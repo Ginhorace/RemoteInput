@@ -1,0 +1,240 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="de">
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">Fernsteuerung</string>
+    <string name="shortcut_connect_to">Mit %1$s verbinden</string>
+
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">Bluetooth-Berechtigung anfordern</string>
+    <string name="turn_on_bluetooth">Bluetooth einschalten</string>
+    <string name="scanning">Suche läuft…</string>
+    <string name="bluetooth_ready">Bluetooth bereit</string>
+    <string name="stop_scanning">Suche stoppen</string>
+    <string name="start_scanning">Suche starten</string>
+    <string name="app_description">Diese App sucht und verbindet Bluetooth-Geräte.\n\nFunktionen:\n- Bluetooth-Geräte in der Nähe suchen\n- Gespeicherte Bluetooth-Geräte anzeigen\n- Verbindung mit Bluetooth-Geräten unterstützen\n\nTippe oben auf die Schaltfläche, um die Bluetooth-Berechtigung zu erteilen und die Funktionen der App zu nutzen.</string>
+    <string name="saved_devices">Gespeicherte Geräte</string>
+    <string name="nearby_devices">Geräte in der Nähe</string>
+    <string name="click_to_scan">Tippe auf „Suche starten“, um nach Geräten zu suchen</string>
+    <string name="connect">Verbinden</string>
+    <string name="bluetooth_device">Bluetooth-Gerät</string>
+    <string name="unknown_device">Unbekanntes Gerät</string>
+
+    <!-- ControlActivity -->
+    <string name="back">Zurück</string>
+    <string name="connected">Verbunden</string>
+    <string name="connecting">Verbinden…</string>
+    <string name="disconnecting">Trennen…</string>
+    <string name="disconnected">Nicht verbunden</string>
+    <string name="initializing">Initialisierung…</string>
+    <string name="registering">Registrierung…</string>
+    <string name="init_failed">Initialisierung fehlgeschlagen</string>
+    <string name="left_button">Linke Taste</string>
+    <string name="right_button">Rechte Taste</string>
+    <string name="input_text">Text eingeben…</string>
+    <string name="send">Senden</string>
+    <string name="sending">Senden…</string>
+    <string name="sending_text_hint">Text wird gesendet, bitte warten…</string>
+    <string name="ok">OK</string>
+    <string name="disconnect">Trennen</string>
+    <string name="confirm_disconnect">Möchtest du die Bluetooth-Verbindung wirklich trennen?</string>
+    <string name="cancel">Abbrechen</string>
+
+    <!-- Verbindung bleibt bestehen: Dauerbenachrichtigung des Vordergrunddienstes, Karte auf der Scan-Seite, Hinweis beim Zurückgehen, Gerätewechsel -->
+    <string name="connection_kept_title">Verbindung bleibt bestehen</string>
+    <string name="notification_channel_name">Bestehende Verbindung</string>
+    <string name="notification_channel_description">Zeigt die Bluetooth-Verbindung, die bestehen bleibt, während du andere Apps nutzt.</string>
+    <string name="notification_text_connecting">Verbindung mit %1$s wird hergestellt…</string>
+    <string name="notification_text_connected">Verbunden mit %1$s</string>
+    <string name="notification_action_open">Zur Steuerung</string>
+    <string name="connection_kept_toast">Die Verbindung bleibt im Hintergrund bestehen</string>
+    <string name="scanner_switch_title">Gerät wechseln?</string>
+    <string name="scanner_switch_text">Aktuell mit %1$s verbunden. Trennen und mit %2$s verbinden?</string>
+    <string name="scanner_switch_confirm">Wechseln</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">Tastaturmodus</string>
+    <string name="mode_touchpad">Touchpad-Modus</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">Haupt</string>
+    <string name="keyboard_page_function">Funktionen</string>
+    <string name="keyboard_page_numpad">Ziffernblock</string>
+
+    <!-- Der Host ignoriert Num Lock: der Ziffernblock ist womöglich unbrauchbar -->
+    <string name="keyboard_numpad_warning">Das verbundene Gerät unterstützt den Ziffernblock möglicherweise nicht. Die Vorlagen-Eingabe, die ihn nutzt (Alt + Ziffern), funktioniert dann eventuell nicht.</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">Touchpad-Tasten</string>
+
+    <!-- Settings -->
+    <string name="settings">Einstellungen</string>
+    <string name="theme_settings">Design-Einstellungen</string>
+    <string name="theme_mode">Design-Modus</string>
+    <string name="theme_mode_system">Systemeinstellung folgen</string>
+    <string name="theme_mode_light">Hell</string>
+    <string name="theme_mode_dark">Dunkel</string>
+    <string name="hue_scheme">Farbschema</string>
+    <string name="language_settings">Spracheinstellungen</string>
+    <string name="language_mode">Sprache</string>
+    <string name="keyboard_settings">Tastatur</string>
+    <string name="keyboard_layout">Tastaturlayout des Hosts</string>
+    <string name="keyboard_layout_follow_ui">App-Sprache folgen</string>
+    <string name="keyboard_layout_hint">Die App kann das Layout des verbundenen Geräts nicht auslesen – wählen Sie das passende. Bei Abweichung geben die Tasten falsche Zeichen aus.</string>
+    <string name="keyboard_layout_send_hint">Beim Senden einer Vorlage beachten: Vorlagen senden US-Tastenpositionen. Ist die Host-Belegung nicht US (Französisch AZERTY, Deutsch QWERTZ, Russisch, Arabisch und so weiter), zuerst auf eine US-Tastatur umstellen; bei Koreanisch, Japanisch und Ähnlichem sind die Buchstabentasten ersetzt, entsprechen im englischen Modus aber US - dort genügt der Wechsel in den englischen Modus (alphanumerisch).</string>
+    <string name="charset_settings">Zeichensätze</string>
+    <string name="charset_settings_hint">Deaktivierte Zeichensätze werden nur beim Bearbeiten einer Vorlage ausgeblendet; Vorlagen, die sie bereits nutzen, funktionieren weiter.</string>
+    <string name="charset_add_label">Zeichensatz hinzufügen</string>
+    <string name="charset_add">Hinzufügen</string>
+    <string name="charset_add_ok">„%1$s“ hinzugefügt</string>
+    <string name="charset_add_duplicate">Bereits als „%1$s“ in der Liste</string>
+    <string name="charset_add_not_found">„%1$s“ ist auf diesem Gerät nicht verfügbar</string>
+    <string name="charset_add_blank">Zeichensatznamen eingeben</string>
+    <string name="charset_delete">Löschen</string>
+    <string name="charset_delete_confirm">Zeichensatz „%1$s“ löschen? Vorlagen, die ihn verwenden, melden einen nicht unterstützten Zeichensatz.</string>
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">Azure</string>
+    <string name="hue_teal">Türkis</string>
+    <string name="hue_violet">Violett</string>
+    <string name="hue_amber">Amber</string>
+    <string name="hue_rose">Rosé</string>
+    <string name="hue_graphite">Graphit</string>
+
+    <!-- Languages -->
+    <string name="language_system">Systemeinstellung folgen</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">Hinweis</string>
+
+    <!-- Errors -->
+    <string name="error_title">Fehler</string>
+    <string name="error_unsupported">Das System dieses Telefons aktiviert das Bluetooth-HID-Device-Profil nicht. Prüfe die Systemeinstellungen.</string>
+    <string name="error_device_not_ready">HID-Dienst ist nicht bereit</string>
+    <string name="error_register_failed">HID-App konnte nicht registriert werden</string>
+    <string name="error_register_exception">HID-App konnte nicht registriert werden: %1$s</string>
+    <string name="error_pairing_failed">Kopplung fehlgeschlagen oder abgebrochen</string>
+    <string name="error_connect_failed">Verbindung fehlgeschlagen</string>
+    <string name="error_connect_exception">Verbindung fehlgeschlagen: %1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">Vorlagenmodus</string>
+    <string name="template_title">Vorlagen</string>
+    <string name="template_new">Neu</string>
+    <string name="template_edit">Bearbeiten</string>
+    <string name="template_copy">Kopieren</string>
+    <string name="template_copy_name">Kopie von %1$s</string>
+    <string name="template_delete">Löschen</string>
+    <string name="template_save">Speichern</string>
+    <string name="template_name">Vorlagenname</string>
+    <string name="template_description">Vorlagenbeschreibung</string>
+    <string name="template_description_label">"Beschreibung: "</string>
+    <string name="template_description_empty">Zum Hinzufügen tippen</string>
+    <string name="template_description_hint">Wofür die Vorlage gedacht ist und was am Host einzurichten ist</string>
+    <string name="template_empty_list">Noch keine Vorlagen. Tippe auf „Neu“, um eine anzulegen.</string>
+    <string name="template_preset_title">Vorlage auswählen</string>
+    <string name="template_preset_oem_alt_code_description">Verwendung: Zeichensatz passend zur Umgebung ändern (der Standard-Zeichensatz folgt der UI-Sprache; für Word auf Unicode umstellen) -> Ziffernblock einschalten -> auf die IME der eigenen Sprache wechseln (Vereinfachtes Chinesisch, Traditionelles Chinesisch, Japanisch, Koreanisch: auf die US-Tastatur wechseln) -> Text im Textfeld eingeben und senden\n\nHinweise:\n\n1. Der Standard-Zeichensatz folgt der UI-Sprache und ist die OEM-Codepage dieser Sprache auf dem Host (Vereinfachtes Chinesisch GBK, Traditionelles Chinesisch Big5, Japanisch windows-31j, Koreanisch windows-949, Englisch: IBM437 in den USA, IBM850 in Großbritannien/international (ohne erkannte Region wird die US-Seite verwendet), westeuropäische Sprachen IBM850, Russisch IBM866, Arabisch IBM720, Hindi US-ASCII); das ist die Codepage für andere Windows-Apps. Für Word auf Unicode umstellen. Alt Code gibt den Code über den Ziffernblock ein, also zuerst den Ziffernblock einschalten (Num Lock).\n\n2. Die Zuordnung Sprache -> OEM-Codepage zeigt das runde Fragezeichen neben dem Zeichensatz. Vereinfachtes und traditionelles Chinesisch, Japanisch und Koreanisch nutzen für ANSI und OEM dieselbe Codepage, also einfach die OEM-Vorlage nehmen. Bei OEMCP 65001 (UTF-8) des Hosts funktioniert Alt Code nicht.\n\n3. Ohne führende 0 ist dies die OEM-Variante des nativen Windows-Alt-Code-Mechanismus (mit führender 0 die ANSI-Variante).\n\n4. Bei der Microsoft-IME für Vereinfachtes/Traditionelles Chinesisch, Japanisch oder Koreanisch auf die US-Tastatur wechseln (oder den Kompatibilitätsmodus für ältere Versionen / eine Drittanbieter-IME): diese IMEs legen OEM-Eingaben auf IBM437 und ANSI auf windows-1252 fest, und Word gibt 2 Zeichen aus.</string>
+    <string name="template_preset_ansi_alt_code_description">Verwendung: Zeichensatz passend zur Umgebung ändern (der Standard-Zeichensatz folgt der UI-Sprache; für Word auf Unicode umstellen) -> Ziffernblock einschalten -> auf die IME der eigenen Sprache wechseln (Vereinfachtes Chinesisch, Traditionelles Chinesisch, Japanisch, Koreanisch: OEM-Version empfohlen) -> Text im Textfeld eingeben und senden\n\nHinweise:\n\n1. Der Standard-Zeichensatz folgt der UI-Sprache und ist die ANSI-Codepage dieser Sprache auf dem Host (Vereinfachtes Chinesisch GBK, Traditionelles Chinesisch Big5, Japanisch windows-31j, Koreanisch windows-949, Englisch und westeuropäische Sprachen windows-1252, Russisch windows-1251, Arabisch windows-1256, Hindi US-ASCII); das ist die Codepage für andere Windows-Apps. Für Word auf Unicode umstellen. Alt Code gibt den Code über den Ziffernblock ein, also zuerst den Ziffernblock einschalten (Num Lock).\n\n2. Die Zuordnung Sprache -> ANSI-Codepage zeigt das runde Fragezeichen neben dem Zeichensatz. Vereinfachtes und traditionelles Chinesisch, Japanisch und Koreanisch nutzen für ANSI und OEM dieselbe Codepage, also einfach die OEM-Vorlage nehmen. Bei ACP 65001 (UTF-8) des Hosts funktioniert Alt Code nicht.\n\n3. Mit führender 0 ist dies die ANSI-Variante des nativen Windows-Alt-Code (ohne führende 0 die OEM-Variante).\n\n4. Mit Rime für Traditionelles Chinesisch bedeutet eine führende 0 Big5, ohne führende 0 GBK.</string>
+    <string name="template_preset_richedit_alt_x_description">Verwendung: Eingabepunkt eines RichEdit-fähigen Programms öffnen -> Eingabemethode anpassen (vereinfachtes Chinesisch, traditionelles Chinesisch, Japanisch, Koreanisch: Englisch-Modus verwenden) -> Text im Textfeld eingeben und senden (die Vorlage tippt u+ und den Hex-Code und drückt am Ende Alt+X)\n\nHinweise:\n\nAlt+X ist die eingebaute Inline-Umwandlung von RichEdit (Words Text-Engine). Die Codepage muss nicht geprüft und der Zeichensatz nicht geändert werden, der Ziffernblock wird nicht gebraucht.\n\nSteht die Einfügemarke direkt hinter einem Hex-Code, wandelt ein Druck den Code an Ort und Stelle in das Zeichen um; da der Code aber variable Länge hat, muss für eine punktgenaue Umwandlung genau dieser Text markiert oder zuerst u+ getippt werden (dafür ist das u+ dieser Vorlage da; das Präfix wird bei der Umwandlung mit gelöscht).\n\nNur in RichEdit-Hosts wirksam, nach Programmnamen nachschlagbar:\nUnterstützt: alle Word-Versionen, der Outlook-Mailtext, OneNote, Windows 11 Editor, WordPad (ab Windows 11 24H2 entfernt), die Commit-Dialoge von TortoiseSVN / Git;\nSonst: nicht in Excel, Browsern, VS Code oder normalen PowerPoint-Textfeldern (in PPT nur im Formeleditor). Das französische Word nutzt Alt+C.</string>
+    <string name="template_preset_macos_hex_description">Verwendung: in den Systemeinstellungen unter Tastatur die Eingabequelle auf Unicode Hex Input umstellen -> den Text im Textfeld eingeben und senden (die Vorlage hält Option gedrückt, tippt 4 Hex-Ziffern und lässt Option los, damit das Zeichen erscheint)\n\nHinweise:\n\n1. Der Code muss auf 4 Stellen mit Nullen aufgefüllt werden: Diese Eingabequelle nimmt pro Aufruf genau 4 Hex-Ziffern, deshalb trägt der Code-Platzhalter der Vorlage pad=4 - kürzere Werte bekommen führende Nullen, zum Beispiel ist 中 gleich 4E2D und A muss als 0041 geschrieben werden; ohne das Auffüllen stehen diese Ziffern für eine andere Codeposition.\n\n2. Der Zeichensatz ist UTF-16 und sollte nicht geändert werden: Zeichen außerhalb der BMP (Emoji usw.) werden in zwei Aufrufe Option+xxxx aufgeteilt, einer je UTF-16-Codeeinheit, und macOS fügt die beiden Surrogate selbst zu einem Zeichen zusammen - 😀 ist D83D und DE00, zwei Aufrufe. Unicode würde 5 Hex-Ziffern senden, die diese Eingabequelle nicht annimmt.\n\n3. Voraussetzung ist, dass die Eingabequelle zuerst auf Unicode Hex Input gestellt wird - bei einer normalen Tastaturbelegung tippt Option nur Symbole. Das Umstellen muss der Nutzer selbst machen (die Vorlage tut es nicht); danach wieder zurückstellen, sonst sind die Option+Ziffer-Kürzel des Alltags belegt.\n\n4. Diese Vorlage ist nicht an einem echten Gerät geprüft: Es stand kein macOS-Gerät zur Verfügung, das Tastentiming kann je nach Systemversion abweichen. Wenn nichts passiert, zuerst am Host von Hand Option+4E2D versuchen und mit dem Timing der Vorlage vergleichen (das meint das unverified im Namen).</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">Verwendung: am Host ist keine Einstellung nötig, einfach den Text im Textfeld eingeben und senden (die Vorlage drückt Ctrl+Shift+U, lässt alles wieder los, tippt die Hex-Ziffern und bestätigt am Ende mit der Leertaste)\n\nHinweise:\n\n1. Diese Sequenz lässt sich auf zwei Arten drücken, und diese Vorlage nutzt die diskrete: Ctrl+Shift+U drücken und sofort alles loslassen (das System zeigt dann ein unterstrichenes u), die Hex-Ziffern tippen und mit der Leertaste bestätigen. Bei der anderen, gehaltenen Art bleibt Ctrl+Shift gedrückt, man tippt u und die Ziffern und lässt erst dann los, womit automatisch bestätigt wird - wann das passiert, hängt vom Host ab und ist vom Gerät nicht festzustellen, deshalb nutzt die Vorlage sie nicht.\n\n2. Der Zeichensatz ist Unicode und muss nicht geändert werden: 1 bis 6 Hex-Ziffern schreiben, kein Auffüllen mit Nullen und kein Aufteilen in UTF-16-Surrogatpaare wie unter macOS - Zeichen außerhalb der BMP (Emoji usw.) gehen mit einem Durchgang hinein.\n\n3. Der Host braucht ein Framework für die Eingabemethode am Desktop (GTK / IBus / Fcitx); Desktop-Linux und ChromeOS bringen eines mit, es funktioniert also sofort. Einzelne Programme belegen diese Tastenkombination selbst, dort wirkt sie nicht.\n\n4. Bestätigt wird mit der Leertaste; Enter geht genauso. Wer Enter will, ändert den letzten Schritt der Vorlage auf tap Enter.\n\n5. Nach der Tastenkombination muss der Eingabemethode etwas Zeit bleiben, ihren inneren Zustand aufzubauen, sonst landen die ersten Hex-Ziffern als normale Buchstaben direkt im Textfeld. Die 50 Millisekunden Tastenabstand im Kopf der Vorlage sind dieser Puffer; kürzer sollte es nicht sein.</string>
+    <string name="template_host_layout_us_notice">Die Host-Tastatur ist keine US-Belegung: Die Tasten geben andere Zeichen aus. Stellen Sie den Host vor dem Senden auf eine US-Tastatur um (Windows) oder fügen Sie eine US-Tastatur als Eingabemethode hinzu (Linux); das Unicode Hex Input unter macOS ist bereits US-basiert.</string>
+    <string name="template_host_layout_english_notice">Die Buchstabentasten der Host-Tastatur sind keine lateinischen Buchstaben (Koreanisch, Japanisch und Ähnliches): Schalten Sie vor dem Senden in den englischen Modus (alphanumerisch) - dort entsprechen die 26 Buchstabentasten einer US-Tastatur.</string>
+    <string name="template_send_unencodable_title">Zeichen nicht kodierbar</string>
+    <string name="template_send_unencodable_text">Zeichen %1$d „%2$s“ (U+%3$s) lässt sich mit dem Zeichensatz %4$s nicht kodieren; beim Senden würde es fehlen. Prüfen Sie den Zeichensatz oder die Hilfe daneben, oder ob der Text falsch ist.</string>
+    <string name="template_send_anyway">Trotzdem senden</string>
+    <string name="template_preview_unencodable">Im Beispiel gibt es ein nicht kodierbares Zeichen: „%1$s“ (U+%2$s) lässt sich mit %3$s nicht kodieren und wird beim Aufklappen übersprungen.</string>
+    <string name="template_delete_confirm">Vorlage „%1$s“ löschen?</string>
+    <string name="template_save_failed">Vorlage konnte nicht gespeichert werden:</string>
+    <string name="template_load_error_title">Fehler beim Laden der Vorlagen</string>
+    <string name="template_load_error_desc">Diese Vorlagen enthalten Fehler. Öffne sie im Editor, um sie zu beheben:</string>
+    <string name="template_load_error_item">%1$s (%2$d Fehler)</string>
+    <string name="template_send_blocked">Die Vorlage kann noch keinen Text eingeben — erst beheben, dann senden</string>
+    <string name="template_card_summary">%1$s · Basis %2$d · %3$d Schritte</string>
+    <string name="template_expand_summary">%1$d Schritte · %2$d Frames · ~%3$d ms</string>
+    <string name="template_editor_title">Vorlage bearbeiten</string>
+    <string name="template_empty_steps">Noch keine Schritte. Tippe auf „Schritt hinzufügen“.</string>
+    <string name="template_step_summary">%1$d Schritte · Halten %2$d ms · Abstand %3$d ms</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">Vorlagenparameter</string>
+    <string name="template_header_summary">%1$s · Basis %2$d · %3$d / %4$d / %5$d ms</string>
+    <string name="template_header_charset">Zeichensatz</string>
+    <string name="charset_hint_title">Zeichensätze und Aliase</string>
+    <string name="charset_hint_desc">Gegenüber steht der Zeichensatz, den die jeweilige Sprache unter Windows verwendet. Schreibe in die Vorlage den kanonischen Namen (den fetten, nicht proportionalen); die Aliase darunter werden ebenfalls erkannt.</string>
+    <string name="charset_hint_limits">Hinweis: Die meisten Zeichensätze enthalten nicht alle Unicode-Zeichen; fehlende Zeichen lassen sich nicht senden (vor dem Senden kommt ein Hinweis). Außerdem können Zeichensätze dasselbe Zeichen an anderen Codepositionen führen (windows-1252 vs. IBM850, GBK vs. Big5) - die falsche Seite tippt also andere Zeichen. Für alle Zeichen Unicode oder UTF-16 verwenden.</string>
+    <string name="charset_word_alt_code_hint">In Word diesen Eintrag verwenden (Alt Code wird überschrieben)</string>
+    <string name="charset_lang_gbk">Chinesisch (vereinfacht) (ansi/oem)</string>
+    <string name="charset_lang_big5">Chinesisch (traditionell) (ansi/oem)</string>
+    <string name="charset_lang_windows_31j">Japanisch (ansi/oem)</string>
+    <string name="charset_lang_windows_949">Koreanisch (ansi/oem)</string>
+    <string name="charset_lang_windows_1252">Englisch · Spanisch · Französisch · Portugiesisch · Deutsch (ansi)</string>
+    <string name="charset_lang_ibm437">Englisch (USA) (oem)</string>
+    <string name="charset_lang_ibm850">Englisch (UK/international) · Spanisch · Französisch · Portugiesisch · Deutsch (oem)</string>
+    <string name="charset_lang_windows_1251">Russisch (ansi)</string>
+    <string name="charset_lang_ibm866">Russisch (oem)</string>
+    <string name="charset_lang_windows_1256">Arabisch (ansi)</string>
+    <string name="charset_lang_ibm720">Arabisch (oem)</string>
+    <string name="charset_lang_unicode">Alle modernen Sprachen (unicode) · vollständige Codepunkte (UTF-32 ohne Auffüllnullen, 1-6 Stellen)</string>
+    <string name="charset_lang_utf16">Zeichen der supplementären Ebene werden als 2 Einheiten gesendet (UTF-16-Codeeinheiten)</string>
+    <string name="charset_lang_us_ascii">Englisch (ascii) · Hindi (keine ansi/oem-Codepage)</string>
+    <string name="template_header_radix">Basis</string>
+    <string name="template_header_template_gap">Vorlagenabstand</string>
+    <string name="template_header_key_hold">Halten</string>
+    <string name="template_header_key_gap">Tastenabstand</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">Tasten</string>
+    <string name="template_modifier_section">Modifikatoren: die nächste Aktion wird ein Kombischritt</string>
+    <string name="template_key_section">Tasten: ein Tippen fügt einen „tap“-Schritt hinzu</string>
+    <string name="template_add">Hinzufügen</string>
+    <string name="template_add_delay">Verzögerung</string>
+    <string name="template_add_code">Code-Platzhalter</string>
+    <string name="template_add_custom">Benutzerdefinierte Taste</string>
+    <string name="template_custom_key_title">Benutzerdefinierte Taste</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">Schritt bearbeiten</string>
+    <string name="template_step_key">Tastenname</string>
+    <string name="template_step_duration">Dauer (ms)</string>
+    <string name="template_step_pad">Auf N Stellen auffüllen</string>
+    <string name="template_step_enable">Aktiviert</string>
+    <string name="template_step_code_hint">Halten und Abstand jeder Ziffer stammen aus den Vorlagenparametern „Halten / Abstand“.</string>
+    <string name="template_step_keys">Quelle der Ziffern</string>
+    <string name="template_keys_numpad">Ziffernblock</string>
+    <string name="template_keys_main">Haupttastatur</string>
+    <string name="template_step_split">Aufteilen</string>
+    <string name="template_step_chord_hint">Die ganze Gruppe wird zusammen gedrückt und losgelassen; „Aufteilen“ ergibt die gleichwertigen Einzelschritte.</string>
+    <string name="template_step_split_hint">Aufteilen macht aus „tap“ „Drücken“ + „Loslassen“: Die Taste bleibt bis zum passenden Loslass-Schritt gedrückt.</string>
+    <string name="template_step_modifier_hint">Modifikatortaste: Dieser Schritt drückt und lässt sie los.</string>
+    <string name="template_step_unknown_hint">Diese Zeile wurde nicht erkannt. Schreiben Sie sie als einen gültigen Schritt, z. B. „down Alt“, „sleep 20“ oder „&lt;code&gt;“.</string>
+    <string name="template_step_line">Zeile</string>
+    <string name="template_status_ok">Syntax korrekt</string>
+    <string name="template_status_error">%1$d Fehler</string>
+    <string name="template_status_warning">%1$d Warnungen</string>
+    <string name="template_preview">Erweiterte Vorschau</string>
+    <string name="template_preview_empty">Nichts anzuzeigen</string>
+    <string name="template_preview_sample">Beispiel</string>
+    <string name="template_preview_test">Testen</string>
+    <string name="template_preview_header_action">Aktion</string>
+    <string name="template_preview_header_report">Modifikator / Taste</string>
+    <string name="template_preview_header_duration">Halten</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">Die Vorlage ist leer</string>
+    <string name="template_error_missing_code">&lt;code&gt;-Platzhalter fehlt: Die Vorlage kann nicht zum Tippen von Text verwendet werden</string>
+    <string name="template_warn_code_disabled">&lt;code&gt; ist deaktiviert: Die Vorlage kann nicht zum Tippen von Text verwendet werden</string>
+    <string name="template_error_unknown_key">Unbekannter Tastenname „%1$s“</string>
+    <string name="template_error_unknown_key_suggest">Unbekannter Tastenname „%1$s“, meintest du „%2$s“?</string>
+    <string name="template_error_invalid_number">Ungültige Zahl „%1$s“</string>
+    <string name="template_error_invalid_value">Ungültiger Wert „%1$s“</string>
+    <string name="template_error_unclosed_placeholder">Nach „&lt;“ fehlt „&gt;“</string>
+    <string name="template_error_unknown_step">Unbekannter Schritt „%1$s“</string>
+    <string name="template_error_unknown_charset">Nicht unterstützter Zeichensatz „%1$s“</string>
+    <string name="template_error_invalid_radix">Die Basis muss 10 oder 16 sein, aktuell „%1$s“</string>
+    <string name="template_error_unbalanced_key">Taste „%1$s“ wird gedrückt und nie losgelassen — sie bleibt gehalten</string>
+    <string name="template_warn_unknown_param">Unbekannter Parameter „%1$s“</string>
+    <string name="template_warn_duplicate_code">Eine Vorlage sendet genau ein Zeichen; mehrere &lt;code&gt;-Platzhalter senden dieselbe Ziffernfolge erneut</string>
+    <string name="template_warn_multiple_held_keys">Es werden mehrere normale Tasten gleichzeitig gehalten (%1$s), der Tastaturbericht trägt aber nur eine</string>
+    <string name="template_warn_small_delay">Die Verzögerung von %1$s ms ist sehr kurz und kann über Bluetooth gestaucht werden</string>
+    <string name="template_warn_small_delay_header">Halten oder Abstand der Vorlage (%1$s ms) liegt unter 10 ms und kann über Bluetooth gestaucht werden</string>
+    <string name="template_warn_ignored_attr">Das Attribut „%1$s“ wirkt nicht mehr: Der Tastenrhythmus folgt jetzt den Vorlagenparametern und wird beim Speichern entfernt</string>
+</resources>

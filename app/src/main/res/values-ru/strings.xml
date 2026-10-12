@@ -1,0 +1,240 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="ru">
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">Удалённое управление</string>
+    <string name="shortcut_connect_to">Подключиться к %1$s</string>
+
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">Запросить доступ к Bluetooth</string>
+    <string name="turn_on_bluetooth">Включить Bluetooth</string>
+    <string name="scanning">Поиск…</string>
+    <string name="bluetooth_ready">Bluetooth готов</string>
+    <string name="stop_scanning">Остановить поиск</string>
+    <string name="start_scanning">Начать поиск</string>
+    <string name="app_description">Приложение ищет и подключает устройства Bluetooth.\n\nВозможности:\n- Поиск устройств Bluetooth поблизости\n- Показ сохранённых устройств Bluetooth\n- Поддержка подключения устройств Bluetooth\n\nНажмите кнопку выше, чтобы разрешить доступ к Bluetooth и пользоваться функциями приложения.</string>
+    <string name="saved_devices">Сохранённые устройства</string>
+    <string name="nearby_devices">Устройства поблизости</string>
+    <string name="click_to_scan">Нажмите «Начать поиск», чтобы найти устройства</string>
+    <string name="connect">Подключить</string>
+    <string name="bluetooth_device">Устройство Bluetooth</string>
+    <string name="unknown_device">Неизвестное устройство</string>
+
+    <!-- ControlActivity -->
+    <string name="back">Назад</string>
+    <string name="connected">Подключено</string>
+    <string name="connecting">Подключение…</string>
+    <string name="disconnecting">Отключение…</string>
+    <string name="disconnected">Не подключено</string>
+    <string name="initializing">Инициализация…</string>
+    <string name="registering">Регистрация…</string>
+    <string name="init_failed">Не удалось инициализировать</string>
+    <string name="left_button">Левая кнопка</string>
+    <string name="right_button">Правая кнопка</string>
+    <string name="input_text">Введите текст…</string>
+    <string name="send">Отправить</string>
+    <string name="sending">Отправка…</string>
+    <string name="sending_text_hint">Текст отправляется, подождите…</string>
+    <string name="ok">ОК</string>
+    <string name="disconnect">Отключить</string>
+    <string name="confirm_disconnect">Отключить соединение Bluetooth?</string>
+    <string name="cancel">Отмена</string>
+
+    <!-- Соединение сохраняется: постоянное уведомление службы переднего плана, карточка на экране поиска, сообщение при возврате и подтверждение смены устройства -->
+    <string name="connection_kept_title">Соединение сохраняется</string>
+    <string name="notification_channel_name">Сохраняемое соединение</string>
+    <string name="notification_channel_description">Показывает соединение Bluetooth, которое сохраняется, пока вы пользуетесь другими приложениями.</string>
+    <string name="notification_text_connecting">Подключение к %1$s…</string>
+    <string name="notification_text_connected">Подключено к %1$s</string>
+    <string name="notification_action_open">К управлению</string>
+    <string name="connection_kept_toast">Соединение сохраняется в фоновом режиме</string>
+    <string name="scanner_switch_title">Сменить устройство?</string>
+    <string name="scanner_switch_text">Сейчас подключено к %1$s. Отключить и подключиться к %2$s?</string>
+    <string name="scanner_switch_confirm">Сменить</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">Режим клавиатуры</string>
+    <string name="mode_touchpad">Режим тачпада</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">Основная</string>
+    <string name="keyboard_page_function">Функции</string>
+    <string name="keyboard_page_numpad">Цифровая</string>
+
+    <!-- Хост игнорирует Num Lock: цифровая клавиатура может быть недоступна -->
+    <string name="keyboard_numpad_warning">Возможно, подключённое устройство не поддерживает цифровую клавиатуру. Ввод по шаблону, который её использует (Alt + цифры), может не работать.</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">Кнопки тачпада</string>
+
+    <!-- Settings -->
+    <string name="settings">Настройки</string>
+    <string name="theme_settings">Настройки темы</string>
+    <string name="theme_mode">Режим темы</string>
+    <string name="theme_mode_system">Как в системе</string>
+    <string name="theme_mode_light">Светлая</string>
+    <string name="theme_mode_dark">Тёмная</string>
+    <string name="hue_scheme">Цветовая схема</string>
+    <string name="language_settings">Настройки языка</string>
+    <string name="language_mode">Язык</string>
+    <string name="keyboard_settings">Клавиатура</string>
+    <string name="keyboard_layout">Раскладка клавиатуры хоста</string>
+    <string name="keyboard_layout_follow_ui">Как в языке приложения</string>
+    <string name="keyboard_layout_hint">Приложение не может определить раскладку подключённого устройства — выберите подходящую вручную. Если раскладки различаются, клавиши будут вводить неверные символы.</string>
+    <string name="keyboard_layout_send_hint">При отправке шаблона учитывайте: шаблоны отправляют позиции клавиш US. Если раскладка хоста не US (французская AZERTY, немецкая QWERTZ, русская, арабская и т. д.), сначала переключитесь на клавиатуру US; у корейского, японского и подобных буквенные клавиши заменены, но в английском режиме совпадают с US, поэтому достаточно переключиться в английский режим.</string>
+    <string name="charset_settings">Кодировки</string>
+    <string name="charset_settings_hint">Отключение кодировки лишь скрывает её при редактировании шаблона; шаблоны, которые уже её используют, продолжают работать.</string>
+    <string name="charset_add_label">Добавить кодировку</string>
+    <string name="charset_add">Добавить</string>
+    <string name="charset_add_ok">«%1$s» добавлена</string>
+    <string name="charset_add_duplicate">Уже есть в списке как «%1$s»</string>
+    <string name="charset_add_not_found">«%1$s» недоступна на этом устройстве</string>
+    <string name="charset_add_blank">Введите название кодировки</string>
+    <string name="charset_delete">Удалить</string>
+    <string name="charset_delete_confirm">Удалить кодировку «%1$s»? Шаблоны, которые её используют, сообщат о недоступной кодировке.</string>
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">Azure</string>
+    <string name="hue_teal">Бирюзовый</string>
+    <string name="hue_violet">Фиолетовый</string>
+    <string name="hue_amber">Янтарный</string>
+    <string name="hue_rose">Розовый</string>
+    <string name="hue_graphite">Графитовый</string>
+
+    <!-- Languages -->
+    <string name="language_system">Как в системе</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">Подсказка</string>
+
+    <!-- Errors -->
+    <string name="error_title">Ошибка</string>
+    <string name="error_unsupported">В системе этого телефона не включён профиль Bluetooth HID Device. Проверьте настройки системы.</string>
+    <string name="error_device_not_ready">Служба HID не готова</string>
+    <string name="error_register_failed">Не удалось зарегистрировать приложение HID</string>
+    <string name="error_register_exception">Не удалось зарегистрировать приложение HID: %1$s</string>
+    <string name="error_pairing_failed">Сопряжение не удалось или отменено</string>
+    <string name="error_connect_failed">Не удалось подключиться</string>
+    <string name="error_connect_exception">Не удалось подключиться: %1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">Режим шаблонов</string>
+    <string name="template_title">Шаблоны</string>
+    <string name="template_new">Создать</string>
+    <string name="template_edit">Изменить</string>
+    <string name="template_copy">Копировать</string>
+    <string name="template_copy_name">Копия %1$s</string>
+    <string name="template_delete">Удалить</string>
+    <string name="template_save">Сохранить</string>
+    <string name="template_name">Название шаблона</string>
+    <string name="template_description">Описание шаблона</string>
+    <string name="template_description_label">"Описание: "</string>
+    <string name="template_description_empty">Нажмите, чтобы добавить</string>
+    <string name="template_description_hint">Для чего нужен этот шаблон и что настроить на хосте</string>
+    <string name="template_empty_list">Шаблонов пока нет. Нажмите «Создать», чтобы добавить.</string>
+    <string name="template_preset_title">Выберите шаблон</string>
+    <string name="template_preset_oem_alt_code_description">Как использовать: измените кодировку под своё окружение (кодировка по умолчанию зависит от языка интерфейса; для Word её нужно сменить на Unicode) -> включите цифровой блок -> переключитесь на IME своего языка (упрощённый/традиционный китайский, японский, корейский — переключитесь на клавиатуру US) -> введите текст в поле и отправьте\n\nПримечания:\n\n1. Кодировка по умолчанию зависит от языка интерфейса и соответствует OEM-кодовой странице этого языка на хосте (упрощённый китайский GBK, традиционный китайский Big5, японский windows-31j, корейский windows-949, английский: IBM437 в США, IBM850 в Великобритании/международный (если регион не определён, берётся страница США), западноевропейские языки IBM850, русский IBM866, арабский IBM720, хинди US-ASCII) — именно её и нужно использовать в других приложениях Windows; в Word смените её на Unicode. Alt Code вводит код с цифрового блока, поэтому сначала включите цифровой блок (Num Lock).\n\n2. Соответствие «язык -> OEM-кодовая страница» можно посмотреть по значку вопросительного знака в круге рядом с кодировкой. Упрощённый и традиционный китайский, японский и корейский используют одну и ту же кодовую страницу для ANSI и OEM, поэтому достаточно выбрать шаблон OEM. Если OEMCP хоста — 65001 (UTF-8), Alt Code не работает.\n\n3. Без ведущего нуля это OEM-вариант встроенного в Windows механизма Alt Code (с ведущим нулём — вариант ANSI).\n\n4. При IME Microsoft для упрощённого/традиционного китайского, японского или корейского переключитесь на клавиатуру US (или режим совместимости со старой версией / стороннюю IME): эти IME фиксируют OEM-ввод на IBM437, а ANSI — на windows-1252, и Word выводит 2 символа.</string>
+    <string name="template_preset_ansi_alt_code_description">Как использовать: измените кодировку под своё окружение (кодировка по умолчанию зависит от языка интерфейса; для Word её нужно сменить на Unicode) -> включите цифровой блок -> переключитесь на IME своего языка (упрощённый/традиционный китайский, японский, корейский — рекомендуем версию OEM) -> введите текст в поле и отправьте\n\nПримечания:\n\n1. Кодировка по умолчанию зависит от языка интерфейса и соответствует ANSI-кодовой странице этого языка на хосте (упрощённый китайский GBK, традиционный китайский Big5, японский windows-31j, корейский windows-949, английский и западноевропейские языки windows-1252, русский windows-1251, арабский windows-1256, хинди US-ASCII) — именно её и нужно использовать в других приложениях Windows; в Word смените её на Unicode. Alt Code вводит код с цифрового блока, поэтому сначала включите цифровой блок (Num Lock).\n\n2. Соответствие «язык -> ANSI-кодовая страница» можно посмотреть по значку вопросительного знака в круге рядом с кодировкой. Упрощённый и традиционный китайский, японский и корейский используют одну и ту же кодовую страницу для ANSI и OEM, поэтому достаточно выбрать шаблон OEM. Если ACP хоста — 65001 (UTF-8), Alt Code не работает.\n\n3. С ведущим нулём это вариант ANSI встроенного Alt Code Windows (без ведущего нуля — вариант OEM).\n\n4. С Rime для традиционного китайского ведущий нуль означает Big5, а без него — GBK.</string>
+    <string name="template_preset_richedit_alt_x_description">Как использовать: открыть точку ввода программы с поддержкой RichEdit -> настроить способ ввода (упрощённый китайский, традиционный китайский, японский, корейский: использовать английский режим) -> ввести текст в поле и отправить (шаблон набирает u+ и шестнадцатеричный код, затем нажимает Alt+X)\n\nПримечания:\n\nAlt+X — встроенное в RichEdit (текстовый движок Word) преобразование на месте. Проверять кодовую страницу и менять кодировку не нужно, цифровой блок тоже не используется.\n\nЕсли курсор стоит сразу после шестнадцатеричного кода, нажатие превращает код в символ на месте; но поскольку код переменной длины, для точного преобразования только этого фрагмента нужно выделить текст или сначала набрать u+ (u+ в этом шаблоне для этого и нужен, префикс удаляется вместе с преобразованием).\n\nРаботает только в хостах RichEdit, можно искать по названию программы:\nПоддерживается: все версии Word, текст письма Outlook, OneNote, Блокнот Windows 11, WordPad (удалён в Windows 11 24H2), диалоги коммитов TortoiseSVN / Git;\nПрочее: не работает в Excel, браузерах, VS Code и обычных текстовых полях PowerPoint (в PPT только редактор формул). Во французском Word используется Alt+C.</string>
+    <string name="template_preset_macos_hex_description">Как использовать: переключить текущий источник ввода на Unicode Hex Input (Системные настройки -> Клавиатура) -> введите текст в поле и отправьте (шаблон удерживает Option, набирает 4 шестнадцатеричные цифры и отпускает Option, чтобы символ появился)\n\nПримечания:\n\n1. Код нужно дополнить нулями до 4 цифр: этот источник ввода принимает ровно 4 шестнадцатеричные цифры за раз, поэтому заполнитель кода в шаблоне имеет pad=4 — более короткие значения получают ведущие нули, например 中 — это 4E2D, а A надо писать как 0041; без дополнения эти цифры означают другую позицию кода.\n\n2. Кодировка — UTF-16, менять её не стоит: символы вне BMP (эмодзи и другие) разбиваются на два вызова Option+xxxx, по одному на кодовую единицу UTF-16, и macOS сам объединяет две суррогатные пары в один символ: 😀 — это D83D и DE00, два вызова. С Unicode отправлялись бы 5 шестнадцатеричных цифр, которые этот источник ввода не принимает.\n\n3. Сначала нужно переключить источник ввода на Unicode Hex Input — при обычной раскладке Option вводит только символы. Переключает пользователь (шаблон этого не делает); после работы верните прежний источник, иначе повседневные сочетания Option+цифра будут заняты.\n\n4. Этот шаблон не проверен на реальной машине: устройства macOS под рукой не было, поэтому тайминги нажатий могут отличаться в зависимости от версии системы. Если ничего не происходит, сначала попробуйте Option+4E2D вручную на хосте и сравните с таймингами шаблона (это и означает unverified в названии).</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">Как использовать: на хосте ничего настраивать не нужно, просто введите текст в поле и отправьте (шаблон нажимает Ctrl+Shift+U и всё отпускает, набирает шестнадцатеричные цифры и в конце подтверждает пробелом)\n\nПримечания:\n\n1. Эту последовательность можно нажимать двумя способами, и в этом шаблоне используется дискретный: нажать Ctrl+Shift+U и сразу всё отпустить (система покажет подчёркнутую u), затем набрать шестнадцатеричные цифры и подтвердить пробелом. Другой, удерживающий, оставляет Ctrl+Shift нажатыми, набирает u и цифры и подтверждает автоматически при отпускании: момент подтверждения в этом случае зависит от хоста, и устройство не может его определить, поэтому шаблон его не использует.\n\n2. Кодировка — Unicode, менять её не нужно: пишутся от 1 до 6 шестнадцатеричных цифр, дополнять нулями не требуется, и разбивать на суррогатные пары UTF-16, как в macOS, тоже не надо: символы вне BMP (эмодзи и другие) вводятся за один раз.\n\n3. Хосту нужен настольный фреймворк методов ввода (GTK / IBus / Fcitx); в настольном Linux и ChromeOS он уже есть, поэтому всё работает сразу. Некоторые программы забирают это сочетание себе, и там оно не сработает.\n\n4. Подтверждение — пробел; Enter действует так же. Чтобы использовать Enter, измените последний шаг шаблона на tap Enter.\n\n5. После сочетания дайте методу ввода время привести в порядок своё внутреннее состояние, иначе первые шестнадцатеричные цифры попадут в поле как обычные буквы. Интервал между нажатиями 50 миллисекунд в заголовке шаблона — как раз этот запас, уменьшать его не стоит.</string>
+    <string name="template_host_layout_us_notice">Клавиатура хоста — не раскладка US: клавиши будут вводить другие символы. Перед отправкой переключите хост на клавиатуру US (Windows) или добавьте способ ввода с клавиатурой US (Linux); Unicode Hex Input в macOS уже основан на US.</string>
+    <string name="template_host_layout_english_notice">Буквенные клавиши клавиатуры хоста — не латинские буквы (корейский, японский и подобные): перед отправкой переключитесь в английский режим (алфанумерический) — в нём 26 буквенных клавиш совпадают с клавиатурой US.</string>
+    <string name="template_send_unencodable_title">Есть символ, который не кодируется</string>
+    <string name="template_send_unencodable_text">Символ %1$d «%2$s» (U+%3$s) не кодируется в кодировке %4$s; при отправке он пропадёт. Проверьте кодировку или справку рядом, либо текст.</string>
+    <string name="template_send_anyway">Всё равно отправить</string>
+    <string name="template_preview_unencodable">В образце есть не кодируемый символ: «%1$s» (U+%2$s) не кодируется в %3$s и пропускается при разворачивании.</string>
+    <string name="template_delete_confirm">Удалить шаблон «%1$s»?</string>
+    <string name="template_save_failed">Не удалось сохранить шаблон:</string>
+    <string name="template_load_error_title">Ошибки загрузки шаблонов</string>
+    <string name="template_load_error_desc">В этих шаблонах есть ошибки. Откройте их в редакторе и исправьте:</string>
+    <string name="template_load_error_item">%1$s (ошибок: %2$d)</string>
+    <string name="template_send_blocked">Шаблон пока не может вводить текст — сначала исправьте</string>
+    <string name="template_card_summary">%1$s · основание %2$d · шагов: %3$d</string>
+    <string name="template_expand_summary">шагов: %1$d · кадров: %2$d · ~%3$d мс</string>
+    <string name="template_editor_title">Изменение шаблона</string>
+    <string name="template_empty_steps">Шагов пока нет. Нажмите «Добавить шаг», чтобы создать.</string>
+    <string name="template_step_summary">шагов: %1$d · удержание %2$d мс · интервал %3$d мс</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">Параметры шаблона</string>
+    <string name="template_header_summary">%1$s · основание %2$d · %3$d / %4$d / %5$d мс</string>
+    <string name="template_header_charset">Кодировка</string>
+    <string name="charset_hint_title">Кодировки и псевдонимы</string>
+    <string name="charset_hint_desc">Напротив указана кодировка, которую каждая языковая версия Windows использует по умолчанию. В шаблоне пишите каноническое имя (выделенное жирным моноширинным шрифтом); псевдонимы ниже тоже принимаются.</string>
+    <string name="charset_hint_limits">Примечание: большинство кодировок не содержат весь Unicode, и отсутствующие символы отправить нельзя (перед отправкой будет предупреждение); кроме того, у разных кодировок один и тот же символ может стоять на другой позиции (windows-1252 и IBM850, GBK и Big5), поэтому неверная страница введёт другие символы. Чтобы охватить всё, используйте Unicode или UTF-16.</string>
+    <string name="charset_word_alt_code_hint">В Word используйте эту строку (Alt Code переопределяется)</string>
+    <string name="charset_lang_gbk">Китайский упрощённый (ansi/oem)</string>
+    <string name="charset_lang_big5">Китайский традиционный (ansi/oem)</string>
+    <string name="charset_lang_windows_31j">Японский (ansi/oem)</string>
+    <string name="charset_lang_windows_949">Корейский (ansi/oem)</string>
+    <string name="charset_lang_windows_1252">Английский · испанский · французский · португальский · немецкий (ansi)</string>
+    <string name="charset_lang_ibm437">Английский (США) (oem)</string>
+    <string name="charset_lang_ibm850">Английский (Великобритания / международный) · испанский · французский · португальский · немецкий (oem)</string>
+    <string name="charset_lang_windows_1251">Русский (ansi)</string>
+    <string name="charset_lang_ibm866">Русский (oem)</string>
+    <string name="charset_lang_windows_1256">Арабский (ansi)</string>
+    <string name="charset_lang_ibm720">Арабский (oem)</string>
+    <string name="charset_lang_unicode">Все современные языки (unicode) · полные кодовые точки (UTF-32 без ведущих нулей, 1-6 знаков)</string>
+    <string name="charset_lang_utf16">Символы дополнительной плоскости отправляются как 2 единицы (кодовые единицы UTF-16)</string>
+    <string name="charset_lang_us_ascii">Английский (ascii) · Хинди (нет кодовой страницы ansi/oem)</string>
+    <string name="template_header_radix">Основание</string>
+    <string name="template_header_template_gap">Интервал шаблона</string>
+    <string name="template_header_key_hold">Удержание</string>
+    <string name="template_header_key_gap">Интервал клавиш</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">Клавиши</string>
+    <string name="template_modifier_section">Модификаторы: следующее действие станет комбинацией</string>
+    <string name="template_key_section">Клавиши: нажатие добавляет шаг «tap»</string>
+    <string name="template_add">Добавить</string>
+    <string name="template_add_delay">Задержка</string>
+    <string name="template_add_code">Подстановка кода</string>
+    <string name="template_add_custom">Своя клавиша</string>
+    <string name="template_custom_key_title">Своя клавиша</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">Изменение шага</string>
+    <string name="template_step_key">Имя клавиши</string>
+    <string name="template_step_duration">Длительность (мс)</string>
+    <string name="template_step_pad">Дополнить нулями до N</string>
+    <string name="template_step_enable">Включено</string>
+    <string name="template_step_code_hint">Удержание и интервал каждого разряда берутся из параметров шаблона «удержание / интервал».</string>
+    <string name="template_step_keys">Источник цифр</string>
+    <string name="template_keys_numpad">Цифровой блок</string>
+    <string name="template_keys_main">Основной блок</string>
+    <string name="template_step_split">Разделить</string>
+    <string name="template_step_chord_hint">Группа нажимается и отпускается целиком; «Разделить» даёт равнозначные отдельные шаги.</string>
+    <string name="template_step_split_hint">Разделение превращает «tap» в «нажатие» + «отпускание»: клавиша остаётся нажатой до соответствующего шага отпускания.</string>
+    <string name="template_step_modifier_hint">Клавиша-модификатор: нажатие и отпускание выполняет этот шаг.</string>
+    <string name="template_step_unknown_hint">Эта строка не распознана. Перепишите её как один корректный шаг, например «down Alt», «sleep 20» или «&lt;code&gt;».</string>
+    <string name="template_step_line">Строка</string>
+    <string name="template_status_ok">Синтаксис верен</string>
+    <string name="template_status_error">ошибок: %1$d</string>
+    <string name="template_status_warning">предупреждений: %1$d</string>
+    <string name="template_preview">Развёрнутый предпросмотр</string>
+    <string name="template_preview_empty">Нечего показывать</string>
+    <string name="template_preview_sample">Пример</string>
+    <string name="template_preview_test">Тест</string>
+    <string name="template_preview_header_action">Действие</string>
+    <string name="template_preview_header_report">Модификатор / Код</string>
+    <string name="template_preview_header_duration">Удержание</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">Шаблон пуст</string>
+    <string name="template_error_missing_code">Нет подстановки &lt;code&gt;: шаблон нельзя использовать для ввода текста</string>
+    <string name="template_warn_code_disabled">&lt;code&gt; отключён: шаблон нельзя использовать для ввода текста</string>
+    <string name="template_error_unknown_key">Неизвестное имя клавиши «%1$s»</string>
+    <string name="template_error_unknown_key_suggest">Неизвестное имя клавиши «%1$s», возможно, вы имели в виду «%2$s»?</string>
+    <string name="template_error_invalid_number">Недопустимое число «%1$s»</string>
+    <string name="template_error_invalid_value">Недопустимое значение «%1$s»</string>
+    <string name="template_error_unclosed_placeholder">После «&lt;» нет «&gt;»</string>
+    <string name="template_error_unknown_step">Неизвестный шаг «%1$s»</string>
+    <string name="template_error_unknown_charset">Неподдерживаемая кодировка «%1$s»</string>
+    <string name="template_error_invalid_radix">Основание должно быть 10 или 16, сейчас «%1$s»</string>
+    <string name="template_error_unbalanced_key">Клавиша «%1$s» нажата и не отпущена: она останется зажатой</string>
+    <string name="template_warn_unknown_param">Неизвестный параметр «%1$s»</string>
+    <string name="template_warn_duplicate_code">Шаблон отправляет ровно один символ; несколько подстановок &lt;code&gt; отправят ту же последовательность цифр ещё раз</string>
+    <string name="template_warn_multiple_held_keys">Одновременно удерживаются несколько обычных клавиш (%1$s), но отчёт клавиатуры вмещает только одну</string>
+    <string name="template_warn_small_delay">Задержка %1$s мс слишком мала и может быть сжата в Bluetooth</string>
+    <string name="template_warn_small_delay_header">Удержание или интервал шаблона %1$s мс меньше 10 мс и может быть сжат в Bluetooth</string>
+    <string name="template_warn_ignored_attr">Атрибут «%1$s» больше не действует: ритм клавиш берётся из параметров шаблона, а атрибут удаляется при сохранении</string>
+</resources>

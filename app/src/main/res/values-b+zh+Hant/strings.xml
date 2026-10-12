@@ -1,0 +1,240 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="zh-Hant">
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">遠端控制</string>
+    <string name="shortcut_connect_to">連線至 %1$s</string>
+
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">要求藍牙權限</string>
+    <string name="turn_on_bluetooth">開啟藍牙</string>
+    <string name="scanning">正在掃描…</string>
+    <string name="bluetooth_ready">藍牙已就緒</string>
+    <string name="stop_scanning">停止掃描</string>
+    <string name="start_scanning">開始掃描</string>
+    <string name="app_description">本應用程式用於掃描與連線藍牙裝置。\n\n功能特色：\n- 掃描附近的藍牙裝置\n- 顯示已儲存的藍牙裝置\n- 支援藍牙裝置連線\n\n請點選上方按鈕要求藍牙權限，以使用應用程式功能。</string>
+    <string name="saved_devices">已儲存的裝置</string>
+    <string name="nearby_devices">附近的裝置</string>
+    <string name="click_to_scan">點選開始掃描按鈕以搜尋裝置</string>
+    <string name="connect">連線</string>
+    <string name="bluetooth_device">藍牙裝置</string>
+    <string name="unknown_device">未知裝置</string>
+
+    <!-- ControlActivity -->
+    <string name="back">返回</string>
+    <string name="connected">已連線</string>
+    <string name="connecting">連線中…</string>
+    <string name="disconnecting">中斷中…</string>
+    <string name="disconnected">未連線</string>
+    <string name="initializing">正在初始化…</string>
+    <string name="registering">註冊中…</string>
+    <string name="init_failed">初始化失敗</string>
+    <string name="left_button">左鍵</string>
+    <string name="right_button">右鍵</string>
+    <string name="input_text">輸入文字…</string>
+    <string name="send">傳送</string>
+    <string name="sending">傳送中…</string>
+    <string name="sending_text_hint">正在傳送文字，請稍候…</string>
+    <string name="ok">確定</string>
+    <string name="disconnect">中斷連線</string>
+    <string name="confirm_disconnect">確定要中斷藍牙連線嗎？</string>
+    <string name="cancel">取消</string>
+
+    <!-- 連線保持：前景服務的常駐通知、掃描頁連線卡片、返回提示、切換裝置確認 -->
+    <string name="connection_kept_title">連線保持中</string>
+    <string name="notification_channel_name">連線保持</string>
+    <string name="notification_channel_description">在使用其他應用程式時顯示仍在保持的藍牙連線。</string>
+    <string name="notification_text_connecting">正在連線 %1$s…</string>
+    <string name="notification_text_connected">已連線 %1$s</string>
+    <string name="notification_action_open">回到控制頁</string>
+    <string name="connection_kept_toast">連線仍在背景保持</string>
+    <string name="scanner_switch_title">切換裝置？</string>
+    <string name="scanner_switch_text">目前已連線 %1$s。要中斷它並連線到 %2$s 嗎？</string>
+    <string name="scanner_switch_confirm">切換</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">鍵盤模式</string>
+    <string name="mode_touchpad">觸控板模式</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">主鍵盤</string>
+    <string name="keyboard_page_function">功能鍵</string>
+    <string name="keyboard_page_numpad">數字鍵盤</string>
+
+    <!-- 主機不理 Num Lock 時的提示：數字鍵盤可能用不了 -->
+    <string name="keyboard_numpad_warning">連接的裝置可能不支援數字鍵盤。依賴數字鍵盤的範本輸入（Alt + 數字）可能無法使用。</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">觸控板按鍵</string>
+
+    <!-- Settings -->
+    <string name="settings">設定</string>
+    <string name="theme_settings">主題設定</string>
+    <string name="theme_mode">主題模式</string>
+    <string name="theme_mode_system">跟隨系統</string>
+    <string name="theme_mode_light">淺色</string>
+    <string name="theme_mode_dark">深色</string>
+    <string name="hue_scheme">色相配置</string>
+    <string name="language_settings">語言設定</string>
+    <string name="language_mode">語言</string>
+    <string name="keyboard_settings">鍵盤</string>
+    <string name="keyboard_layout">宿主鍵盤配置</string>
+    <string name="keyboard_layout_follow_ui">跟隨介面語言</string>
+    <string name="keyboard_layout_hint">應用程式無法讀取已連接裝置的鍵盤配置，請選擇與之一致的一項；兩者不一致時按鍵會輸出錯誤字元。</string>
+    <string name="keyboard_layout_send_hint">傳送範本時注意：範本按美式鍵位發出，宿主佈局不是美式時(法語 AZERTY、德語 QWERTZ、俄語、阿拉伯語等)要先換成美式鍵盤；韓語、日語這類字母位被替換但英文模式下與美式一致的，切到英文(英數)模式即可。</string>
+    <string name="charset_settings">字元集</string>
+    <string name="charset_settings_hint">停用只影響編輯範本時的下拉選項；已經在使用該字元集的範本照常執行。</string>
+    <string name="charset_add_label">新增字元集</string>
+    <string name="charset_add">新增</string>
+    <string name="charset_add_ok">已新增「%1$s」</string>
+    <string name="charset_add_duplicate">與清單中的「%1$s」重複</string>
+    <string name="charset_add_not_found">這台裝置沒有字元集「%1$s」</string>
+    <string name="charset_add_blank">請輸入字元集名稱</string>
+    <string name="charset_delete">刪除</string>
+    <string name="charset_delete_confirm">確定刪除字元集「%1$s」？正在使用它的範本會回報字元集無法使用。</string>
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">Azure 藍</string>
+    <string name="hue_teal">Teal 青綠</string>
+    <string name="hue_violet">Violet 紫</string>
+    <string name="hue_amber">Amber 琥珀</string>
+    <string name="hue_rose">Rose 玫紅</string>
+    <string name="hue_graphite">Graphite 石墨</string>
+
+    <!-- Languages -->
+    <string name="language_system">跟隨系統</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">提示</string>
+
+    <!-- Errors -->
+    <string name="error_title">錯誤</string>
+    <string name="error_unsupported">系統未啟用藍牙 HID 裝置功能，請檢查手機系統設定</string>
+    <string name="error_device_not_ready">HID 服務未就緒</string>
+    <string name="error_register_failed">登錄 HID 應用程式失敗</string>
+    <string name="error_register_exception">登錄 HID 應用程式失敗：%1$s</string>
+    <string name="error_pairing_failed">配對失敗或已取消</string>
+    <string name="error_connect_failed">連線失敗</string>
+    <string name="error_connect_exception">連線失敗：%1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">範本模式</string>
+    <string name="template_title">範本</string>
+    <string name="template_new">新增</string>
+    <string name="template_edit">編輯</string>
+    <string name="template_copy">複製</string>
+    <string name="template_copy_name">%1$s 副本</string>
+    <string name="template_delete">刪除</string>
+    <string name="template_save">儲存</string>
+    <string name="template_name">範本名稱</string>
+    <string name="template_description">範本描述</string>
+    <string name="template_description_label">描述：</string>
+    <string name="template_description_empty">點擊新增</string>
+    <string name="template_description_hint">這份範本做什麼用，宿主上要先做什麼設定</string>
+    <string name="template_empty_list">還沒有範本，點選「新增」建立一個</string>
+    <string name="template_preset_title">選擇範本</string>
+    <string name="template_preset_oem_alt_code_description">使用方法：依環境修改字元集(預設字元集跟隨介面語言，Word 環境需要改成 Unicode) -> 打開數字鍵盤 -> 切換到自己語言的輸入法(簡體中文、繁體中文、日語、韓語切換到美式鍵盤) -> 在文字框輸入文字並傳送\n\n註解說明：\n\n1. 預設字元集是當前介面語言對應的宿主 OEM 碼頁(簡體中文 GBK、繁體中文 Big5、日語 windows-31j、韓語 windows-949、英語：美國 IBM437、英國/國際 IBM850（未區分地區時預設美國），西歐各語言 IBM850、俄語 IBM866、阿拉伯語 IBM720、印地語 US-ASCII)，也就是在 Windows 其他介面下該用的那一張；Word 裡需要改成 Unicode。Alt Code 依賴數字鍵盤輸入編碼，使用前要先把數字鍵盤打開(Num Lock)。\n\n2. 語言與 OEM 碼頁的對應關係可以點字元集旁邊的圓圈問號圖示查詢。簡體中文、繁體中文、日語、韓語的 ANSI 與 OEM 碼頁是同一張，所以直接選擇 OEM 版本的範本就行。宿主的 OEMCP 是 65001(UTF-8)時，Alt Code 不生效。\n\n3. 數字不帶前導 0，是 Windows 原生機制 Alt Code 的 OEM 版本(帶前導 0 的是 ANSI 版本)。\n\n4. 簡體中文、繁體中文、日語、韓語的微軟輸入法下要切換到美式鍵盤(或改用舊版相容模式 / 第三方輸入法)，因為這四種語言的微軟輸入法把 OEM 輸入固定成 IBM437、ANSI 固定成 windows-1252，Word 裡還會輸出 2 個字元。</string>
+    <string name="template_preset_ansi_alt_code_description">使用方法：依環境修改字元集(預設字元集跟隨介面語言，Word 環境需要改成 Unicode) -> 打開數字鍵盤 -> 切換到自己語言的輸入法(簡體中文、繁體中文、日語、韓語建議用 OEM 版本) -> 在文字框輸入文字並傳送\n\n註解說明：\n\n1. 預設字元集是當前介面語言對應的宿主 ANSI 碼頁(簡體中文 GBK、繁體中文 Big5、日語 windows-31j、韓語 windows-949、英語與西歐各語言 windows-1252、俄語 windows-1251、阿拉伯語 windows-1256、印地語 US-ASCII)，也就是在 Windows 其他介面下該用的那一張；Word 裡需要改成 Unicode。Alt Code 依賴數字鍵盤輸入編碼，使用前要先把數字鍵盤打開(Num Lock)。\n\n2. 語言與 ANSI 碼頁的對應關係可以點字元集旁邊的圓圈問號圖示查詢。簡體中文、繁體中文、日語、韓語的 ANSI 與 OEM 碼頁是同一張，所以直接選擇 OEM 版本的範本就行。宿主的 ACP 是 65001(UTF-8)時，Alt Code 不生效。\n\n3. 輸入數字帶前導 0，是 Windows 原生機制 Alt Code 的 ANSI 版本(不帶 0 的是 OEM 版本)。\n\n4. 繁體中文使用 Rime 的繁體中文輸入法時，帶 0 的字元集是 Big5，不帶 0 是 GBK。</string>
+    <string name="template_preset_richedit_alt_x_description">使用方法：打開支援 RichEdit 的程式的輸入點 -> 調整輸入法(簡體中文、繁體中文、日語、韓語使用英文模式) -> 在文字框輸入文字並傳送(範本會打 u+ 與十六進位碼，最後按 Alt+X 轉換)\n\n註解說明：\n\nAlt+X 是 RichEdit(Word 的文字內核)自帶的內聯轉換，不需要檢查碼頁更改字元集，也用不到數字鍵盤。\n\n游標緊跟十六進位碼時按下，碼就會就地變成字元；不過因為支援變長碼，要精準只轉這一段，必須選取文字或先打 u+(範本打的 u+ 就是為此，轉換時會連前綴一起刪掉)。\n\n只在 RichEdit 宿主裡有效，可按軟體名稱查詢：\n支援：Word 全版本、Outlook 郵件正文、OneNote、Windows 11 記事本、WordPad(Win11 24H2 起移除)、TortoiseSVN / Git 提交框；\n其他情況：Excel、瀏覽器、VS Code、PowerPoint 一般文字框不支援(PPT 僅公式編輯區)。法文版 Word 用的是 Alt+C。</string>
+    <string name="template_preset_macos_hex_description">使用方法：在宿主的「鍵盤 → 輸入法」裡把目前的輸入法切成 Unicode Hex Input -> 在文字框輸入文字並傳送即可(範本會按住 Option 打 4 位十六進位，再放開 Option 讓字元上屏)\n\n註解說明：\n\n1. 編碼必須補齊到 4 位：這套輸入法單次只收 4 位十六進位，所以範本的編碼佔位符帶 pad=4 —— 不足 4 位時會在前面補 0，例如「中」是 4E2D、「A」要寫成 0041；不補零的話那幾位會被當成別的碼位。\n\n2. 字元集是 UTF-16，不要改動：輔助平面字元(Emoji 等)按 UTF-16 代碼單元拆成兩次 Option+xxxx，由 macOS 自己把兩個代理項合成一個字元，例如 😀 是 D83D 與 DE00 兩次。改成 Unicode 會送出 5 位碼位，這套輸入法收不下。\n\n3. 前提是先把輸入法切成 Unicode Hex Input，一般鍵盤佈局下按 Option 只會打符號。這一步要使用者自己按(範本不負責切)，用完記得切回原來的輸入法，否則日常的 Option+數字 快捷鍵會被佔掉。\n\n4. 這條預設沒有上機驗證：手邊沒有 macOS 裝置，按鍵時序可能隨系統版本變化。發現不生效時，先在宿主上手動試一次 Option+4E2D 能不能上屏，再對比範本的時序(名字裡的 unverified 就是這個意思)。</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">使用方法：宿主上不需要額外設定，在文字框輸入文字並傳送即可(範本會先按 Ctrl+Shift+U 並全部放開，再逐位敲十六進位碼，最後用空格確認)\n\n註解說明：\n\n1. 這段序列有兩種按法，本範本用的是「離散式」：Ctrl+Shift+U 按下後立即全部放開，此時系統會顯示一個帶下線的 u，再敲十六進位、最後按空格提交；另一種「保持式」是按住 Ctrl+Shift 不放，敲完 u 與碼位、放開時自動提交，提交時機握在宿主手裡、裝置端無法確認，所以不用它。\n\n2. 字元集是 Unicode，不需要改動：寫 1~6 位十六進位，不需要補零，也不需要像 macOS 那樣按 UTF-16 代理對拆兩次，輔助平面字元(Emoji 等)一次就能輸入。\n\n3. 需要宿主裝了桌面輸入法框架(GTK / IBus / Fcitx)才能用，桌面 Linux 與 ChromeOS 都內建、開箱即用。個別程式會自己佔用這個組合鍵，在那種程式裡會失效。\n\n4. 確認鍵用的是空格，Enter 鍵同樣有效；想改用 Enter，把範本最後一步改成 tap Enter。\n\n5. 組合鍵按完之後要給輸入法狀態機留出啟動時間，否則開頭幾位十六進位會被當成普通字母直接打進文字框。範本頭部的「按鍵間隔」50 毫秒就是這個緩衝，不建議調小。</string>
+    <string name="template_host_layout_us_notice">宿主鍵盤不是美式佈局，按下的鍵位會輸出別的字元：傳送前先在宿主上換成美式鍵盤(Windows)或新增一個美式鍵盤輸入法(Linux)；macOS 的 Unicode Hex Input 本來就是美式佈局。</string>
+    <string name="template_host_layout_english_notice">宿主鍵盤的字母位不是拉丁字母(韓語、日語這類)：傳送前先切到英文(英數)模式，英文模式下 26 個字母位與美式鍵盤一致。</string>
+    <string name="template_send_unencodable_title">有字元編不出來</string>
+    <string name="template_send_unencodable_text">第 %1$d 個字元「%2$s」(U+%3$s) 無法用字元集 %4$s 編碼，繼續傳送會漏掉這個字元。請檢查字元集或查看旁邊的說明，或檢查文字是否用錯。</string>
+    <string name="template_send_anyway">仍然傳送</string>
+    <string name="template_preview_unencodable">範例裡有字元編不出來：「%1$s」(U+%2$s) 無法用 %3$s 編碼，展開時已跳過。</string>
+    <string name="template_delete_confirm">確定刪除範本「%1$s」？</string>
+    <string name="template_save_failed">儲存範本失敗：</string>
+    <string name="template_load_error_title">範本載入錯誤</string>
+    <string name="template_load_error_desc">以下範本有錯誤，請在編輯器中修正：</string>
+    <string name="template_load_error_item">%1$s（%2$d 個錯誤）</string>
+    <string name="template_send_blocked">範本無法輸入文字，修正後才能傳送</string>
+    <string name="template_card_summary">%1$s · %2$d 進位 · %3$d 步</string>
+    <string name="template_expand_summary">%1$d 步 · 展開 %2$d 幀 · 約 %3$d ms</string>
+    <string name="template_editor_title">編輯範本</string>
+    <string name="template_empty_steps">還沒有步驟，點選「新增步驟」建立一個</string>
+    <string name="template_step_summary">%1$d 步 · 保持 %2$d ms · 間隔 %3$d ms</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">範本參數</string>
+    <string name="template_header_summary">%1$s · %2$d 進位 · %3$d / %4$d / %5$d ms</string>
+    <string name="template_header_charset">字元集</string>
+    <string name="charset_hint_title">字元集與別名</string>
+    <string name="charset_hint_desc">另一側是各語言在 Windows 上對應的字元集。範本裡請寫規範名（加粗、等寬的那個），它下面的別名系統同樣認得。</string>
+    <string name="charset_hint_limits">注意：大多數字元集沒有包含 Unicode 的所有編碼，收不進去的字元傳不出去(傳送前會提示)；部分字元集之間的碼位不同(如 windows-1252 與 IBM850、GBK 與 Big5)，選錯頁時字元會送成別的字。需要涵蓋全部字元請用 Unicode 或 UTF-16。</string>
+    <string name="charset_word_alt_code_hint">Word 裡改用這一項(Alt Code 被重載)</string>
+    <string name="charset_lang_gbk">簡體中文（ansi/oem）</string>
+    <string name="charset_lang_big5">繁體中文（ansi/oem）</string>
+    <string name="charset_lang_windows_31j">日語（ansi/oem）</string>
+    <string name="charset_lang_windows_949">韓語（ansi/oem）</string>
+    <string name="charset_lang_windows_1252">英語 · 西班牙語 · 法語 · 葡萄牙語 · 德語（ansi）</string>
+    <string name="charset_lang_ibm437">英語（美國）（oem）</string>
+    <string name="charset_lang_ibm850">英語（英國/國際）· 西班牙語 · 法語 · 葡萄牙語 · 德語（oem）</string>
+    <string name="charset_lang_windows_1251">俄語（ansi）</string>
+    <string name="charset_lang_ibm866">俄語（oem）</string>
+    <string name="charset_lang_windows_1256">阿拉伯語（ansi）</string>
+    <string name="charset_lang_ibm720">阿拉伯語（oem）</string>
+    <string name="charset_lang_unicode">全部現代語言（unicode）· 完整碼點（UTF-32 不補零，1~6 位）</string>
+    <string name="charset_lang_utf16">輔助平面字元會拆成 2 段（UTF-16 代碼單元）</string>
+    <string name="charset_lang_us_ascii">英語（ascii）· 印地語（無 ansi/oem 碼頁）</string>
+    <string name="template_header_radix">進位</string>
+    <string name="template_header_template_gap">範本間隔</string>
+    <string name="template_header_key_hold">按下保持</string>
+    <string name="template_header_key_gap">按鍵間隔</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">鍵盤按鍵</string>
+    <string name="template_modifier_section">修飾鍵：選取後，下一次新增會包成組合鍵</string>
+    <string name="template_key_section">按鍵：點一下新增一條 tap</string>
+    <string name="template_add">新增</string>
+    <string name="template_add_delay">延遲</string>
+    <string name="template_add_code">編碼預留位置</string>
+    <string name="template_add_custom">自訂按鍵</string>
+    <string name="template_custom_key_title">自訂按鍵</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">編輯步驟</string>
+    <string name="template_step_key">按鍵名稱</string>
+    <string name="template_step_duration">時長（毫秒）</string>
+    <string name="template_step_pad">補零到幾位</string>
+    <string name="template_step_enable">啟用</string>
+    <string name="template_step_code_hint">每一位的保持與間隔取自範本參數裡的「按下保持 / 按鍵間隔」。</string>
+    <string name="template_step_keys">數字鍵來源</string>
+    <string name="template_keys_numpad">數字鍵盤</string>
+    <string name="template_keys_main">主鍵盤</string>
+    <string name="template_step_split">拆分</string>
+    <string name="template_step_chord_hint">整組按下、再整組放開；「拆分」得到的就是等價的多步寫法。</string>
+    <string name="template_step_split_hint">拆分會把「tap」變成「按下」+「放開」兩步，按鍵會一直保持到後面的放開步驟。</string>
+    <string name="template_step_modifier_hint">修飾鍵：由本步驟負責按下 / 放開。</string>
+    <string name="template_step_unknown_hint">這一行認不出來。請把它改成一條合法步驟，例如「down Alt」「sleep 20」或「&lt;code&gt;」。</string>
+    <string name="template_step_line">行</string>
+    <string name="template_status_ok">語法正確</string>
+    <string name="template_status_error">%1$d 個錯誤</string>
+    <string name="template_status_warning">%1$d 個警告</string>
+    <string name="template_preview">展開預覽</string>
+    <string name="template_preview_empty">沒有可預覽的內容</string>
+    <string name="template_preview_sample">預覽字元</string>
+    <string name="template_preview_test">測試</string>
+    <string name="template_preview_header_action">動作</string>
+    <string name="template_preview_header_report">修飾鍵 / 鍵碼</string>
+    <string name="template_preview_header_duration">保持</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">範本為空</string>
+    <string name="template_error_missing_code">缺少 &lt;code&gt; 預留位置，無法用於輸入文字</string>
+    <string name="template_warn_code_disabled">&lt;code&gt; 被停用，無法用於輸入文字</string>
+    <string name="template_error_unknown_key">未知鍵名「%1$s」</string>
+    <string name="template_error_unknown_key_suggest">未知鍵名「%1$s」，是否要輸入「%2$s」？</string>
+    <string name="template_error_invalid_number">無效的數字「%1$s」</string>
+    <string name="template_error_invalid_value">無效的值「%1$s」</string>
+    <string name="template_error_unclosed_placeholder">「&lt;」後面缺少「&gt;」</string>
+    <string name="template_error_unknown_step">無法辨識的步驟「%1$s」</string>
+    <string name="template_error_unknown_charset">不支援的字元集「%1$s」</string>
+    <string name="template_error_invalid_radix">進位只能是 10 或 16，目前是「%1$s」</string>
+    <string name="template_error_unbalanced_key">按鍵「%1$s」按下後沒有放開，這個鍵會一直保持按住</string>
+    <string name="template_warn_unknown_param">未知參數「%1$s」</string>
+    <string name="template_warn_duplicate_code">一個範本只傳送一個字元，&lt;code&gt; 出現多次會讓同一串編碼被重複傳送</string>
+    <string name="template_warn_multiple_held_keys">同時按住了多個一般按鍵（%1$s），但鍵盤報告只能攜帶 1 個一般按鍵</string>
+    <string name="template_warn_small_delay">延遲 %1$s ms 過短，藍牙下可能被壓縮</string>
+    <string name="template_warn_small_delay_header">範本的按鍵保持 / 間隔 %1$s ms 低於 10 ms，藍牙下可能被壓縮</string>
+    <string name="template_warn_ignored_attr">屬性「%1$s」已不再生效：按鍵節奏統一取範本參數，儲存後會被清除</string>
+</resources>

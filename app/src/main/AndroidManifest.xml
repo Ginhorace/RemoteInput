@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <!-- 蓝牙权限 (适用于 Android 12+) -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <!-- Include "neverForLocation" only if you can strongly assert that
+     your app never derives physical location from Bluetooth scan results. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
+
+    <uses-feature android:name="android.hardware.bluetooth" android:required="true"/>
+
+    <!--
+        连接期间的前台服务。
+        FOREGROUND_SERVICE_CONNECTED_DEVICE 是 Android 14+ 对 connectedDevice 类型的单独要求；
+        POST_NOTIFICATIONS 是 Android 13+ 显示那条常驻通知的运行时权限。
+    -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!--
+        roundIcon 也指同一份：自适应图标自己能套圆蒙版，不需要另配一套圆角图。
+    -->
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RemoteInput">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.RemoteInput">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--
+            旋转时不重建 Activity，免得 Compose 里那些 `remember` 的界面状态跟着丢
+            （连接的存活已经不依赖控制页了：连接归进程级单例所有，见 BluetoothHidViewModel，
+            控制页销毁不再拆链，这也是「切到别的应用就断开」的修复点）。
+            注意：这里刻意不声明 uiMode —— "跟随系统"暗色模式依赖系统重建才会刷新；
+            语言 / 主题的跨页面生效走各 Activity 的 onResume 显式 recreate()，与此无关。
+        -->
+        <!--
+            singleTop：常驻通知的「回到控制页」用 PendingIntent 打进来。控制页已在栈顶时复用
+            同一个实例（走 onNewIntent），而不是再叠一层控制页。
+        -->
+        <activity
+            android:name=".ControlActivity"
+            android:exported="false"
+            android:label="@string/control_title"
+            android:theme="@style/Theme.RemoteInput"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
+            android:windowSoftInputMode= "adjustNothing"/>
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/settings"
+            android:theme="@style/Theme.RemoteInput"
+            android:configChanges="uiMode" />
+
+        <!--
+            连接期间的前台服务：只为把进程钉在前台（退到后台的普通进程随时可能被回收，
+            进程一死 HID 注册就跟着没了，主机侧表现为设备被拔出），顺带承载那条常驻通知。
+            连接本身由 BluetoothHidViewModel 的进程级单例持有，见 HidForegroundService。
+        -->
+        <service
+            android:name=".HidForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice" />
+
+    </application>
+
+</manifest>

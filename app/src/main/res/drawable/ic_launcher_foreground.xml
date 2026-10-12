@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  RemoteInput 应用图标前景：立体键帽（U = Unicode）+ 正上方无线信号弧（蓝牙 / 局域网发送）。
+
+  配色只有一条规则 —— **白键帽压在黑底上**：
+    - 侧壁 14 层是一条从 #828282 到 #BCBCBC 的灰阶，底暗顶亮，撑出立体与拔模角；
+    - 顶面是 #FFFFFF → #C0C0C0 的高光渐变（最亮处给左上角）；
+    - 字母 U 与信号弧取近黑 #0D1117、中灰 #C0C0C0，压在亮面上看得最清。
+
+  这些色值**刻意写死**，不接主题色也不分亮暗：键帽是白的，底色就只能一直是暗的，
+  跟着暗色模式翻成亮底会连字形一起消失。图标与界面主题因此互不相干 ——
+  界面上那 6 套色相只管界面。
+  深色模式下的"主题图标"（Android 13+ 单色层）另有一份，见 ic_launcher_monochrome.xml。
+
+  几何口径与 icon-preview.html 一致：
+    - 键帽顶面：平面图形先 rotate(-42°)，再纵向压扁 cos58° = 0.5299（等距投影）
+      注意嵌套顺序：缩放/旋转在内层，压扁在外层，否则会得到被旋转的压扁图形（错误）
+    - 侧壁：14 层圆角方形由下至上堆叠（半宽 43 → 34，屏幕纵向抬升 22.05）模拟立体与拔模角
+    - 字母 U 与顶面共面（同一条变换链），随顶面一起投影
+    - 信号弧：屏幕空间，位于键帽顶端之上，不与键帽重叠
+    - 整体缩放 0.51 后居中，全部落在 72dp 安全圆内
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 整体：居中 + 缩放到安全区 -->
+    <group
+        android:scaleX="0.51"
+        android:scaleY="0.51"
+        android:translateX="54"
+        android:translateY="70.4">
+
+        <!-- ===== 键帽侧壁：由底到顶 14 层 ===== -->
+        <group android:translateY="0">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.43" android:scaleY="0.43">
+                        <path android:fillColor="#FF828282" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-1.575">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.4236" android:scaleY="0.4236">
+                        <path android:fillColor="#FF868686" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-3.15">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.4171" android:scaleY="0.4171">
+                        <path android:fillColor="#FF8A8A8A" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-4.725">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.4107" android:scaleY="0.4107">
+                        <path android:fillColor="#FF8F8F8F" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-6.3">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.4043" android:scaleY="0.4043">
+                        <path android:fillColor="#FF949494" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-7.875">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.3979" android:scaleY="0.3979">
+                        <path android:fillColor="#FF989898" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-9.45">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.3914" android:scaleY="0.3914">
+                        <path android:fillColor="#FF9C9C9C" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-11.025">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.385" android:scaleY="0.385">
+                        <path android:fillColor="#FFA2A2A2" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-12.6">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.3786" android:scaleY="0.3786">
+                        <path android:fillColor="#FFA6A6A6" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-14.175">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.3721" android:scaleY="0.3721">
+                        <path android:fillColor="#FFAAAAAA" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-15.75">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.3657" android:scaleY="0.3657">
+                        <path android:fillColor="#FFAEAEAE" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-17.325">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.3593" android:scaleY="0.3593">
+                        <path android:fillColor="#FFB4B4B4" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-18.9">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.3529" android:scaleY="0.3529">
+                        <path android:fillColor="#FFB8B8B8" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+        <group android:translateY="-20.475">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.3464" android:scaleY="0.3464">
+                        <path android:fillColor="#FFBCBCBC" android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+
+        <!-- ===== 键帽顶面（含高光渐变）与字母 U ===== -->
+        <group android:translateY="-22.05">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.34" android:scaleY="0.34">
+                        <path android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z">
+                            <aapt:attr name="android:fillColor">
+                                <gradient
+                                    android:endX="70"
+                                    android:endY="80"
+                                    android:startX="-80"
+                                    android:startY="-80"
+                                    android:type="linear">
+                                    <item android:color="#FFFFFFFF" android:offset="0" />
+                                    <item android:color="#FFE1E1E1" android:offset="0.55" />
+                                    <item android:color="#FFC0C0C0" android:offset="1" />
+                                </gradient>
+                            </aapt:attr>
+                        </path>
+
+                        <!-- U（Unicode），与顶面共面，随顶面一起投影 -->
+                        <path
+                            android:fillColor="#FF0D1117"
+                            android:pathData="M-44,-42L-44,-2A44,44 0 0 0 44,-2L44,-42L28,-42L28,-2A28,28 0 0 1 -28,-2L-28,-42Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+
+        <!-- ===== 无线信号弧：屏幕空间，键帽正上方，圆点朝下 ===== -->
+        <path
+            android:fillColor="#FFC0C0C0"
+            android:pathData="M-6.5,-54.5A6.5,6.5 0 0 1 6.5,-54.5A6.5,6.5 0 0 1 -6.5,-54.5Z" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M-15.55,-70.05A22,22 0 0 1 15.55,-70.05"
+            android:strokeColor="#FFC0C0C0"
+            android:strokeLineCap="round"
+            android:strokeWidth="8" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M-26.87,-81.37A38,38 0 0 1 26.87,-81.37"
+            android:strokeColor="#FFC0C0C0"
+            android:strokeLineCap="round"
+            android:strokeWidth="8" />
+    </group>
+</vector>

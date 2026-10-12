@@ -1,0 +1,301 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">Remote Control</string>
+    <string name="shortcut_connect_to">Connect to %1$s</string>
+
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">Request Bluetooth Permission</string>
+    <string name="turn_on_bluetooth">Turn On Bluetooth</string>
+    <string name="scanning">Scanning…</string>
+    <string name="bluetooth_ready">Bluetooth Ready</string>
+    <string name="stop_scanning">Stop Scanning</string>
+    <string name="start_scanning">Start Scanning</string>
+    <string name="app_description">This app is used to scan and connect Bluetooth devices.\n\nFeatures:\n- Scan nearby Bluetooth devices\n- Display saved Bluetooth devices\n- Support Bluetooth device connection\n\nPlease click the button above to request Bluetooth permission to use the app features.</string>
+    <string name="saved_devices">Saved Devices</string>
+    <string name="nearby_devices">Nearby Devices</string>
+    <string name="click_to_scan">Click Start Scanning button to search for devices</string>
+    <string name="connect">Connect</string>
+    <string name="bluetooth_device">Bluetooth Device</string>
+    <string name="unknown_device">Unknown Device</string>
+    
+    <!-- ControlActivity -->
+    <string name="back">Back</string>
+    <string name="connected">Connected</string>
+    <string name="connecting">Connecting…</string>
+    <string name="disconnecting">Disconnecting…</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="initializing">Initializing…</string>
+    <string name="registering">Registering…</string>
+    <string name="init_failed">Initialization failed</string>
+    <string name="left_button">Left Button</string>
+    <string name="right_button">Right Button</string>
+    <string name="input_text">Input Text…</string>
+    <string name="send">Send</string>
+    <string name="sending">Sending…</string>
+    <string name="sending_text_hint">Sending text, please wait…</string>
+    <string name="ok">OK</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="confirm_disconnect">Are you sure you want to disconnect the Bluetooth connection?</string>
+    <string name="cancel">Cancel</string>
+    
+    <!--
+        Connection kept alive: the ongoing notification of the foreground service, the scanner
+        page connection card, the back-button toast, and the switch-device confirmation.
+    -->
+    <string name="connection_kept_title">Connection kept alive</string>
+    <string name="notification_channel_name">Kept connection</string>
+    <string name="notification_channel_description">Shows the Bluetooth connection that stays alive while you use other apps.</string>
+    <string name="notification_text_connecting">Connecting to %1$s…</string>
+    <string name="notification_text_connected">Connected to %1$s</string>
+    <string name="notification_action_open">Open controls</string>
+    <string name="connection_kept_toast">Connection kept alive in the background</string>
+    <string name="scanner_switch_title">Switch device?</string>
+    <string name="scanner_switch_text">Currently connected to %1$s. Disconnect it and connect to %2$s?</string>
+    <string name="scanner_switch_confirm">Switch</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">Keyboard Mode</string>
+    <string name="mode_touchpad">Touchpad Mode</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">Main</string>
+    <string name="keyboard_page_function">Function</string>
+    <string name="keyboard_page_numpad">Numpad</string>
+
+    <!-- Keyboard: shown when the host ignores the Num Lock key, so the numpad may be unusable -->
+    <string name="keyboard_numpad_warning">The connected device may not support the numeric keypad. Template input that relies on it (Alt + digits) may not work.</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">Touchpad Buttons</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="theme_settings">Theme Settings</string>
+    <string name="theme_mode">Theme Mode</string>
+    <string name="theme_mode_system">Follow System</string>
+    <string name="theme_mode_light">Light</string>
+    <string name="theme_mode_dark">Dark</string>
+    <string name="hue_scheme">Hue Scheme</string>
+    <string name="language_settings">Language Settings</string>
+    <string name="language_mode">Language</string>
+    <string name="keyboard_settings">Keyboard</string>
+    <string name="keyboard_layout">Host Keyboard Layout</string>
+    <string name="keyboard_layout_follow_ui">Follow App Language</string>
+    <string name="keyboard_layout_hint">The app cannot read the keyboard layout of the connected device, so pick the one that matches it. If the two differ, the keys will type the wrong characters.</string>
+    <string name="keyboard_layout_send_hint">When sending a template, note that templates use US key positions: if the host layout is not US (French AZERTY, German QWERTZ, Russian, Arabic and so on), switch the host to a US keyboard first; for Korean, Japanese and the like the letter keys are replaced but match US in English mode, so switching to English (alphanumeric) mode is enough.</string>
+    <string name="charset_settings">Charsets</string>
+    <string name="charset_settings_hint">Turning a charset off only removes it from the template editor’s list; templates that already use it keep working.</string>
+    <string name="charset_add_label">Add a charset</string>
+    <string name="charset_add">Add</string>
+    <string name="charset_add_ok">Added “%1$s”</string>
+    <string name="charset_add_duplicate">Already in the list as “%1$s”</string>
+    <string name="charset_add_not_found">“%1$s” is not available on this device</string>
+    <string name="charset_add_blank">Enter a charset name</string>
+    <string name="charset_delete">Delete</string>
+    <string name="charset_delete_confirm">Delete charset “%1$s”? Templates that use it will report an unsupported charset.</string>
+
+    <!--
+        键盘布局名与语言名同策略：用该布局所属语言的写法，任何界面语言下都保持原样，
+        因此不参与翻译（translatable="false"，只在默认语包里定义一次）。
+        清单与落位规则见 util/KeyboardLayoutCatalog.kt，那里是唯一数据源。
+    -->
+    <string name="keyboard_layout_us_qwerty" translatable="false">US QWERTY</string>
+    <string name="keyboard_layout_french" translatable="false">Français (AZERTY)</string>
+    <string name="keyboard_layout_german" translatable="false">Deutsch (QWERTZ)</string>
+    <string name="keyboard_layout_spanish" translatable="false">Español</string>
+    <string name="keyboard_layout_portuguese" translatable="false">Português (ABNT2)</string>
+    <string name="keyboard_layout_russian" translatable="false">Русская</string>
+    <string name="keyboard_layout_arabic" translatable="false">العربية</string>
+    <string name="keyboard_layout_korean" translatable="false">한국어 (두벌식)</string>
+    <string name="keyboard_layout_japanese" translatable="false">日本語 (JIS)</string>
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">Azure</string>
+    <string name="hue_teal">Teal</string>
+    <string name="hue_violet">Violet</string>
+    <string name="hue_amber">Amber</string>
+    <string name="hue_rose">Rose</string>
+    <string name="hue_graphite">Graphite</string>
+
+    <!-- Languages -->
+    <!--
+        语言名一律用该语言自己的写法，任何界面语言下都保持原样，因此不参与翻译
+        （translatable="false"，只在默认语包里定义一次）。
+        清单与排序依据见 util/LanguageCatalog.kt，那里是唯一数据源。
+    -->
+    <string name="language_system">Follow System</string>
+    <string name="language_chinese" translatable="false">简体中文</string>
+    <string name="language_chinese_traditional" translatable="false">繁體中文</string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_spanish" translatable="false">Español</string>
+    <string name="language_arabic" translatable="false">العربية</string>
+    <string name="language_hindi" translatable="false">हिन्दी</string>
+    <string name="language_russian" translatable="false">Русский</string>
+    <string name="language_french" translatable="false">Français</string>
+    <string name="language_portuguese" translatable="false">Português</string>
+    <string name="language_german" translatable="false">Deutsch</string>
+    <string name="language_japanese" translatable="false">日本語</string>
+    <string name="language_korean" translatable="false">한국어</string>
+    <!-- 扩展位：码页已就位，只差一份 values-<tag>/strings.xml -->
+    <string name="language_italian" translatable="false">Italiano</string>
+    <string name="language_dutch" translatable="false">Nederlands</string>
+    <string name="language_indonesian" translatable="false">Bahasa Indonesia</string>
+    <string name="language_persian" translatable="false">فارسی</string>
+    <string name="language_ukrainian" translatable="false">Українська</string>
+    <string name="language_swedish" translatable="false">Svenska</string>
+    <string name="language_danish" translatable="false">Dansk</string>
+    <string name="language_finnish" translatable="false">Suomi</string>
+    <string name="language_polish" translatable="false">Polski</string>
+    <string name="language_czech" translatable="false">Čeština</string>
+    <string name="language_hungarian" translatable="false">Magyar</string>
+    <string name="language_turkish" translatable="false">Türkçe</string>
+    <string name="language_vietnamese" translatable="false">Tiếng Việt</string>
+    <string name="language_greek" translatable="false">Ελληνικά</string>
+    <string name="language_hebrew" translatable="false">עברית</string>
+    <string name="language_thai" translatable="false">ไทย</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">Tip</string>
+
+    <!-- Errors -->
+    <string name="error_title">Error</string>
+    <string name="error_unsupported">This phone\'s system does not enable the Bluetooth HID Device profile. Please check the system settings.</string>
+    <string name="error_device_not_ready">HID service is not ready</string>
+    <string name="error_register_failed">Failed to register the HID app</string>
+    <string name="error_register_exception">Failed to register the HID app: %1$s</string>
+    <string name="error_pairing_failed">Pairing failed or was cancelled</string>
+    <string name="error_connect_failed">Connection failed</string>
+    <string name="error_connect_exception">Connection failed: %1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">Template Mode</string>
+    <string name="template_title">Templates</string>
+    <string name="template_new">New</string>
+    <string name="template_edit">Edit</string>
+    <string name="template_copy">Copy</string>
+    <string name="template_copy_name">%1$s copy</string>
+    <string name="template_delete">Delete</string>
+    <string name="template_save">Save</string>
+    <string name="template_name">Template name</string>
+    <string name="template_description">Template description</string>
+    <!-- 卡片上「描述：」后面紧跟正文。分隔符按语言给：中日用全角冒号，西文在冒号后留一个空格
+         （引号是 Android 保留首尾空白的方式，不会进到界面上） -->
+    <string name="template_description_label">"Description: "</string>
+    <string name="template_description_empty">Tap to add one</string>
+    <string name="template_description_hint">What this template does, and any host setup it needs</string>
+    <string name="template_empty_list">No templates yet. Tap “New” to create one.</string>
+    <string name="template_preset_title">Choose a template</string>
+    <!-- 五份预设说明（OEM / ANSI Alt Code、RichEdit Alt+X、Linux Ctrl+Shift+U、macOS unicode Hex (unverified)），
+         由 MacroTemplatePresets.localize 在落盘前补进模板正文。版式按份不同：OEM / ANSI 是「使用方法」与
+         「注释说明」两条头各空一行，其后 4 条带序号的注释（段间空一行），共 11 行 / 10 个 \n；
+         Linux 也是两条头、带序号的注释 5 条，共 13 行 / 12 个 \n；macOS 也是两条头、带序号的注释 4 条，
+         共 11 行 / 10 个 \n；RichEdit 不编号，两条头之后直接是正文段落。
+         括号一律用半角，文案里不放 % 与 "，也不放裸的 '（Android 只认 \' 或 ’，裸的那个会让
+         整条字符串编译失败）；文中的「圆圈问号」指字符集旁那个问号图标 -->
+    <string name="template_preset_oem_alt_code_description">How to use: set the charset for your environment (the default charset follows the UI language; switch it to Unicode for Word) -> turn the numpad on -> switch to the IME of your language (Simplified Chinese, Traditional Chinese, Japanese, Korean: switch to the US keyboard) -> type the text in the text box and send it\n\nNotes:\n\n1. The default charset follows the UI language and is the OEM code page of that language on the host (Simplified Chinese GBK, Traditional Chinese Big5, Japanese windows-31j, Korean windows-949, English: IBM437 in the US, IBM850 in the UK/international (the US page is used when the region is unknown), Western European languages IBM850, Russian IBM866, Arabic IBM720, Hindi US-ASCII), which is the page to use in other Windows apps; switch it to Unicode for Word. Alt Code types the code on the numpad, so turn the numpad on first (Num Lock).\n\n2. The language-to-OEM-code-page table can be looked up behind the circled question mark next to the charset. Simplified Chinese, Traditional Chinese, Japanese and Korean use one and the same code page for ANSI and OEM, so just pick the OEM template. Alt Code does not work when the host OEMCP is 65001 (UTF-8).\n\n3. Without a leading zero this is the OEM variant of the Windows native Alt Code mechanism (with a leading zero it is the ANSI variant).\n\n4. With the Microsoft IME of Simplified Chinese, Traditional Chinese, Japanese or Korean, switch to the US keyboard (or the older-compatible IME mode / a third-party IME): those IMEs fix OEM input to IBM437 and ANSI input to windows-1252, and Word outputs 2 characters.</string>
+    <string name="template_preset_ansi_alt_code_description">How to use: set the charset for your environment (the default charset follows the UI language; switch it to Unicode for Word) -> turn the numpad on -> switch to the IME of your language (Simplified Chinese, Traditional Chinese, Japanese, Korean: the OEM version is recommended) -> type the text in the text box and send it\n\nNotes:\n\n1. The default charset follows the UI language and is the ANSI code page of that language on the host (Simplified Chinese GBK, Traditional Chinese Big5, Japanese windows-31j, Korean windows-949, English and Western European languages windows-1252, Russian windows-1251, Arabic windows-1256, Hindi US-ASCII), which is the page to use in other Windows apps; switch it to Unicode for Word. Alt Code types the code on the numpad, so turn the numpad on first (Num Lock).\n\n2. The language-to-ANSI-code-page table can be looked up behind the circled question mark next to the charset. Simplified Chinese, Traditional Chinese, Japanese and Korean use one and the same code page for ANSI and OEM, so just pick the OEM template. Alt Code does not work when the host ACP is 65001 (UTF-8).\n\n3. With a leading zero this is the ANSI variant of Windows native Alt Code (without a leading zero it is the OEM variant).\n\n4. With Rime for Traditional Chinese a leading zero means Big5 and no leading zero means GBK.</string>
+    <string name="template_preset_richedit_alt_x_description">How to use: open the input point of a program that supports RichEdit -> adjust the IME (Simplified Chinese, Traditional Chinese, Japanese, Korean: use English mode) -> type the text in the text box and send it (the template types u+ and the hex code, then presses Alt+X)\n\nNotes:\n\nAlt+X is the inline conversion built into RichEdit (Word’s text engine). No need to check the code page or change the charset, and the numpad is not used.\n\nWith the caret right after a hex code, pressing it turns the code into the character in place; but since the code is variable length, to convert exactly that piece you must select it or type u+ first (that is what the u+ in this template is for, and the prefix is deleted together with the conversion).\n\nWorks only in RichEdit hosts, searchable by app name:\nSupported: every Word version, the Outlook mail body, OneNote, Windows 11 Notepad, WordPad (removed in Windows 11 24H2), the commit dialogs of TortoiseSVN / Git;\nOthers: not in Excel, browsers, VS Code or plain PowerPoint text boxes (PPT only in the equation editor). French Word uses Alt+C.</string>
+    <string name="template_preset_macos_hex_description">How to use: switch the current input source to Unicode Hex Input (System Settings -> Keyboard -> Input Sources) -> type the text in the text box and send it (the template holds Option, types 4 hex digits, then releases Option so the character lands)\n\nNotes:\n\n1. The code must be zero padded to 4 digits: this input source takes exactly 4 hex digits per call, so the code placeholder in the template carries pad=4 - anything shorter gets leading zeros, for example 中 is 4E2D and A must be written 0041; without the padding those digits stand for a different code point.\n\n2. The charset is UTF-16 and should not be changed: supplementary characters (emoji etc.) are split into two Option+xxxx calls, one per UTF-16 code unit, and macOS merges the two surrogates into one character itself - 😀 is D83D and DE00, two calls. Switching to Unicode would send 5 hex digits, which this input source does not take.\n\n3. It needs the input source to be Unicode Hex Input first - under a normal keyboard layout Option just types symbols. Switching it is up to the user (the template does not do it); switch back afterwards, or the Option+digit shortcuts of your daily typing will be taken over.\n\n4. This preset is not verified on a real machine: there was no macOS device at hand, so the timing may vary between system versions. If it does nothing, first try Option+4E2D by hand on the host and compare with the template timing (that is what the unverified in the name is about).</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">How to use: no host setup needed - type the text in the text box and send it (the template presses Ctrl+Shift+U and releases it, types the hex code digits, then confirms with Space)\n\nNotes:\n\n1. This sequence can be pressed in two ways and this template uses the discrete one: press Ctrl+Shift+U and release it at once (the system then shows an underlined u), type the hex digits, and press Space to commit. The other way is to hold Ctrl+Shift down, type u and the digits, then let go to commit by itself - the commit then depends on the host, so the device cannot tell when it happened, and this template does not use it.\n\n2. The charset is Unicode and does not need to be changed: write 1 to 6 hex digits, no zero padding, and no UTF-16 surrogate pair split as on macOS - supplementary characters (emoji etc.) go in with one call.\n\n3. The host needs a desktop input-method framework (GTK / IBus / Fcitx); desktop Linux and ChromeOS ship one, so it works out of the box. A few programs grab this shortcut for themselves, and it will not work in them.\n\n4. Space is the commit key; Enter works as well - to switch, change the last step to tap Enter.\n\n5. Leave the input method a moment after the shortcut to settle its internal state, or the first few hex digits land in the text box as plain letters. The 50 ms key gap in the template header is that buffer; do not shorten it.</string>
+    <string name="template_host_layout_us_notice">The host keyboard is not a US layout, so the keys will type other characters: switch the host to a US keyboard (Windows) or add a US keyboard input method (Linux) before sending; the Unicode Hex Input on macOS is US based already.</string>
+    <string name="template_host_layout_english_notice">The letter keys of the host keyboard are not Latin letters (Korean, Japanese and the like): switch to English (alphanumeric) mode before sending - in that mode the 26 letter keys match a US keyboard.</string>
+    <string name="template_send_unencodable_title">Character cannot be encoded</string>
+    <string name="template_send_unencodable_text">Character %1$d “%2$s” (U+%3$s) cannot be encoded with charset %4$s; sending it would drop that character. Check the charset or the help next to it, or check whether the text is wrong.</string>
+    <string name="template_send_anyway">Send anyway</string>
+    <string name="template_preview_unencodable">The sample has a character that cannot be encoded: “%1$s” (U+%2$s) is not encodable with %3$s and is skipped when expanding.</string>
+    <string name="template_delete_confirm">Delete template “%1$s”?</string>
+    <string name="template_save_failed">Failed to save template:</string>
+    <string name="template_load_error_title">Template load errors</string>
+    <string name="template_load_error_desc">These templates contain errors. Open them in the editor to fix:</string>
+    <string name="template_load_error_item">%1$s (%2$d error(s))</string>
+    <string name="template_send_blocked">Template cannot type text yet — fix it before sending</string>
+    <string name="template_card_summary">%1$s · radix %2$d · %3$d steps</string>
+    <string name="template_expand_summary">%1$d steps · %2$d frames · ~%3$d ms</string>
+    <string name="template_editor_title">Edit template</string>
+    <string name="template_empty_steps">No steps yet. Use “Add step” to create one.</string>
+    <string name="template_step_summary">%1$d steps · hold %2$d ms · gap %3$d ms</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">Template parameters</string>
+    <string name="template_header_summary">%1$s · radix %2$d · %3$d / %4$d / %5$d ms</string>
+    <string name="template_header_charset">Charset</string>
+    <string name="charset_hint_title">Charsets and aliases</string>
+    <string name="charset_hint_desc">On the right is the charset each language uses on Windows. Write the canonical name (the bold monospaced one) in the template; the aliases below it are accepted as well.</string>
+    <string name="charset_hint_limits">Note: most charsets do not contain all of Unicode, so characters they lack cannot be sent (you are told before sending); and some charsets use different code points for the same character (windows-1252 vs IBM850, GBK vs Big5), so picking the wrong page types other characters. Use Unicode or UTF-16 to cover everything.</string>
+    <string name="charset_word_alt_code_hint">Use this one in Word (Alt Code is overridden)</string>
+    <string name="charset_lang_gbk">Simplified Chinese (ansi/oem)</string>
+    <string name="charset_lang_big5">Traditional Chinese (ansi/oem)</string>
+    <string name="charset_lang_windows_31j">Japanese (ansi/oem)</string>
+    <string name="charset_lang_windows_949">Korean (ansi/oem)</string>
+    <string name="charset_lang_windows_1252">English · Spanish · French · Portuguese · German (ansi)</string>
+    <string name="charset_lang_ibm437">English (US) (oem)</string>
+    <string name="charset_lang_ibm850">English (UK / international) · Spanish · French · Portuguese · German (oem)</string>
+    <string name="charset_lang_windows_1251">Russian (ansi)</string>
+    <string name="charset_lang_ibm866">Russian (oem)</string>
+    <string name="charset_lang_windows_1256">Arabic (ansi)</string>
+    <string name="charset_lang_ibm720">Arabic (oem)</string>
+    <string name="charset_lang_unicode">All modern languages (unicode) · full code points (UTF-32 without zero padding, 1-6 digits)</string>
+    <string name="charset_lang_utf16">Supplementary-plane characters are sent as 2 units (UTF-16 code units)</string>
+    <string name="charset_lang_us_ascii">English (ascii) · Hindi (no ansi/oem code page)</string>
+    <string name="template_header_radix">Radix</string>
+    <string name="template_header_template_gap">Template gap</string>
+    <string name="template_header_key_hold">Hold</string>
+    <string name="template_header_key_gap">Key gap</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">Keys</string>
+    <string name="template_modifier_section">Modifiers: the next add wraps into a chord</string>
+    <string name="template_key_section">Keys: one tap adds one “tap” step</string>
+    <string name="template_add">Add</string>
+    <string name="template_add_delay">Delay</string>
+    <string name="template_add_code">Code placeholder</string>
+    <string name="template_add_custom">Custom key</string>
+    <string name="template_custom_key_title">Custom key</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">Edit step</string>
+    <string name="template_step_key">Key name</string>
+    <string name="template_step_duration">Duration (ms)</string>
+    <string name="template_step_pad">Pad to N digits</string>
+    <string name="template_step_enable">Enabled</string>
+    <string name="template_step_code_hint">Hold and gap for each digit come from the template\'s hold / gap parameters.</string>
+    <string name="template_step_keys">Digit keys</string>
+    <string name="template_keys_numpad">Numpad</string>
+    <string name="template_keys_main">Main</string>
+    <string name="template_step_split">Split</string>
+    <string name="template_step_chord_hint">The whole group is pressed and released together; “Split” gives the equivalent separate steps.</string>
+    <string name="template_step_split_hint">Split turns “tap” into “down” + “up”, so the key stays pressed until the matching release step.</string>
+    <string name="template_step_modifier_hint">Modifier key: it is pressed/released by this step.</string>
+    <string name="template_step_unknown_hint">This line was not recognized. Rewrite it as one valid step, e.g. “down Alt”, “sleep 20” or “&lt;code&gt;”.</string>
+    <string name="template_step_line">Line</string>
+    <string name="template_status_ok">Syntax OK</string>
+    <string name="template_status_error">%1$d error(s)</string>
+    <string name="template_status_warning">%1$d warning(s)</string>
+    <string name="template_preview">Expanded preview</string>
+    <string name="template_preview_empty">Nothing to preview</string>
+    <string name="template_preview_sample">Sample</string>
+    <string name="template_preview_test">Test</string>
+    <string name="template_preview_header_action">Action</string>
+    <string name="template_preview_header_report">Modifier / Key</string>
+    <string name="template_preview_header_duration">Hold</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">Template is empty</string>
+    <string name="template_error_missing_code">Missing &lt;code&gt; placeholder: the template cannot be used to type text</string>
+    <string name="template_warn_code_disabled">&lt;code&gt; is disabled: the template cannot be used to type text</string>
+    <string name="template_error_unknown_key">Unknown key name “%1$s”</string>
+    <string name="template_error_unknown_key_suggest">Unknown key name “%1$s”, did you mean “%2$s”?</string>
+    <string name="template_error_invalid_number">Invalid number “%1$s”</string>
+    <string name="template_error_invalid_value">Invalid value “%1$s”</string>
+    <string name="template_error_unclosed_placeholder">Missing “&gt;” after “&lt;”</string>
+    <string name="template_error_unknown_step">Unrecognized step “%1$s”</string>
+    <string name="template_error_unknown_charset">Unsupported charset “%1$s”</string>
+    <string name="template_error_invalid_radix">Radix must be 10 or 16, got “%1$s”</string>
+    <string name="template_error_unbalanced_key">Key “%1$s” is pressed but never released</string>
+    <string name="template_warn_unknown_param">Unknown parameter “%1$s”</string>
+    <string name="template_warn_duplicate_code">A template sends exactly one character; multiple &lt;code&gt; placeholders send the same digits again</string>
+    <string name="template_warn_multiple_held_keys">Multiple normal keys are held at once (%1$s), but the keyboard report carries only one</string>
+    <string name="template_warn_small_delay">Delay %1$s ms is very short and may be compressed over Bluetooth</string>
+    <string name="template_warn_small_delay_header">Template hold / gap %1$s ms is below 10 ms and may be compressed over Bluetooth</string>
+    <string name="template_warn_ignored_attr">Attribute “%1$s” no longer takes effect: key timing now follows the template parameters, and it is removed when the template is saved</string>
+</resources>

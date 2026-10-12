@@ -1,0 +1,240 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="ja">
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">リモートコントロール</string>
+    <string name="shortcut_connect_to">%1$s に接続</string>
+
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">Bluetooth の権限を許可</string>
+    <string name="turn_on_bluetooth">Bluetooth をオンにする</string>
+    <string name="scanning">スキャン中…</string>
+    <string name="bluetooth_ready">Bluetooth の準備完了</string>
+    <string name="stop_scanning">スキャン停止</string>
+    <string name="start_scanning">スキャン開始</string>
+    <string name="app_description">このアプリは Bluetooth デバイスをスキャンして接続するためのものです。\n\n機能：\n- 近くの Bluetooth デバイスをスキャン\n- 保存済みの Bluetooth デバイスを表示\n- Bluetooth デバイスの接続に対応\n\nアプリの機能を使うには、上のボタンから Bluetooth の権限を許可してください。</string>
+    <string name="saved_devices">保存済みデバイス</string>
+    <string name="nearby_devices">近くのデバイス</string>
+    <string name="click_to_scan">「スキャン開始」ボタンを押してデバイスを検索します</string>
+    <string name="connect">接続</string>
+    <string name="bluetooth_device">Bluetooth デバイス</string>
+    <string name="unknown_device">不明なデバイス</string>
+
+    <!-- ControlActivity -->
+    <string name="back">戻る</string>
+    <string name="connected">接続済み</string>
+    <string name="connecting">接続中…</string>
+    <string name="disconnecting">切断中…</string>
+    <string name="disconnected">未接続</string>
+    <string name="initializing">初期化中…</string>
+    <string name="registering">登録中…</string>
+    <string name="init_failed">初期化に失敗しました</string>
+    <string name="left_button">左ボタン</string>
+    <string name="right_button">右ボタン</string>
+    <string name="input_text">テキストを入力…</string>
+    <string name="send">送信</string>
+    <string name="sending">送信中…</string>
+    <string name="sending_text_hint">テキストを送信中です。しばらくお待ちください…</string>
+    <string name="ok">OK</string>
+    <string name="disconnect">切断</string>
+    <string name="confirm_disconnect">Bluetooth 接続を切断してもよろしいですか？</string>
+    <string name="cancel">キャンセル</string>
+
+    <!-- 接続の維持：フォアグラウンドサービスの常駐通知、スキャン画面のカード、戻る時の通知、デバイス切り替えの確認 -->
+    <string name="connection_kept_title">接続を維持中</string>
+    <string name="notification_channel_name">接続の維持</string>
+    <string name="notification_channel_description">他のアプリを使っている間も維持される Bluetooth 接続を表示します。</string>
+    <string name="notification_text_connecting">%1$s に接続中…</string>
+    <string name="notification_text_connected">%1$s に接続済み</string>
+    <string name="notification_action_open">操作画面に戻る</string>
+    <string name="connection_kept_toast">接続はバックグラウンドで維持されています</string>
+    <string name="scanner_switch_title">デバイスを切り替えますか？</string>
+    <string name="scanner_switch_text">現在 %1$s に接続中です。切断して %2$s に接続しますか？</string>
+    <string name="scanner_switch_confirm">切り替え</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">キーボードモード</string>
+    <string name="mode_touchpad">タッチパッドモード</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">メイン</string>
+    <string name="keyboard_page_function">ファンクション</string>
+    <string name="keyboard_page_numpad">テンキー</string>
+
+    <!-- ホストが Num Lock を無視したときのヒント：テンキーが使えない可能性 -->
+    <string name="keyboard_numpad_warning">接続先のデバイスはテンキーに対応していない可能性があります。テンキーを使うテンプレート入力（Alt + 数字）が動作しないことがあります。</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">タッチパッドのボタン</string>
+
+    <!-- Settings -->
+    <string name="settings">設定</string>
+    <string name="theme_settings">テーマ設定</string>
+    <string name="theme_mode">テーマモード</string>
+    <string name="theme_mode_system">システムに従う</string>
+    <string name="theme_mode_light">ライト</string>
+    <string name="theme_mode_dark">ダーク</string>
+    <string name="hue_scheme">色相スキーム</string>
+    <string name="language_settings">言語設定</string>
+    <string name="language_mode">言語</string>
+    <string name="keyboard_settings">キーボード</string>
+    <string name="keyboard_layout">ホストのキーボード配列</string>
+    <string name="keyboard_layout_follow_ui">アプリの言語に従う</string>
+    <string name="keyboard_layout_hint">接続先のキーボード配列は取得できないため、一致するものを選んでください。一致しないとキーが誤った文字を入力します。</string>
+    <string name="keyboard_layout_send_hint">テンプレート送信時の注意：テンプレートは US のキー位置を送ります。ホストが US 配列でない場合(フランス語 AZERTY、ドイツ語 QWERTZ、ロシア語、アラビア語など)は先に US キーボードに切り替えてください。韓国語・日本語などのように字母キーが置き換わっていても英語モードで US と一致する場合は、英語(半角英数)モードに切り替えるだけで十分です。</string>
+    <string name="charset_settings">文字コード</string>
+    <string name="charset_settings_hint">無効にしてもテンプレート編集中の選択肢から消えるだけで、すでに使っているテンプレートはそのまま動作します。</string>
+    <string name="charset_add_label">文字コードを追加</string>
+    <string name="charset_add">追加</string>
+    <string name="charset_add_ok">「%1$s」を追加しました</string>
+    <string name="charset_add_duplicate">すでに「%1$s」として登録されています</string>
+    <string name="charset_add_not_found">この端末では「%1$s」を利用できません</string>
+    <string name="charset_add_blank">文字コード名を入力してください</string>
+    <string name="charset_delete">削除</string>
+    <string name="charset_delete_confirm">文字コード「%1$s」を削除しますか？使用しているテンプレートは未対応の文字コードとして報告されます。</string>
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">Azure ブルー</string>
+    <string name="hue_teal">Teal ティール</string>
+    <string name="hue_violet">Violet バイオレット</string>
+    <string name="hue_amber">Amber アンバー</string>
+    <string name="hue_rose">Rose ローズ</string>
+    <string name="hue_graphite">Graphite グラファイト</string>
+
+    <!-- Languages -->
+    <string name="language_system">システムに従う</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">ヒント</string>
+
+    <!-- Errors -->
+    <string name="error_title">エラー</string>
+    <string name="error_unsupported">この端末のシステムでは Bluetooth HID デバイスプロファイルが有効になっていません。システム設定を確認してください。</string>
+    <string name="error_device_not_ready">HID サービスが準備できていません</string>
+    <string name="error_register_failed">HID アプリの登録に失敗しました</string>
+    <string name="error_register_exception">HID アプリの登録に失敗しました：%1$s</string>
+    <string name="error_pairing_failed">ペアリングに失敗したか、キャンセルされました</string>
+    <string name="error_connect_failed">接続に失敗しました</string>
+    <string name="error_connect_exception">接続に失敗しました：%1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">テンプレートモード</string>
+    <string name="template_title">テンプレート</string>
+    <string name="template_new">新規</string>
+    <string name="template_edit">編集</string>
+    <string name="template_copy">複製</string>
+    <string name="template_copy_name">%1$s のコピー</string>
+    <string name="template_delete">削除</string>
+    <string name="template_save">保存</string>
+    <string name="template_name">テンプレート名</string>
+    <string name="template_description">テンプレートの説明</string>
+    <string name="template_description_label">説明：</string>
+    <string name="template_description_empty">タップして追加</string>
+    <string name="template_description_hint">このテンプレートの用途と、ホスト側で必要な設定</string>
+    <string name="template_empty_list">テンプレートがありません。「新規」で作成してください。</string>
+    <string name="template_preset_title">テンプレートを選択</string>
+    <string name="template_preset_oem_alt_code_description">使い方：環境に合わせて文字コードを変更(既定の文字コードは UI 言語に従います。Word では Unicode に変更) -> テンキーを有効化 -> 自分の言語の IME に切り替え(簡体字中国語・繁体字中国語・日本語・韓国語は US キーボードに切り替え) -> テキスト欄に文字を入力して送信\n\n補足：\n\n1. 既定の文字コードは UI 言語に従い、その言語のホスト側 OEM コードページ(簡体字中国語 GBK、繁体字中国語 Big5、日本語 windows-31j、韓国語 windows-949、英語：米国 IBM437、英国/国際 IBM850（地域が判別できない場合は米国版），西ヨーロッパ諸語 IBM850、ロシア語 IBM866、アラビア語 IBM720、ヒンディー語 US-ASCII)になります。これは Windows のほかのアプリで使うページです。Word では Unicode に変更してください。Alt Code はテンキーでコードを入力するので、先にテンキーを有効(Num Lock)にしてください。\n\n2. 言語と OEM コードページの対応は、文字コードの右にある丸い疑問符アイコンから確認できます。簡体字中国語・繁体字中国語・日本語・韓国語は ANSI と OEM のコードページが同じなので、OEM 版のテンプレートを選べばそのまま使えます。ホストの OEMCP が 65001(UTF-8)の場合、Alt Code は効きません。\n\n3. 先頭に 0 を付けない数字は、Windows ネイティブの Alt Code 機構の OEM 版です(先頭に 0 を付けるのは ANSI 版)。\n\n4. 簡体字中国語・繁体字中国語・日本語・韓国語の Microsoft IME では US キーボード(または旧バージョン互換モード / サードパーティ IME)に切り替えてください。これらの IME は OEM 入力を IBM437、ANSI を windows-1252 に固定しており、Word では 2 文字出力されます。</string>
+    <string name="template_preset_ansi_alt_code_description">使い方：環境に合わせて文字コードを変更(既定の文字コードは UI 言語に従います。Word では Unicode に変更) -> テンキーを有効化 -> 自分の言語の IME に切り替え(簡体字中国語・繁体字中国語・日本語・韓国語は OEM 版を推奨) -> テキスト欄に文字を入力して送信\n\n補足：\n\n1. 既定の文字コードは UI 言語に従い、その言語のホスト側 ANSI コードページ(簡体字中国語 GBK、繁体字中国語 Big5、日本語 windows-31j、韓国語 windows-949、英語および西ヨーロッパ諸語 windows-1252、ロシア語 windows-1251、アラビア語 windows-1256、ヒンディー語 US-ASCII)になります。これは Windows のほかのアプリで使うページです。Word では Unicode に変更してください。Alt Code はテンキーでコードを入力するので、先にテンキーを有効(Num Lock)にしてください。\n\n2. 言語と ANSI コードページの対応は、文字コードの右にある丸い疑問符アイコンから確認できます。簡体字中国語・繁体字中国語・日本語・韓国語は ANSI と OEM のコードページが同じなので、OEM 版のテンプレートを選べばそのまま使えます。ホストの ACP が 65001(UTF-8)の場合、Alt Code は効きません。\n\n3. 先頭に 0 を付けた数字は、Windows ネイティブの Alt Code の ANSI 版です(付けないのは OEM 版)。\n\n4. 繁体字中国語で Rime の繁体字中国語入力を使う場合、0 を付けると文字コードは Big5、付けないと GBK です。</string>
+    <string name="template_preset_richedit_alt_x_description">使い方：RichEdit 対応プログラムの入力位置を開く -> 入力方式を調整(簡体字中国語・繁体字中国語・日本語・韓国語は英語モードを使う) -> テキスト欄に文字を入力して送信(テンプレートは u+ と 16 進コードを打ち、最後に Alt+X を押す)\n\n補足：\n\nAlt+X は RichEdit(Word の文字エンジン)に内蔵されたインライン変換です。コードページの確認や文字コードの変更は不要で、テンキーも使いません。\n\n16 進コードの直後にカーソルがある状態で押すと、コードがその場で文字に変わります。ただし可変長のコードに対応しているため、その部分だけを正確に変換するには、テキストを選択するか先に u+ を打つ必要があります(このテンプレートの u+ はそのためで、変換時に接頭辞ごと削除されます)。\n\nRichEdit をホストするアプリでのみ有効です。アプリ名で調べられます：\n対応：すべてのバージョンの Word、Outlook のメール本文、OneNote、Windows 11 メモ帳、WordPad(Windows 11 24H2 で削除)、TortoiseSVN / Git のコミットダイアログ；\nその他：Excel、ブラウザー、VS Code、PowerPoint の通常のテキストボックスは非対応(PPT は数式編集エリアのみ)。フランス語版 Word は Alt+C。</string>
+    <string name="template_preset_macos_hex_description">使い方：「キーボード → 入力ソース」で現在の入力ソースを Unicode Hex Input に切り替える -> テキスト欄に文字を入力して送信するだけです(テンプレートは Option を押したまま 4 桁の 16 進数を打ち、Option を離して文字を確定します)\n\n補足：\n\n1. コードは 4 桁にゼロ埋めする必要があります：この入力ソースは 1 回につき 4 桁の 16 進数しか受け付けないため、テンプレートのコードのプレースホルダーには pad=4 が付いています。4 桁に満たない場合は前に 0 が入ります。たとえば「中」は 4E2D、「A」は 0041 と書きます。埋めないと別の符号位置として扱われます。\n\n2. 文字コードは UTF-16 で、変更しないでください：補助面の文字(絵文字など)は UTF-16 の符号単位ごとに 2 回の Option+xxxx に分かれ、macOS が 2 つのサロゲートを 1 文字に合成します。たとえば 😀 は D83D と DE00 の 2 回です。Unicode に変えると 5 桁の符号位置を送ることになり、この入力ソースでは受け取れません。\n\n3. 前提として入力ソースを Unicode Hex Input に切り替えておく必要があります。通常のキーボードレイアウトでは Option は記号を打つだけです。切り替えは利用者が行ってください(テンプレートは切り替えません)。使い終わったら元の入力ソースに戻してください。戻さないと普段の Option+数字 のショートカットが使えなくなります。\n\n4. このプリセットは実機で検証していません：手元に macOS 端末がないため、キーのタイミングはシステムのバージョンによって変わる可能性があります。効かないときは、まずホストで手動で Option+4E2D が入力できるか試し、テンプレートのタイミングと比べてください(名前の unverified はその意味です)。</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">使い方：ホスト側の設定は不要で、テキスト欄に文字を入力して送信するだけです(テンプレートはまず Ctrl+Shift+U を押してすべて離し、16 進コードを 1 桁ずつ打ち、最後にスペースで確定します)\n\n補足：\n\n1. このシーケンスには 2 通りの押し方があります。このテンプレートは「離散式」を使います：Ctrl+Shift+U を押したらすぐにすべて離すと、システムが下線付きの u を表示するので、16 進コードを打って最後にスペースで確定します。もう 1 つの「保持式」は Ctrl+Shift を押したまま u とコードを打ち、離した時点で自動的に確定するものです。確定のタイミングがホスト任せになり、デバイス側からは分からないため、このテンプレートでは使いません。\n\n2. 文字コードは Unicode で、変更は不要です：16 進数を 1~6 桁書き、ゼロ埋めも不要、macOS のように UTF-16 サロゲートペアで 2 回に分ける必要もありません。補助面の文字(絵文字など)も 1 回で入力できます。\n\n3. ホストにデスクトップの入力メソッドフレームワーク(GTK / IBus / Fcitx)が必要です。デスクトップ Linux と ChromeOS には最初から入っているので、すぐ使えます。一部のプログラムがこのショートカットを独自に使っている場合、そこでは効きません。\n\n4. 確定キーはスペースです。Enter でも同じように効きます。Enter に変えたい場合は、テンプレートの最後の手順を tap Enter にしてください。\n\n5. ショートカットの直後は、入力メソッドの内部状態が整うまで少し時間を空けてください。そうしないと最初の数桁が普通の文字としてそのままテキスト欄に入ります。テンプレート先頭の「キー間隔」50 ミリ秒がその緩衝で、短くしないことをおすすめします。</string>
+    <string name="template_host_layout_us_notice">ホストのキーボードが US 配列ではありません。押したキーは別の文字を出力します：送信前にホストを US キーボードに切り替えるか(Windows)、US キーボードの入力ソースを追加してください(Linux)。macOS の Unicode Hex Input はもともと US 配列です。</string>
+    <string name="template_host_layout_english_notice">ホストのキーボードの字母キーがラテン文字ではありません(韓国語・日本語など)：送信前に英語(半角英数)モードに切り替えてください。そのモードでは 26 の字母キーが US 配列と一致します。</string>
+    <string name="template_send_unencodable_title">エンコードできない文字があります</string>
+    <string name="template_send_unencodable_text">%1$d 文字目「%2$s」(U+%3$s) は文字コード %4$s ではエンコードできません。そのまま送るとこの文字は抜けます。文字コードを確認するか、その横のヘルプを見るか、テキストが間違っていないか確認してください。</string>
+    <string name="template_send_anyway">それでも送信</string>
+    <string name="template_preview_unencodable">サンプルにエンコードできない文字があります：「%1$s」(U+%2$s) は %3$s ではエンコードできず、展開時にスキップされます。</string>
+    <string name="template_delete_confirm">テンプレート「%1$s」を削除しますか？</string>
+    <string name="template_save_failed">テンプレートの保存に失敗しました：</string>
+    <string name="template_load_error_title">テンプレートの読み込みエラー</string>
+    <string name="template_load_error_desc">次のテンプレートにエラーがあります。エディターで修正してください：</string>
+    <string name="template_load_error_item">%1$s（エラー %2$d 件）</string>
+    <string name="template_send_blocked">テンプレートはまだテキストを入力できません。修正してから送信してください</string>
+    <string name="template_card_summary">%1$s · %2$d 進 · %3$d ステップ</string>
+    <string name="template_expand_summary">%1$d ステップ · %2$d フレーム · 約 %3$d ms</string>
+    <string name="template_editor_title">テンプレートを編集</string>
+    <string name="template_empty_steps">ステップがありません。「ステップを追加」で作成してください。</string>
+    <string name="template_step_summary">%1$d ステップ · 保持 %2$d ms · 間隔 %3$d ms</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">テンプレートのパラメータ</string>
+    <string name="template_header_summary">%1$s · %2$d 進 · %3$d / %4$d / %5$d ms</string>
+    <string name="template_header_charset">文字コード</string>
+    <string name="charset_hint_title">文字コードと別名</string>
+    <string name="charset_hint_desc">反対側は各言語が Windows で使う文字コードです。テンプレートには正規名（太字の等幅）を書いてください。その下の別名も認識されます。</string>
+    <string name="charset_hint_limits">注意：ほとんどの文字コードは Unicode のすべての文字を含んでおらず、含まれない文字は送信できません(送信前に通知されます)。また文字コードごとに同じ文字の符号位置が異なる場合があり(例：windows-1252 と IBM850、GBK と Big5)、ページを間違えると別の文字が出ます。すべての文字を扱うには Unicode か UTF-16 を使ってください。</string>
+    <string name="charset_word_alt_code_hint">Word ではこの項目を使ってください(Alt Code が上書きされます)</string>
+    <string name="charset_lang_gbk">簡体字中国語（ansi/oem）</string>
+    <string name="charset_lang_big5">繁体字中国語（ansi/oem）</string>
+    <string name="charset_lang_windows_31j">日本語（ansi/oem）</string>
+    <string name="charset_lang_windows_949">韓国語（ansi/oem）</string>
+    <string name="charset_lang_windows_1252">英語 · スペイン語 · フランス語 · ポルトガル語 · ドイツ語（ansi）</string>
+    <string name="charset_lang_ibm437">英語（米国）（oem）</string>
+    <string name="charset_lang_ibm850">英語（英国/国際）· スペイン語 · フランス語 · ポルトガル語 · ドイツ語（oem）</string>
+    <string name="charset_lang_windows_1251">ロシア語（ansi）</string>
+    <string name="charset_lang_ibm866">ロシア語（oem）</string>
+    <string name="charset_lang_windows_1256">アラビア語（ansi）</string>
+    <string name="charset_lang_ibm720">アラビア語（oem）</string>
+    <string name="charset_lang_unicode">すべての現代言語（unicode）· 完全なコードポイント（UTF-32 ゼロ埋めなし、1~6 桁）</string>
+    <string name="charset_lang_utf16">補助面の文字は 2 つに分けて送信（UTF-16 コードユニット）</string>
+    <string name="charset_lang_us_ascii">英語（ascii）· ヒンディー語（ansi/oem コードページなし）</string>
+    <string name="template_header_radix">基数</string>
+    <string name="template_header_template_gap">テンプレート間隔</string>
+    <string name="template_header_key_hold">押下保持</string>
+    <string name="template_header_key_gap">キー間隔</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">キー</string>
+    <string name="template_modifier_section">修飾キー：選ぶと次の追加が組み合わせになります</string>
+    <string name="template_key_section">キー：タップで「tap」を 1 つ追加</string>
+    <string name="template_add">追加</string>
+    <string name="template_add_delay">遅延</string>
+    <string name="template_add_code">コードのプレースホルダー</string>
+    <string name="template_add_custom">カスタムキー</string>
+    <string name="template_custom_key_title">カスタムキー</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">ステップを編集</string>
+    <string name="template_step_key">キー名</string>
+    <string name="template_step_duration">長さ（ミリ秒）</string>
+    <string name="template_step_pad">N 桁までゼロ埋め</string>
+    <string name="template_step_enable">有効</string>
+    <string name="template_step_code_hint">各桁の保持と間隔は、テンプレートの「押下保持 / キー間隔」を使います。</string>
+    <string name="template_step_keys">数字キーの種類</string>
+    <string name="template_keys_numpad">テンキー</string>
+    <string name="template_keys_main">メインキー</string>
+    <string name="template_step_split">分割</string>
+    <string name="template_step_chord_hint">まとめて押してまとめて離します。「分割」すると等価な複数ステップになります。</string>
+    <string name="template_step_split_hint">分割すると「tap」が「押す」＋「離す」の 2 ステップになり、対応する「離す」ステップまで押されたままになります。</string>
+    <string name="template_step_modifier_hint">修飾キー：このステップが押下 / 解放を担当します。</string>
+    <string name="template_step_unknown_hint">この行は解釈できませんでした。「down Alt」「sleep 20」「&lt;code&gt;」のような正しい 1 ステップに書き直してください。</string>
+    <string name="template_step_line">行</string>
+    <string name="template_status_ok">構文は正しい</string>
+    <string name="template_status_error">エラー %1$d 件</string>
+    <string name="template_status_warning">警告 %1$d 件</string>
+    <string name="template_preview">展開プレビュー</string>
+    <string name="template_preview_empty">プレビューできる内容がありません</string>
+    <string name="template_preview_sample">プレビュー文字</string>
+    <string name="template_preview_test">テスト</string>
+    <string name="template_preview_header_action">動作</string>
+    <string name="template_preview_header_report">修飾キー / キーコード</string>
+    <string name="template_preview_header_duration">保持</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">テンプレートが空です</string>
+    <string name="template_error_missing_code">&lt;code&gt; プレースホルダーがないため、テキスト入力に使えません</string>
+    <string name="template_warn_code_disabled">&lt;code&gt; が無効なため、テキスト入力に使えません</string>
+    <string name="template_error_unknown_key">不明なキー名「%1$s」</string>
+    <string name="template_error_unknown_key_suggest">不明なキー名「%1$s」。「%2$s」の間違いではありませんか？</string>
+    <string name="template_error_invalid_number">無効な数値「%1$s」</string>
+    <string name="template_error_invalid_value">無効な値「%1$s」</string>
+    <string name="template_error_unclosed_placeholder">「&lt;」の後に「&gt;」がありません</string>
+    <string name="template_error_unknown_step">認識できないステップ「%1$s」</string>
+    <string name="template_error_unknown_charset">対応していない文字コード「%1$s」</string>
+    <string name="template_error_invalid_radix">基数は 10 か 16 のみです。現在は「%1$s」</string>
+    <string name="template_error_unbalanced_key">キー「%1$s」が押されたまま解放されておらず、押しっぱなしになります</string>
+    <string name="template_warn_unknown_param">不明なパラメータ「%1$s」</string>
+    <string name="template_warn_duplicate_code">1 つのテンプレートが送る文字は 1 文字だけです。&lt;code&gt; を複数書くと、同じ数字列が繰り返し送信されます</string>
+    <string name="template_warn_multiple_held_keys">複数の通常キー（%1$s）が同時に押されていますが、キーボードレポートに載せられる通常キーは 1 つだけです</string>
+    <string name="template_warn_small_delay">遅延 %1$s ms は短すぎます。Bluetooth では圧縮される可能性があります</string>
+    <string name="template_warn_small_delay_header">テンプレートの押下保持 / 間隔 %1$s ms は 10 ms 未満です。Bluetooth では圧縮される可能性があります</string>
+    <string name="template_warn_ignored_attr">属性「%1$s」は無効になりました：キーのタイミングはテンプレートのパラメータに従い、保存時に削除されます</string>
+</resources>

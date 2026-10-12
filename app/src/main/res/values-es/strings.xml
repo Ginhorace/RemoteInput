@@ -1,0 +1,240 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="es">
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">Control remoto</string>
+    <string name="shortcut_connect_to">Conectar con %1$s</string>
+
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">Solicitar permiso de Bluetooth</string>
+    <string name="turn_on_bluetooth">Activar Bluetooth</string>
+    <string name="scanning">Buscando…</string>
+    <string name="bluetooth_ready">Bluetooth listo</string>
+    <string name="stop_scanning">Detener búsqueda</string>
+    <string name="start_scanning">Iniciar búsqueda</string>
+    <string name="app_description">Esta aplicación sirve para buscar y conectar dispositivos Bluetooth.\n\nFunciones:\n- Buscar dispositivos Bluetooth cercanos\n- Mostrar los dispositivos Bluetooth guardados\n- Admitir la conexión de dispositivos Bluetooth\n\nPulsa el botón de arriba para conceder el permiso de Bluetooth y usar las funciones de la aplicación.</string>
+    <string name="saved_devices">Dispositivos guardados</string>
+    <string name="nearby_devices">Dispositivos cercanos</string>
+    <string name="click_to_scan">Pulsa «Iniciar búsqueda» para buscar dispositivos</string>
+    <string name="connect">Conectar</string>
+    <string name="bluetooth_device">Dispositivo Bluetooth</string>
+    <string name="unknown_device">Dispositivo desconocido</string>
+
+    <!-- ControlActivity -->
+    <string name="back">Atrás</string>
+    <string name="connected">Conectado</string>
+    <string name="connecting">Conectando…</string>
+    <string name="disconnecting">Desconectando…</string>
+    <string name="disconnected">Sin conexión</string>
+    <string name="initializing">Inicializando…</string>
+    <string name="registering">Registrando…</string>
+    <string name="init_failed">Error de inicialización</string>
+    <string name="left_button">Botón izquierdo</string>
+    <string name="right_button">Botón derecho</string>
+    <string name="input_text">Escribe texto…</string>
+    <string name="send">Enviar</string>
+    <string name="sending">Enviando…</string>
+    <string name="sending_text_hint">Enviando el texto, espera un momento…</string>
+    <string name="ok">Aceptar</string>
+    <string name="disconnect">Desconectar</string>
+    <string name="confirm_disconnect">¿Seguro que quieres desconectar la conexión Bluetooth?</string>
+    <string name="cancel">Cancelar</string>
+
+    <!-- Conexión mantenida: notificación permanente del servicio en primer plano, tarjeta de la pantalla de escaneo, aviso al volver atrás y confirmación de cambio de dispositivo -->
+    <string name="connection_kept_title">Conexión mantenida</string>
+    <string name="notification_channel_name">Conexión mantenida</string>
+    <string name="notification_channel_description">Muestra la conexión Bluetooth que se mantiene mientras usas otras aplicaciones.</string>
+    <string name="notification_text_connecting">Conectando con %1$s…</string>
+    <string name="notification_text_connected">Conectado con %1$s</string>
+    <string name="notification_action_open">Volver a los controles</string>
+    <string name="connection_kept_toast">La conexión se mantiene en segundo plano</string>
+    <string name="scanner_switch_title">¿Cambiar de dispositivo?</string>
+    <string name="scanner_switch_text">Ahora mismo estás conectado con %1$s. ¿Desconectarlo y conectarte con %2$s?</string>
+    <string name="scanner_switch_confirm">Cambiar</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">Modo teclado</string>
+    <string name="mode_touchpad">Modo panel táctil</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">Principal</string>
+    <string name="keyboard_page_function">Funciones</string>
+    <string name="keyboard_page_numpad">Numérico</string>
+
+    <!-- El host ignora la tecla Bloq Num: el teclado numérico puede ser inservible -->
+    <string name="keyboard_numpad_warning">Es posible que el dispositivo conectado no admita el teclado numérico. La entrada por plantilla que lo usa (Alt + dígitos) podría no funcionar.</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">Botones del panel táctil</string>
+
+    <!-- Settings -->
+    <string name="settings">Ajustes</string>
+    <string name="theme_settings">Ajustes del tema</string>
+    <string name="theme_mode">Modo del tema</string>
+    <string name="theme_mode_system">Seguir el sistema</string>
+    <string name="theme_mode_light">Claro</string>
+    <string name="theme_mode_dark">Oscuro</string>
+    <string name="hue_scheme">Esquema de color</string>
+    <string name="language_settings">Ajustes de idioma</string>
+    <string name="language_mode">Idioma</string>
+    <string name="keyboard_settings">Teclado</string>
+    <string name="keyboard_layout">Distribución del teclado del host</string>
+    <string name="keyboard_layout_follow_ui">Seguir el idioma de la app</string>
+    <string name="keyboard_layout_hint">La app no puede leer la distribución del dispositivo conectado; elige la que coincida con él. Si no coinciden, las teclas escribirán caracteres incorrectos.</string>
+    <string name="keyboard_layout_send_hint">Al enviar una plantilla, ten en cuenta que usa posiciones de tecla US: si la distribución del anfitrión no es US (francés AZERTY, alemán QWERTZ, ruso, árabe, etc.), cambia primero a un teclado US; en coreano, japonés y similares las teclas de letras están sustituidas pero coinciden con US en modo inglés, así que basta con cambiar al modo inglés (alfanumérico).</string>
+    <string name="charset_settings">Juegos de caracteres</string>
+    <string name="charset_settings_hint">Desactivar un juego de caracteres solo lo oculta al editar una plantilla; las plantillas que ya lo usan siguen funcionando.</string>
+    <string name="charset_add_label">Añadir un juego de caracteres</string>
+    <string name="charset_add">Añadir</string>
+    <string name="charset_add_ok">Se añadió «%1$s»</string>
+    <string name="charset_add_duplicate">Ya está en la lista como «%1$s»</string>
+    <string name="charset_add_not_found">«%1$s» no está disponible en este dispositivo</string>
+    <string name="charset_add_blank">Escribe un nombre de juego de caracteres</string>
+    <string name="charset_delete">Eliminar</string>
+    <string name="charset_delete_confirm">¿Eliminar el juego de caracteres «%1$s»? Las plantillas que lo usen mostrarán un error de juego de caracteres no admitido.</string>
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">Azure</string>
+    <string name="hue_teal">Turquesa</string>
+    <string name="hue_violet">Violeta</string>
+    <string name="hue_amber">Ámbar</string>
+    <string name="hue_rose">Rosa</string>
+    <string name="hue_graphite">Grafito</string>
+
+    <!-- Languages -->
+    <string name="language_system">Seguir el sistema</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">Sugerencia</string>
+
+    <!-- Errors -->
+    <string name="error_title">Error</string>
+    <string name="error_unsupported">El sistema de este teléfono no habilita el perfil Bluetooth HID Device. Comprueba los ajustes del sistema.</string>
+    <string name="error_device_not_ready">El servicio HID no está listo</string>
+    <string name="error_register_failed">No se pudo registrar la aplicación HID</string>
+    <string name="error_register_exception">No se pudo registrar la aplicación HID: %1$s</string>
+    <string name="error_pairing_failed">El emparejamiento falló o se canceló</string>
+    <string name="error_connect_failed">No se pudo conectar</string>
+    <string name="error_connect_exception">No se pudo conectar: %1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">Modo plantilla</string>
+    <string name="template_title">Plantillas</string>
+    <string name="template_new">Nueva</string>
+    <string name="template_edit">Editar</string>
+    <string name="template_copy">Copiar</string>
+    <string name="template_copy_name">Copia de %1$s</string>
+    <string name="template_delete">Eliminar</string>
+    <string name="template_save">Guardar</string>
+    <string name="template_name">Nombre de la plantilla</string>
+    <string name="template_description">Descripción de la plantilla</string>
+    <string name="template_description_label">"Descripción: "</string>
+    <string name="template_description_empty">Toca para añadir</string>
+    <string name="template_description_hint">Para qué sirve esta plantilla y qué hay que configurar en el host</string>
+    <string name="template_empty_list">Aún no hay plantillas. Pulsa «Nueva» para crear una.</string>
+    <string name="template_preset_title">Elegir una plantilla</string>
+    <string name="template_preset_oem_alt_code_description">Cómo usarlo: cambia el juego de caracteres según tu entorno (el juego de caracteres predeterminado sigue el idioma de la interfaz; para Word hay que cambiarlo a Unicode) -> activa el teclado numérico -> cambia al método de entrada de tu idioma (chino simplificado, chino tradicional, japonés, coreano: cambia al teclado de EE. UU.) -> escribe el texto en el cuadro de texto y envíalo\n\nNotas:\n\n1. El juego de caracteres predeterminado sigue el idioma de la interfaz y es la página de códigos OEM de ese idioma en el host (chino simplificado GBK, chino tradicional Big5, japonés windows-31j, coreano windows-949, inglés: IBM437 en EE. UU., IBM850 en el Reino Unido/internacional (se usa la página de EE. UU. si no se conoce la región), lenguas de Europa occidental IBM850, ruso IBM866, árabe IBM720, hindi US-ASCII), que es la que hay que usar en otras aplicaciones de Windows; en Word hay que cambiarlo a Unicode. Alt Code introduce el código con el teclado numérico, así que activa primero el teclado numérico (Bloq Num).\n\n2. La correspondencia idioma -> página de códigos OEM se consulta en el signo de interrogación dentro de un círculo junto al juego de caracteres. El chino simplificado, el chino tradicional, el japonés y el coreano usan la misma página de códigos para ANSI y OEM, así que basta con elegir la plantilla OEM. Alt Code no funciona si el OEMCP del host es 65001 (UTF-8).\n\n3. Sin cero inicial esta es la variante OEM del mecanismo nativo Alt Code de Windows (con cero inicial es la variante ANSI).\n\n4. Con el método de entrada de Microsoft de chino simplificado, chino tradicional, japonés o coreano, cambia al teclado de EE. UU. (o al modo de compatibilidad con la versión anterior / un método de entrada de terceros): esos métodos fijan la entrada OEM en IBM437 y la ANSI en windows-1252, y Word escribe 2 caracteres.</string>
+    <string name="template_preset_ansi_alt_code_description">Cómo usarlo: cambia el juego de caracteres según tu entorno (el juego de caracteres predeterminado sigue el idioma de la interfaz; para Word hay que cambiarlo a Unicode) -> activa el teclado numérico -> cambia al método de entrada de tu idioma (chino simplificado, chino tradicional, japonés, coreano: se recomienda la versión OEM) -> escribe el texto en el cuadro de texto y envíalo\n\nNotas:\n\n1. El juego de caracteres predeterminado sigue el idioma de la interfaz y es la página de códigos ANSI de ese idioma en el host (chino simplificado GBK, chino tradicional Big5, japonés windows-31j, coreano windows-949, inglés y lenguas de Europa occidental windows-1252, ruso windows-1251, árabe windows-1256, hindi US-ASCII), que es la que hay que usar en otras aplicaciones de Windows; en Word hay que cambiarlo a Unicode. Alt Code introduce el código con el teclado numérico, así que activa primero el teclado numérico (Bloq Num).\n\n2. La correspondencia idioma -> página de códigos ANSI se consulta en el signo de interrogación dentro de un círculo junto al juego de caracteres. El chino simplificado, el chino tradicional, el japonés y el coreano usan la misma página de códigos para ANSI y OEM, así que basta con elegir la plantilla OEM. Alt Code no funciona si el ACP del host es 65001 (UTF-8).\n\n3. Con cero inicial esta es la variante ANSI del Alt Code nativo de Windows (sin cero inicial es la variante OEM).\n\n4. Con Rime para chino tradicional, un cero inicial significa Big5 y sin cero inicial, GBK.</string>
+    <string name="template_preset_richedit_alt_x_description">Cómo usar: abrir el punto de entrada de un programa compatible con RichEdit -> ajustar el método de entrada (chino simplificado, chino tradicional, japonés, coreano: usar el modo inglés) -> escribir el texto en el cuadro de texto y enviarlo (la plantilla teclea u+ y el código hex, y al final pulsa Alt+X)\n\nNotas:\n\nAlt+X es la conversión en línea integrada en RichEdit (el motor de texto de Word). No hace falta revisar la página de códigos ni cambiar el conjunto de caracteres, y el teclado numérico no se usa.\n\nCon el cursor justo detrás de un código hex, al pulsarlo el código se convierte en el carácter en su sitio; pero como admite códigos de longitud variable, para convertir solo ese fragmento hay que seleccionar el texto o teclear antes u+ (el u+ de esta plantilla existe para eso, y al convertir se borra también el prefijo).\n\nSolo funciona en anfitriones RichEdit, consultable por nombre de programa:\nCompatible: todas las versiones de Word, el cuerpo del correo de Outlook, OneNote, el Bloc de notas de Windows 11, WordPad (eliminado en Windows 11 24H2), los cuadros de confirmación de TortoiseSVN / Git;\nOtros: no en Excel, navegadores, VS Code ni en los cuadros de texto normales de PowerPoint (en PPT solo el editor de ecuaciones). El Word francés usa Alt+C.</string>
+    <string name="template_preset_macos_hex_description">Cómo usar: cambiar la fuente de entrada actual a Unicode Hex Input (Ajustes del sistema -> Teclado) -> escribir el texto en el cuadro de texto y enviarlo (la plantilla mantiene Option pulsado, teclea 4 dígitos hex y suelta Option para que aparezca el carácter)\n\nNotas:\n\n1. El código debe rellenarse con ceros hasta 4 dígitos: esta fuente de entrada solo acepta 4 dígitos hex por llamada, así que el marcador de código de la plantilla lleva pad=4; lo más corto recibe ceros a la izquierda, por ejemplo 中 es 4E2D y A debe escribirse 0041; sin ese relleno los dígitos valen para otra posición de código.\n\n2. El conjunto de caracteres es UTF-16 y no conviene cambiarlo: los caracteres fuera del BMP (emoji, etc.) se dividen en dos llamadas Option+xxxx, una por unidad de código UTF-16, y macOS une los dos suplentes en un solo carácter: 😀 es D83D y DE00, dos llamadas. Con Unicode se enviarían 5 dígitos hex, que esta fuente de entrada no acepta.\n\n3. Hace falta poner antes la fuente de entrada en Unicode Hex Input; con una distribución de teclado normal, Option solo escribe símbolos. Ese cambio lo hace el usuario (la plantilla no lo hace); después conviene volver a la fuente de antes, o los atajos Option+ número del día a día quedarán ocupados.\n\n4. Esta plantilla no está verificada en una máquina real: no había ningún dispositivo macOS a mano, así que los tiempos de tecla pueden variar según la versión del sistema. Si no hace nada, prueba primero Option+4E2D a mano en el anfitrión y compáralo con los tiempos de la plantilla (eso significa el unverified del nombre).</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">Cómo usar: en el anfitrión no hace falta configurar nada, solo escribir el texto en el cuadro de texto y enviarlo (la plantilla pulsa Ctrl+Shift+U y suelta todo, teclea los dígitos hex y al final confirma con el espacio)\n\nNotas:\n\n1. Esta secuencia se puede pulsar de dos formas y esta plantilla usa la discreta: pulsar Ctrl+Shift+U y soltarlo todo de inmediato (el sistema muestra entonces una u subrayada), teclear los dígitos hex y confirmar con el espacio. La otra, la sostenida, mantiene Ctrl+Shift pulsado, teclea u y los dígitos y se sueltan al final para confirmar de forma automática: en ese caso el momento de confirmar depende del anfitrión y el dispositivo no puede saberlo, así que la plantilla no la usa.\n\n2. El conjunto de caracteres es Unicode y no hay que cambiarlo: se escriben de 1 a 6 dígitos hex, no hace falta rellenar con ceros ni dividir en pares suplentes UTF-16 como en macOS; los caracteres fuera del BMP (emoji, etc.) entran de una vez.\n\n3. El anfitrión necesita un marco de método de entrada de escritorio (GTK / IBus / Fcitx); el Linux de escritorio y ChromeOS ya lo traen, así que funciona sin más. Algunos programas se quedan con este atajo y en ellos no funciona.\n\n4. La tecla de confirmación es el espacio; Intro también vale. Para usar Intro, cambia el último paso de la plantilla a tap Enter.\n\n5. Tras el atajo hay que dejar un momento para que el método de entrada asiente su estado interno, o los primeros dígitos hex entrarán en el cuadro de texto como letras normales. Los 50 milisegundos de intervalo entre teclas del encabezado de la plantilla son ese margen; no conviene reducirlos.</string>
+    <string name="template_host_layout_us_notice">El teclado del anfitrión no es una distribución US: las teclas escribirán otros caracteres. Antes de enviar, cambia el anfitrión a un teclado US (Windows) o añade un método de entrada de teclado US (Linux); el Unicode Hex Input de macOS ya es US.</string>
+    <string name="template_host_layout_english_notice">Las teclas de letras del teclado del anfitrión no son letras latinas (coreano, japonés y similares): antes de enviar, cambia al modo inglés (alfanumérico); en ese modo las 26 teclas de letras coinciden con un teclado US.</string>
+    <string name="template_send_unencodable_title">Hay un carácter que no se puede codificar</string>
+    <string name="template_send_unencodable_text">El carácter %1$d «%2$s» (U+%3$s) no se puede codificar con el conjunto de caracteres %4$s; al enviarlo se perdería. Revisa el conjunto de caracteres o la ayuda de al lado, o si el texto es incorrecto.</string>
+    <string name="template_send_anyway">Enviar de todos modos</string>
+    <string name="template_preview_unencodable">En la muestra hay un carácter que no se puede codificar: «%1$s» (U+%2$s) no se puede codificar con %3$s y se omite al expandir.</string>
+    <string name="template_delete_confirm">¿Eliminar la plantilla «%1$s»?</string>
+    <string name="template_save_failed">No se pudo guardar la plantilla:</string>
+    <string name="template_load_error_title">Errores al cargar plantillas</string>
+    <string name="template_load_error_desc">Estas plantillas tienen errores. Ábrelas en el editor para corregirlas:</string>
+    <string name="template_load_error_item">%1$s (%2$d error(es))</string>
+    <string name="template_send_blocked">La plantilla aún no puede escribir texto: corrígela antes de enviar</string>
+    <string name="template_card_summary">%1$s · base %2$d · %3$d pasos</string>
+    <string name="template_expand_summary">%1$d pasos · %2$d tramas · ~%3$d ms</string>
+    <string name="template_editor_title">Editar plantilla</string>
+    <string name="template_empty_steps">Aún no hay pasos. Usa «Añadir paso» para crear uno.</string>
+    <string name="template_step_summary">%1$d pasos · mantener %2$d ms · intervalo %3$d ms</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">Parámetros de la plantilla</string>
+    <string name="template_header_summary">%1$s · base %2$d · %3$d / %4$d / %5$d ms</string>
+    <string name="template_header_charset">Juego de caracteres</string>
+    <string name="charset_hint_title">Juegos de caracteres y alias</string>
+    <string name="charset_hint_desc">Enfrente figura el juego de caracteres que usa cada idioma en Windows. Escribe en la plantilla el nombre canónico (el que está en negrita y monoespaciado); los alias de debajo también se aceptan.</string>
+    <string name="charset_hint_limits">Nota: la mayoría de los conjuntos de caracteres no contienen todo Unicode y los caracteres que faltan no se pueden enviar (se avisa antes de enviar); además, algunos conjuntos usan posiciones distintas para el mismo carácter (windows-1252 vs IBM850, GBK vs Big5), así que elegir la página equivocada escribe otros caracteres. Para cubrirlo todo, usa Unicode o UTF-16.</string>
+    <string name="charset_word_alt_code_hint">En Word usa esta opción (se sobrescribe Alt Code)</string>
+    <string name="charset_lang_gbk">Chino simplificado (ansi/oem)</string>
+    <string name="charset_lang_big5">Chino tradicional (ansi/oem)</string>
+    <string name="charset_lang_windows_31j">Japonés (ansi/oem)</string>
+    <string name="charset_lang_windows_949">Coreano (ansi/oem)</string>
+    <string name="charset_lang_windows_1252">Inglés · español · francés · portugués · alemán (ansi)</string>
+    <string name="charset_lang_ibm437">Inglés (EE. UU.) (oem)</string>
+    <string name="charset_lang_ibm850">Inglés (Reino Unido / internacional) · español · francés · portugués · alemán (oem)</string>
+    <string name="charset_lang_windows_1251">Ruso (ansi)</string>
+    <string name="charset_lang_ibm866">Ruso (oem)</string>
+    <string name="charset_lang_windows_1256">Árabe (ansi)</string>
+    <string name="charset_lang_ibm720">Árabe (oem)</string>
+    <string name="charset_lang_unicode">Todos los idiomas modernos (unicode) · puntos de código completos (UTF-32 sin ceros de relleno, 1-6 dígitos)</string>
+    <string name="charset_lang_utf16">Los caracteres del plano suplementario se envían en 2 unidades (unidades de código UTF-16)</string>
+    <string name="charset_lang_us_ascii">Inglés (ascii) · Hindi (sin página de códigos ansi/oem)</string>
+    <string name="template_header_radix">Base</string>
+    <string name="template_header_template_gap">Intervalo de la plantilla</string>
+    <string name="template_header_key_hold">Mantener pulsado</string>
+    <string name="template_header_key_gap">Intervalo entre teclas</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">Teclas</string>
+    <string name="template_modifier_section">Modificadores: la próxima acción será una combinación</string>
+    <string name="template_key_section">Teclas: un toque añade un paso «tap»</string>
+    <string name="template_add">Añadir</string>
+    <string name="template_add_delay">Retardo</string>
+    <string name="template_add_code">Marcador de código</string>
+    <string name="template_add_custom">Tecla personalizada</string>
+    <string name="template_custom_key_title">Tecla personalizada</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">Editar paso</string>
+    <string name="template_step_key">Nombre de la tecla</string>
+    <string name="template_step_duration">Duración (ms)</string>
+    <string name="template_step_pad">Rellenar a N dígitos</string>
+    <string name="template_step_enable">Activado</string>
+    <string name="template_step_code_hint">El tiempo de pulsación y el intervalo de cada dígito salen de los parámetros «mantener pulsado / intervalo» de la plantilla.</string>
+    <string name="template_step_keys">Origen de los dígitos</string>
+    <string name="template_keys_numpad">Teclado numérico</string>
+    <string name="template_keys_main">Teclado principal</string>
+    <string name="template_step_split">Dividir</string>
+    <string name="template_step_chord_hint">El grupo se pulsa y se suelta junto; «Dividir» da las etapas separadas equivalentes.</string>
+    <string name="template_step_split_hint">Dividir convierte «tap» en «pulsar» + «soltar», así la tecla queda pulsada hasta el paso de soltar correspondiente.</string>
+    <string name="template_step_modifier_hint">Tecla modificadora: este paso se encarga de pulsarla y soltarla.</string>
+    <string name="template_step_unknown_hint">No se reconoció esta línea. Vuelve a escribirla como un solo paso válido, por ejemplo «down Alt», «sleep 20» o «&lt;code&gt;».</string>
+    <string name="template_step_line">Línea</string>
+    <string name="template_status_ok">Sintaxis correcta</string>
+    <string name="template_status_error">%1$d error(es)</string>
+    <string name="template_status_warning">%1$d aviso(s)</string>
+    <string name="template_preview">Vista previa ampliada</string>
+    <string name="template_preview_empty">No hay nada que previsualizar</string>
+    <string name="template_preview_sample">Ejemplo</string>
+    <string name="template_preview_test">Probar</string>
+    <string name="template_preview_header_action">Acción</string>
+    <string name="template_preview_header_report">Modificador / Tecla</string>
+    <string name="template_preview_header_duration">Mantener</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">La plantilla está vacía</string>
+    <string name="template_error_missing_code">Falta el marcador &lt;code&gt;: la plantilla no sirve para escribir texto</string>
+    <string name="template_warn_code_disabled">&lt;code&gt; está desactivado: la plantilla no sirve para escribir texto</string>
+    <string name="template_error_unknown_key">Nombre de tecla desconocido «%1$s»</string>
+    <string name="template_error_unknown_key_suggest">Nombre de tecla desconocido «%1$s», ¿querías escribir «%2$s»?</string>
+    <string name="template_error_invalid_number">Número no válido «%1$s»</string>
+    <string name="template_error_invalid_value">Valor no válido «%1$s»</string>
+    <string name="template_error_unclosed_placeholder">Falta «&gt;» después de «&lt;»</string>
+    <string name="template_error_unknown_step">Paso no reconocido «%1$s»</string>
+    <string name="template_error_unknown_charset">Juego de caracteres no admitido «%1$s»</string>
+    <string name="template_error_invalid_radix">La base debe ser 10 o 16, valor actual «%1$s»</string>
+    <string name="template_error_unbalanced_key">La tecla «%1$s» se pulsa y nunca se suelta: se queda pulsada</string>
+    <string name="template_warn_unknown_param">Parámetro desconocido «%1$s»</string>
+    <string name="template_warn_duplicate_code">Una plantilla envía exactamente un carácter; varios marcadores &lt;code&gt; reenvían la misma secuencia de dígitos</string>
+    <string name="template_warn_multiple_held_keys">Hay varias teclas normales pulsadas a la vez (%1$s), pero el informe del teclado solo admite una</string>
+    <string name="template_warn_small_delay">El retardo de %1$s ms es muy corto y puede comprimirse por Bluetooth</string>
+    <string name="template_warn_small_delay_header">El tiempo de pulsación o el intervalo de la plantilla (%1$s ms) es inferior a 10 ms y puede comprimirse por Bluetooth</string>
+    <string name="template_warn_ignored_attr">El atributo «%1$s» ya no tiene efecto: el ritmo de las teclas sigue los parámetros de la plantilla y se elimina al guardar</string>
+</resources>

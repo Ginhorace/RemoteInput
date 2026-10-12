@@ -1,0 +1,240 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="hi">
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">रिमोट कंट्रोल</string>
+    <string name="shortcut_connect_to">%1$s से कनेक्ट करें</string>
+
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">ब्लूटूथ अनुमति का अनुरोध करें</string>
+    <string name="turn_on_bluetooth">ब्लूटूथ चालू करें</string>
+    <string name="scanning">खोज जारी है…</string>
+    <string name="bluetooth_ready">ब्लूटूथ तैयार</string>
+    <string name="stop_scanning">खोज रोकें</string>
+    <string name="start_scanning">खोज शुरू करें</string>
+    <string name="app_description">यह ऐप ब्लूटूथ डिवाइस खोजने और कनेक्ट करने के लिए है।\n\nविशेषताएँ:\n- आस-पास के ब्लूटूथ डिवाइस खोजें\n- सहेजे गए ब्लूटूथ डिवाइस दिखाएँ\n- ब्लूटूथ डिवाइस कनेक्शन का समर्थन\n\nऐप की सुविधाएँ इस्तेमाल करने के लिए ऊपर का बटन दबाकर ब्लूटूथ अनुमति दें।</string>
+    <string name="saved_devices">सहेजे गए डिवाइस</string>
+    <string name="nearby_devices">आस-पास के डिवाइस</string>
+    <string name="click_to_scan">डिवाइस खोजने के लिए «खोज शुरू करें» दबाएँ</string>
+    <string name="connect">कनेक्ट करें</string>
+    <string name="bluetooth_device">ब्लूटूथ डिवाइस</string>
+    <string name="unknown_device">अज्ञात डिवाइस</string>
+
+    <!-- ControlActivity -->
+    <string name="back">वापस</string>
+    <string name="connected">कनेक्टेड</string>
+    <string name="connecting">कनेक्ट हो रहा है…</string>
+    <string name="disconnecting">डिस्कनेक्ट हो रहा है…</string>
+    <string name="disconnected">कनेक्ट नहीं है</string>
+    <string name="initializing">आरंभ हो रहा है…</string>
+    <string name="registering">पंजीकरण हो रहा है…</string>
+    <string name="init_failed">आरंभ नहीं हो सका</string>
+    <string name="left_button">बायाँ बटन</string>
+    <string name="right_button">दायाँ बटन</string>
+    <string name="input_text">टेक्स्ट लिखें…</string>
+    <string name="send">भेजें</string>
+    <string name="sending">भेजा जा रहा है…</string>
+    <string name="sending_text_hint">टेक्स्ट भेजा जा रहा है, कृपया प्रतीक्षा करें…</string>
+    <string name="ok">ठीक है</string>
+    <string name="disconnect">डिस्कनेक्ट करें</string>
+    <string name="confirm_disconnect">क्या आप वाकई ब्लूटूथ कनेक्शन डिस्कनेक्ट करना चाहते हैं?</string>
+    <string name="cancel">रद्द करें</string>
+
+    <!-- कनेक्शन बना हुआ: फ़ोरग्राउंड सेवा की स्थायी सूचना, स्कैन स्क्रीन का कार्ड, वापस जाने पर संदेश और डिवाइस बदलने की पुष्टि -->
+    <string name="connection_kept_title">कनेक्शन बना हुआ है</string>
+    <string name="notification_channel_name">बना हुआ कनेक्शन</string>
+    <string name="notification_channel_description">अन्य ऐप इस्तेमाल करते समय बना रहने वाला ब्लूटूथ कनेक्शन दिखाता है।</string>
+    <string name="notification_text_connecting">%1$s से कनेक्ट हो रहा है…</string>
+    <string name="notification_text_connected">%1$s से कनेक्टेड</string>
+    <string name="notification_action_open">कंट्रोल पर वापस जाएँ</string>
+    <string name="connection_kept_toast">कनेक्शन बैकग्राउंड में बना हुआ है</string>
+    <string name="scanner_switch_title">डिवाइस बदलें?</string>
+    <string name="scanner_switch_text">अभी %1$s से कनेक्टेड है। इसे डिस्कनेक्ट करके %2$s से कनेक्ट करें?</string>
+    <string name="scanner_switch_confirm">बदलें</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">कीबोर्ड मोड</string>
+    <string name="mode_touchpad">टचपैड मोड</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">मुख्य</string>
+    <string name="keyboard_page_function">फ़ंक्शन</string>
+    <string name="keyboard_page_numpad">नंबर पैड</string>
+
+    <!-- होस्ट Num Lock को नज़रअंदाज़ करता है: नंबर पैड काम न करे -->
+    <string name="keyboard_numpad_warning">हो सकता है कि कनेक्ट किया गया डिवाइस नंबर पैड का समर्थन न करता हो। नंबर पैड पर निर्भर टेम्पलेट इनपुट (Alt + अंक) काम न करे।</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">टचपैड बटन</string>
+
+    <!-- Settings -->
+    <string name="settings">सेटिंग्स</string>
+    <string name="theme_settings">थीम सेटिंग्स</string>
+    <string name="theme_mode">थीम मोड</string>
+    <string name="theme_mode_system">सिस्टम के अनुसार</string>
+    <string name="theme_mode_light">हल्का</string>
+    <string name="theme_mode_dark">गहरा</string>
+    <string name="hue_scheme">रंग योजना</string>
+    <string name="language_settings">भाषा सेटिंग्स</string>
+    <string name="language_mode">भाषा</string>
+    <string name="keyboard_settings">कीबोर्ड</string>
+    <string name="keyboard_layout">होस्ट कीबोर्ड लेआउट</string>
+    <string name="keyboard_layout_follow_ui">ऐप की भाषा का पालन करें</string>
+    <string name="keyboard_layout_hint">ऐप कनेक्ट किए गए डिवाइस का लेआउट नहीं पढ़ सकता, इसलिए उससे मेल खाता लेआउट चुनें. दोनों अलग होने पर कुंजियाँ गलत अक्षर लिखेंगी.</string>
+    <string name="keyboard_layout_send_hint">टेम्पलेट भेजते समय ध्यान दें: टेम्पलेट US कुंजी-स्थान भेजते हैं। होस्ट का लेआउट US न हो (फ़्रेंच AZERTY, जर्मन QWERTZ, रूसी, अरबी आदि) तो पहले US कीबोर्ड पर बदलें; कोरियाई, जापानी आदि में अक्षर कुंजियाँ बदली हुई हैं पर अंग्रेज़ी मोड में US से मेल खाती हैं, इसलिए अंग्रेज़ी (अल्फ़ान्यूमेरिक) मोड पर जाना काफ़ी है।</string>
+    <string name="charset_settings">कैरेक्टर सेट</string>
+    <string name="charset_settings_hint">बंद करने पर यह सिर्फ़ टेम्पलेट संपादन की सूची से हटता है; जो टेम्पलेट इसे पहले से इस्तेमाल कर रहे हैं वे चलते रहेंगे.</string>
+    <string name="charset_add_label">कैरेक्टर सेट जोड़ें</string>
+    <string name="charset_add">जोड़ें</string>
+    <string name="charset_add_ok">“%1$s” जोड़ा गया</string>
+    <string name="charset_add_duplicate">सूची में पहले से “%1$s” के रूप में मौजूद है</string>
+    <string name="charset_add_not_found">इस डिवाइस पर “%1$s” उपलब्ध नहीं है</string>
+    <string name="charset_add_blank">कैरेक्टर सेट का नाम दर्ज करें</string>
+    <string name="charset_delete">हटाएँ</string>
+    <string name="charset_delete_confirm">कैरेक्टर सेट “%1$s” हटाएँ? इसे इस्तेमाल करने वाले टेम्पलेट असमर्थित कैरेक्टर सेट बताएँगे.</string>
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">एज़्योर</string>
+    <string name="hue_teal">टील</string>
+    <string name="hue_violet">वायलेट</string>
+    <string name="hue_amber">एम्बर</string>
+    <string name="hue_rose">रोज़</string>
+    <string name="hue_graphite">ग्रेफाइट</string>
+
+    <!-- Languages -->
+    <string name="language_system">सिस्टम के अनुसार</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">सुझाव</string>
+
+    <!-- Errors -->
+    <string name="error_title">त्रुटि</string>
+    <string name="error_unsupported">इस फ़ोन का सिस्टम ब्लूटूथ HID डिवाइस प्रोफ़ाइल सक्षम नहीं करता। सिस्टम सेटिंग्स जाँचें।</string>
+    <string name="error_device_not_ready">HID सेवा तैयार नहीं है</string>
+    <string name="error_register_failed">HID ऐप पंजीकृत नहीं हो सका</string>
+    <string name="error_register_exception">HID ऐप पंजीकृत नहीं हो सका: %1$s</string>
+    <string name="error_pairing_failed">पेयरिंग विफल रही या रद्द कर दी गई</string>
+    <string name="error_connect_failed">कनेक्शन विफल</string>
+    <string name="error_connect_exception">कनेक्शन विफल: %1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">टेम्पलेट मोड</string>
+    <string name="template_title">टेम्पलेट</string>
+    <string name="template_new">नया</string>
+    <string name="template_edit">संपादित करें</string>
+    <string name="template_copy">कॉपी करें</string>
+    <string name="template_copy_name">%1$s की कॉपी</string>
+    <string name="template_delete">हटाएँ</string>
+    <string name="template_save">सहेजें</string>
+    <string name="template_name">टेम्पलेट का नाम</string>
+    <string name="template_description">टेम्पलेट विवरण</string>
+    <string name="template_description_label">"विवरण: "</string>
+    <string name="template_description_empty">जोड़ने के लिए टैप करें</string>
+    <string name="template_description_hint">यह टेम्पलेट किस लिए है और होस्ट पर क्या सेट करना है</string>
+    <string name="template_empty_list">अभी कोई टेम्पलेट नहीं है। बनाने के लिए «नया» दबाएँ।</string>
+    <string name="template_preset_title">टेम्पलेट चुनें</string>
+    <string name="template_preset_oem_alt_code_description">उपयोग का तरीका: अपने वातावरण के अनुसार कैरेक्टर सेट बदलें (डिफ़ॉल्ट कैरेक्टर सेट UI भाषा के अनुसार होता है, Word के लिए उसे Unicode में बदलें) -> नंबर पैड चालू करें -> अपनी भाषा के IME पर जाएँ (सरलीकृत/पारंपरिक चीनी, जापानी, कोरियाई: US कीबोर्ड पर जाएँ) -> टेक्स्ट बॉक्स में टेक्स्ट लिखकर भेजें\n\nनोट:\n\n1. डिफ़ॉल्ट कैरेक्टर सेट UI भाषा के अनुसार होता है और वह उस भाषा का होस्ट OEM कोड पेज होता है (सरलीकृत चीनी GBK, पारंपरिक चीनी Big5, जापानी windows-31j, कोरियाई windows-949, अंग्रेज़ी: अमेरिका में IBM437, ब्रिटेन/अंतरराष्ट्रीय में IBM850 (क्षेत्र का पता न हो तो अमेरिकी पेज), पश्चिमी यूरोपीय भाषाएँ IBM850, रूसी IBM866, अरबी IBM720, हिंदी US-ASCII), यही Windows के दूसरे ऐप में इस्तेमाल होता है; Word में उसे Unicode में बदलें। Alt Code नंबर पैड से कोड लिखता है, इसलिए पहले नंबर पैड चालू करें (Num Lock)।\n\n2. भाषा और OEM कोड पेज का संबंध कैरेक्टर सेट के पास वाले गोल प्रश्नचिह्न आइकन से देख सकते हैं। सरलीकृत और पारंपरिक चीनी, जापानी और कोरियाई में ANSI और OEM के लिए एक ही कोड पेज है, इसलिए सीधे OEM टेम्पलेट चुनें। होस्ट का OEMCP 65001 (UTF-8) हो तो Alt Code काम नहीं करता।\n\n3. बिना आगे 0 के यह Windows के मूल Alt Code तंत्र का OEM रूप है (आगे 0 लगाने पर ANSI रूप)।\n\n4. सरलीकृत/पारंपरिक चीनी, जापानी या कोरियाई के Microsoft IME के साथ US कीबोर्ड (या पुराने संस्करण का अनुकूलता मोड / किसी तीसरे पक्ष का IME) पर जाएँ, क्योंकि ये IME OEM इनपुट को IBM437 और ANSI को windows-1252 पर तय कर देते हैं, और Word दो अक्षर लिख देता है।</string>
+    <string name="template_preset_ansi_alt_code_description">उपयोग का तरीका: अपने वातावरण के अनुसार कैरेक्टर सेट बदलें (डिफ़ॉल्ट कैरेक्टर सेट UI भाषा के अनुसार होता है, Word के लिए उसे Unicode में बदलें) -> नंबर पैड चालू करें -> अपनी भाषा के IME पर जाएँ (सरलीकृत/पारंपरिक चीनी, जापानी, कोरियाई: OEM संस्करण की सलाह है) -> टेक्स्ट बॉक्स में टेक्स्ट लिखकर भेजें\n\nनोट:\n\n1. डिफ़ॉल्ट कैरेक्टर सेट UI भाषा के अनुसार होता है और वह उस भाषा का होस्ट ANSI कोड पेज होता है (सरलीकृत चीनी GBK, पारंपरिक चीनी Big5, जापानी windows-31j, कोरियाई windows-949, अंग्रेज़ी और पश्चिमी यूरोपीय भाषाएँ windows-1252, रूसी windows-1251, अरबी windows-1256, हिंदी US-ASCII), यही Windows के दूसरे ऐप में इस्तेमाल होता है; Word में उसे Unicode में बदलें। Alt Code नंबर पैड से कोड लिखता है, इसलिए पहले नंबर पैड चालू करें (Num Lock)।\n\n2. भाषा और ANSI कोड पेज का संबंध कैरेक्टर सेट के पास वाले गोल प्रश्नचिह्न आइकन से देख सकते हैं। सरलीकृत और पारंपरिक चीनी, जापानी और कोरियाई में ANSI और OEM के लिए एक ही कोड पेज है, इसलिए सीधे OEM टेम्पलेट चुनें। होस्ट का ACP 65001 (UTF-8) हो तो Alt Code काम नहीं करता।\n\n3. आगे 0 लगाने पर यह Windows के मूल Alt Code का ANSI रूप है (बिना 0 के OEM रूप)।\n\n4. पारंपरिक चीनी में Rime के साथ आगे 0 लगाने पर कैरेक्टर सेट Big5 और बिना 0 के GBK होता है।</string>
+    <string name="template_preset_richedit_alt_x_description">उपयोग: RichEdit समर्थित प्रोग्राम का इनपुट स्थान खोलें -> इनपुट विधि समायोजित करें (सरलीकृत चीनी, पारंपरिक चीनी, जापानी, कोरियाई: अंग्रेज़ी मोड का प्रयोग करें) -> टेक्स्ट बॉक्स में टेक्स्ट लिखकर भेजें (टेम्पलेट u+ और हेक्स कोड टाइप करता है, अंत में Alt+X दबाता है)\n\nनोट्स:\n\nAlt+X, RichEdit (Word का टेक्स्ट इंजन) में मौजूद इनलाइन रूपांतरण है। कोड पेज जाँचने या कैरेक्टर सेट बदलने की ज़रूरत नहीं, और न्यूमेरिक कीपैड भी इस्तेमाल नहीं होता।\n\nकर्सर सीधे हेक्स कोड के बाद हो तो दबाने पर कोड वहीं कैरेक्टर बन जाता है; पर कोड की लंबाई बदलती है, इसलिए सिर्फ़ उसी हिस्से को ठीक-ठीक बदलने के लिए टेक्स्ट चुनें या पहले u+ टाइप करें (इस टेम्पलेट का u+ इसी लिए है, रूपांतरण के साथ प्रीफ़िक्स भी हट जाता है)।\n\nसिर्फ़ RichEdit होस्ट में काम करता है, प्रोग्राम के नाम से खोज सकते हैं:\nसमर्थित: Word के सभी संस्करण, Outlook का मेल बॉडी, OneNote, Windows 11 नोटपैड, WordPad (Windows 11 24H2 में हटा), TortoiseSVN / Git के कमिट डायलॉग;\nअन्य: Excel, ब्राउज़र, VS Code या PowerPoint के सामान्य टेक्स्ट बॉक्स में नहीं (PPT में सिर्फ़ समीकरण संपादक)। फ़्रेंच Word में Alt+C है।</string>
+    <string name="template_preset_macos_hex_description">उपयोग: पहले इनपुट स्रोत को Unicode Hex Input पर बदलें (सिस्टम सेटिंग्स -> कीबोर्ड) -> टेक्स्ट बॉक्स में टेक्स्ट लिखकर भेजें (टेम्पलेट Option दबाए रखता है, 4 हेक्स अंक टाइप करता है, फिर Option छोड़कर अक्षर दिखाता है)\n\nनोट्स:\n\n1. कोड को 4 अंकों तक शून्य से भरना ज़रूरी है: यह इनपुट स्रोत एक बार में ठीक 4 हेक्स अंक लेता है, इसलिए टेम्पलेट के कोड प्लेसहोल्डर में pad=4 है; कम अंकों वाले मानों के आगे शून्य लग जाते हैं, जैसे 中 यानी 4E2D और A को 0041 लिखना होगा; भरने के बिना ये अंक किसी और कोड स्थान के मायने रखते हैं।\n\n2. कैरेक्टर सेट UTF-16 है और इसे बदलना ठीक नहीं: बीएमपी से बाहर के कैरेक्टर (इमोजी आदि) UTF-16 कोड इकाई के हिसाब से दो Option+xxxx कॉल में बँटते हैं और macOS खुद दोनों सरोगेट को एक अक्षर में जोड़ देता है: 😀 यानी D83D और DE00, दो कॉल। Unicode करने पर 5 हेक्स अंक जाएँगे, जो यह इनपुट स्रोत नहीं लेता।\n\n3. पहले इनपुट स्रोत को Unicode Hex Input करना ज़रूरी है; आम कीबोर्ड लेआउट में Option सिर्फ़ प्रतीक लिखता है। यह बदलाव उपयोगकर्ता करे (टेम्पलेट नहीं करता); काम खत्म होने पर पुराना स्रोत वापस लगाएँ, वरना रोज़ के Option+अंक शॉर्टकट बँध जाएँगे।\n\n4. यह टेम्पलेट असली मशीन पर जाँचा नहीं गया: पास कोई macOS डिवाइस नहीं था, इसलिए की टाइमिंग सिस्टम के संस्करण के साथ बदल सकती है। कुछ न हो तो पहले होस्ट पर हाथ से Option+4E2D आज़माएँ और टेम्पलेट की टाइमिंग से मिलाएँ (नाम का unverified यही कहता है)।</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">उपयोग: होस्ट पर कुछ सेट करने की ज़रूरत नहीं, टेक्स्ट बॉक्स में टेक्स्ट लिखकर भेज दें (टेम्पलेट पहले Ctrl+Shift+U दबाकर सब छोड़ देता है, फिर हेक्स अंक एक-एक करके टाइप करता है और अंत में स्पेस से पुष्टि करता है)\n\nनोट्स:\n\n1. यह क्रम दबाने के दो तरीके हैं और यह टेम्पलेट अलग-अलग वाला तरीका इस्तेमाल करता है: Ctrl+Shift+U दबाकर तुरंत सब छोड़ दें (तब सिस्टम रेखांकित u दिखाता है), फिर हेक्स अंक टाइप करें और अंत में स्पेस से पुष्टि करें। दूसरा, यानी दबाए रखने वाला तरीका, Ctrl+Shift दबाए रखता है, u और अंक टाइप करता है और छोड़ते ही अपने आप पुष्टि हो जाती है - ऐसे में पुष्टि का समय होस्ट पर निर्भर रहता है और डिवाइस उसे जान नहीं सकता, इसलिए टेम्पलेट उसे इस्तेमाल नहीं करता।\n\n2. कैरेक्टर सेट Unicode है और इसे बदलने की ज़रूरत नहीं: 1 से 6 हेक्स अंक लिखें, शून्य से भरने की ज़रूरत नहीं, और macOS की तरह UTF-16 सरोगेट पेयर में दो बार बाँटने की भी ज़रूरत नहीं; बीएमपी से बाहर के कैरेक्टर (इमोजी आदि) एक ही बार में चले जाते हैं।\n\n3. होस्ट पर डेस्कटॉप इनपुट विधि फ़्रेमवर्क (GTK / IBus / Fcitx) होना चाहिए; डेस्कटॉप Linux और ChromeOS में यह पहले से होता है, इसलिए सीधे काम करता है। कुछ प्रोग्राम इस शॉर्टकट को खुद ले लेते हैं, उनमें यह काम नहीं करेगा।\n\n4. पुष्टि के लिए स्पेस इस्तेमाल होता है; Enter भी उतना ही काम करता है। Enter चाहिए तो टेम्पलेट का आख़िरी चरण tap Enter कर दें।\n\n5. शॉर्टकट के बाद इनपुट विधि को अपनी आंतरिक स्थिति सँभालने का थोड़ा समय दें, वरना शुरू के कुछ हेक्स अंक सामान्य अक्षरों की तरह टेक्स्ट बॉक्स में चले जाएँगे। टेम्पलेट के हेडर में 50 मिलीसेकंड का की अंतराल यही समय देता है, इसे घटाना ठीक नहीं।</string>
+    <string name="template_host_layout_us_notice">होस्ट का कीबोर्ड US लेआउट नहीं है: दबाए गए की और अक्षर देंगे। भेजने से पहले होस्ट को US कीबोर्ड पर बदलें (Windows) या US कीबोर्ड इनपुट विधि जोड़ें (Linux); macOS का Unicode Hex Input पहले से US पर आधारित है।</string>
+    <string name="template_host_layout_english_notice">होस्ट कीबोर्ड की अक्षर कुंजियाँ लैटिन अक्षर नहीं हैं (कोरियाई, जापानी आदि): भेजने से पहले अंग्रेज़ी (अल्फ़ान्यूमेरिक) मोड पर जाएँ; उस मोड में 26 अक्षर कुंजियाँ US कीबोर्ड से मेल खाती हैं।</string>
+    <string name="template_send_unencodable_title">एक अक्षर एनकोड नहीं हो सकता</string>
+    <string name="template_send_unencodable_text">%1$d वाँ अक्षर «%2$s» (U+%3$s) कैरेक्टर सेट %4$s से एनकोड नहीं हो सकता; भेजने पर यह अक्षर छूट जाएगा। कैरेक्टर सेट या उसके पास की सहायता देखें, या टेक्स्ट ग़लत है या नहीं, जाँचें।</string>
+    <string name="template_send_anyway">फिर भी भेजें</string>
+    <string name="template_preview_unencodable">नमूने में एक अक्षर एनकोड नहीं हो सकता: «%1$s» (U+%2$s) को %3$s से एनकोड नहीं किया जा सकता और विस्तार में छोड़ दिया जाता है।</string>
+    <string name="template_delete_confirm">टेम्पलेट «%1$s» हटाएँ?</string>
+    <string name="template_save_failed">टेम्पलेट सहेजा नहीं जा सका:</string>
+    <string name="template_load_error_title">टेम्पलेट लोड करने में त्रुटियाँ</string>
+    <string name="template_load_error_desc">इन टेम्पलेट में त्रुटियाँ हैं। ठीक करने के लिए इन्हें एडिटर में खोलें:</string>
+    <string name="template_load_error_item">%1$s (%2$d त्रुटि)</string>
+    <string name="template_send_blocked">टेम्पलेट अभी टेक्स्ट नहीं लिख सकता — ठीक करने के बाद भेजें</string>
+    <string name="template_card_summary">%1$s · आधार %2$d · %3$d चरण</string>
+    <string name="template_expand_summary">%1$d चरण · %2$d फ़्रेम · ~%3$d ms</string>
+    <string name="template_editor_title">टेम्पलेट संपादित करें</string>
+    <string name="template_empty_steps">अभी कोई चरण नहीं है। बनाने के लिए «चरण जोड़ें» दबाएँ।</string>
+    <string name="template_step_summary">%1$d चरण · दबाए रखें %2$d ms · अंतराल %3$d ms</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">टेम्पलेट पैरामीटर</string>
+    <string name="template_header_summary">%1$s · आधार %2$d · %3$d / %4$d / %5$d ms</string>
+    <string name="template_header_charset">कैरेक्टर सेट</string>
+    <string name="charset_hint_title">कैरेक्टर सेट और उपनाम</string>
+    <string name="charset_hint_desc">सामने वाली ओर वह कैरेक्टर सेट है जो हर भाषा Windows में इस्तेमाल करती है। टेम्पलेट में मानक नाम (मोटा, समान चौड़ाई वाला) लिखें; नीचे दिए उपनाम भी स्वीकार किए जाते हैं।</string>
+    <string name="charset_hint_limits">ध्यान दें: ज़्यादातर कैरेक्टर सेट पूरे Unicode को नहीं रखते, और जो अक्षर नहीं हैं वे भेजे नहीं जा सकते (भेजने से पहले सूचना मिलती है); साथ ही कुछ सेट एक ही अक्षर के लिए अलग स्थान रखते हैं (windows-1252 vs IBM850, GBK vs Big5), इसलिए ग़लत पेज चुनने पर दूसरे अक्षर लिखे जाएँगे। सब कुछ चाहिए तो Unicode या UTF-16 इस्तेमाल करें।</string>
+    <string name="charset_word_alt_code_hint">Word में यही पंक्ति इस्तेमाल करें (Alt Code बदल दिया जाता है)</string>
+    <string name="charset_lang_gbk">चीनी (सरलीकृत) (ansi/oem)</string>
+    <string name="charset_lang_big5">चीनी (पारंपरिक) (ansi/oem)</string>
+    <string name="charset_lang_windows_31j">जापानी (ansi/oem)</string>
+    <string name="charset_lang_windows_949">कोरियाई (ansi/oem)</string>
+    <string name="charset_lang_windows_1252">अंग्रेज़ी · स्पेनिश · फ़्रेंच · पुर्तगाली · जर्मन (ansi)</string>
+    <string name="charset_lang_ibm437">अंग्रेज़ी (अमेरिका) (oem)</string>
+    <string name="charset_lang_ibm850">अंग्रेज़ी (यूके / अंतर्राष्ट्रीय) · स्पेनिश · फ़्रेंच · पुर्तगाली · जर्मन (oem)</string>
+    <string name="charset_lang_windows_1251">रूसी (ansi)</string>
+    <string name="charset_lang_ibm866">रूसी (oem)</string>
+    <string name="charset_lang_windows_1256">अरबी (ansi)</string>
+    <string name="charset_lang_ibm720">अरबी (oem)</string>
+    <string name="charset_lang_unicode">सभी आधुनिक भाषाएँ (unicode) · पूर्ण कोड पॉइंट (UTF-32 बिना शून्य भराव, 1-6 अंक)</string>
+    <string name="charset_lang_utf16">पूरक प्लेन के अक्षर 2 इकाइयों में भेजे जाते हैं (UTF-16 कोड इकाइयाँ)</string>
+    <string name="charset_lang_us_ascii">अंग्रेज़ी (ascii) · हिंदी (कोई ansi/oem कोड पेज नहीं)</string>
+    <string name="template_header_radix">आधार</string>
+    <string name="template_header_template_gap">टेम्पलेट अंतराल</string>
+    <string name="template_header_key_hold">दबाए रखने का समय</string>
+    <string name="template_header_key_gap">कुंजी अंतराल</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">कुंजियाँ</string>
+    <string name="template_modifier_section">मॉडिफ़ायर: अगली बार जोड़ने पर संयुक्त चरण बनेगा</string>
+    <string name="template_key_section">कुंजियाँ: एक टैप से «tap» चरण जुड़ता है</string>
+    <string name="template_add">जोड़ें</string>
+    <string name="template_add_delay">देरी</string>
+    <string name="template_add_code">कोड प्लेसहोल्डर</string>
+    <string name="template_add_custom">कस्टम कुंजी</string>
+    <string name="template_custom_key_title">कस्टम कुंजी</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">चरण संपादित करें</string>
+    <string name="template_step_key">कुंजी का नाम</string>
+    <string name="template_step_duration">अवधि (मिलीसेकंड)</string>
+    <string name="template_step_pad">N अंकों तक शून्य भरें</string>
+    <string name="template_step_enable">सक्षम</string>
+    <string name="template_step_code_hint">हर अंक का दबाए रखने का समय और अंतराल टेम्पलेट पैरामीटर «दबाए रखें / अंतराल» से आते हैं।</string>
+    <string name="template_step_keys">अंकों का स्रोत</string>
+    <string name="template_keys_numpad">नंबर पैड</string>
+    <string name="template_keys_main">मुख्य कीबोर्ड</string>
+    <string name="template_step_split">विभाजित करें</string>
+    <string name="template_step_chord_hint">समूह एक साथ दबाया और छोड़ा जाता है; «विभाजित करें» से वही चरण अलग-अलग मिलते हैं।</string>
+    <string name="template_step_split_hint">विभाजन «tap» को «दबाएँ» + «छोड़ें» बना देता है, इसलिए कुंजी संबंधित «छोड़ें» चरण तक दबी रहती है।</string>
+    <string name="template_step_modifier_hint">मॉडिफ़ायर कुंजी: दबाना और छोड़ना इसी चरण का काम है।</string>
+    <string name="template_step_unknown_hint">यह पंक्ति पहचानी नहीं गई. इसे एक मान्य चरण के रूप में फिर से लिखें, जैसे “down Alt”, “sleep 20” या “&lt;code&gt;”.</string>
+    <string name="template_step_line">पंक्ति</string>
+    <string name="template_status_ok">सिंटैक्स सही है</string>
+    <string name="template_status_error">%1$d त्रुटि</string>
+    <string name="template_status_warning">%1$d चेतावनी</string>
+    <string name="template_preview">विस्तृत पूर्वावलोकन</string>
+    <string name="template_preview_empty">दिखाने के लिए कुछ नहीं</string>
+    <string name="template_preview_sample">नमूना</string>
+    <string name="template_preview_test">परीक्षण</string>
+    <string name="template_preview_header_action">क्रिया</string>
+    <string name="template_preview_header_report">मॉडिफ़ायर / कुंजी कोड</string>
+    <string name="template_preview_header_duration">दबाए रखें</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">टेम्पलेट खाली है</string>
+    <string name="template_error_missing_code">&lt;code&gt; प्लेसहोल्डर नहीं है: टेम्पलेट से टेक्स्ट नहीं लिखा जा सकता</string>
+    <string name="template_warn_code_disabled">&lt;code&gt; अक्षम है: टेम्पलेट से टेक्स्ट नहीं लिखा जा सकता</string>
+    <string name="template_error_unknown_key">अज्ञात कुंजी नाम «%1$s»</string>
+    <string name="template_error_unknown_key_suggest">अज्ञात कुंजी नाम «%1$s», क्या आप «%2$s» लिखना चाहते थे?</string>
+    <string name="template_error_invalid_number">अमान्य संख्या «%1$s»</string>
+    <string name="template_error_invalid_value">अमान्य मान «%1$s»</string>
+    <string name="template_error_unclosed_placeholder">«&lt;» के बाद «&gt;» नहीं है</string>
+    <string name="template_error_unknown_step">अज्ञात चरण «%1$s»</string>
+    <string name="template_error_unknown_charset">असमर्थित कैरेक्टर सेट «%1$s»</string>
+    <string name="template_error_invalid_radix">आधार 10 या 16 ही हो सकता है, अभी «%1$s» है</string>
+    <string name="template_error_unbalanced_key">कुंजी «%1$s» दबी है और छोड़ी नहीं गई — यह दबी रहेगी</string>
+    <string name="template_warn_unknown_param">अज्ञात पैरामीटर «%1$s»</string>
+    <string name="template_warn_duplicate_code">एक टेम्पलेट ठीक एक वर्ण भेजता है; &lt;code&gt; कई बार लिखने पर वही अंक-शृंखला दोबारा भेजी जाती है</string>
+    <string name="template_warn_multiple_held_keys">एक साथ कई सामान्य कुंजियाँ (%1$s) दबी हैं, पर कीबोर्ड रिपोर्ट में एक ही आ सकती है</string>
+    <string name="template_warn_small_delay">%1$s ms की देरी बहुत कम है और ब्लूटूथ पर सिकुड़ सकती है</string>
+    <string name="template_warn_small_delay_header">टेम्पलेट का दबाए रखने का समय या अंतराल %1$s ms 10 ms से कम है और ब्लूटूथ पर सिकुड़ सकता है</string>
+    <string name="template_warn_ignored_attr">एट्रिब्यूट «%1$s» अब प्रभावी नहीं है: कुंजी की गति अब टेम्पलेट पैरामीटर से तय होती है और सहेजते समय यह हटा दिया जाता है</string>
+</resources>

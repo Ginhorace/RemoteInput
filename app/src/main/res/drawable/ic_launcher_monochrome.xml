@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  RemoteInput 主题图标（Android 13+ 的 <monochrome> 单色层）。
+
+  系统只用它的**透明度**：实心处填系统主题色，镂空处透出系统给的底色，所以这里不写颜色
+  （一律白）、也不画立体，只留最能认的两样 —— 键帽顶面（中间挖出字母 U）+ 发送信号弧。
+
+  为什么不把 14 层侧壁也搬过来：
+    - U 必须是**通到底**的孔才看得见，而侧壁层层叠在顶面之下 —— 挖在顶面上的孔会露出身后
+      的侧壁，U 直接消失；
+    - 矢量图做不了路径相减，孔只能是"同一条 path 里两个子路径 + evenOdd"，
+      没法把 U 从 14 层里逐层抠掉。
+    所以单色层用"顶面 + U 挖空"这一枚平面图案收口：顶面与 U 同在一条变换链上，
+    合成一条 path 就能挖。信号弧在屏幕空间、不与键帽重叠，照搬即可。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <group
+        android:scaleX="0.51"
+        android:scaleY="0.51"
+        android:translateX="54"
+        android:translateY="70.4">
+
+        <!-- 顶面 + U：两个子路径 + evenOdd，第二个就是第一个的孔 -->
+        <group android:translateY="-22.05">
+            <group android:scaleY="0.5299">
+                <group android:rotation="-42">
+                    <group android:scaleX="0.34" android:scaleY="0.34">
+                        <path
+                            android:fillColor="#FFFFFFFF"
+                            android:fillType="evenOdd"
+                            android:pathData="M-72,-100L72,-100A28,28 0 0 1 100,-72L100,72A28,28 0 0 1 72,100L-72,100A28,28 0 0 1 -100,72L-100,-72A28,28 0 0 1 -72,-100Z M-44,-42L-44,-2A44,44 0 0 0 44,-2L44,-42L28,-42L28,-2A28,28 0 0 1 -28,-2L-28,-42Z" />
+                    </group>
+                </group>
+            </group>
+        </group>
+
+        <!-- 无线信号弧：屏幕空间，键帽正上方，圆点朝下 -->
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M-6.5,-54.5A6.5,6.5 0 0 1 6.5,-54.5A6.5,6.5 0 0 1 -6.5,-54.5Z" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M-15.55,-70.05A22,22 0 0 1 15.55,-70.05"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="8" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M-26.87,-81.37A38,38 0 0 1 26.87,-81.37"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round"
+            android:strokeWidth="8" />
+    </group>
+</vector>

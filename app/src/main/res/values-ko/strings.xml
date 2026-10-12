@@ -1,0 +1,240 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="ko">
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">원격 제어</string>
+    <string name="shortcut_connect_to">%1$s에 연결</string>
+
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">블루투스 권한 요청</string>
+    <string name="turn_on_bluetooth">블루투스 켜기</string>
+    <string name="scanning">검색 중…</string>
+    <string name="bluetooth_ready">블루투스 준비됨</string>
+    <string name="stop_scanning">검색 중지</string>
+    <string name="start_scanning">검색 시작</string>
+    <string name="app_description">이 앱은 블루투스 기기를 검색하고 연결하는 데 사용됩니다.\n\n기능:\n- 주변 블루투스 기기 검색\n- 저장된 블루투스 기기 표시\n- 블루투스 기기 연결 지원\n\n앱 기능을 사용하려면 위 버튼을 눌러 블루투스 권한을 허용해 주세요.</string>
+    <string name="saved_devices">저장된 기기</string>
+    <string name="nearby_devices">주변 기기</string>
+    <string name="click_to_scan">\'검색 시작\' 버튼을 눌러 기기를 찾으세요</string>
+    <string name="connect">연결</string>
+    <string name="bluetooth_device">블루투스 기기</string>
+    <string name="unknown_device">알 수 없는 기기</string>
+
+    <!-- ControlActivity -->
+    <string name="back">뒤로</string>
+    <string name="connected">연결됨</string>
+    <string name="connecting">연결 중…</string>
+    <string name="disconnecting">연결 해제 중…</string>
+    <string name="disconnected">연결 안 됨</string>
+    <string name="initializing">초기화 중…</string>
+    <string name="registering">등록 중…</string>
+    <string name="init_failed">초기화 실패</string>
+    <string name="left_button">왼쪽 버튼</string>
+    <string name="right_button">오른쪽 버튼</string>
+    <string name="input_text">텍스트 입력…</string>
+    <string name="send">전송</string>
+    <string name="sending">전송 중…</string>
+    <string name="sending_text_hint">텍스트를 전송하는 중입니다. 잠시만 기다려 주세요…</string>
+    <string name="ok">확인</string>
+    <string name="disconnect">연결 해제</string>
+    <string name="confirm_disconnect">블루투스 연결을 해제하시겠습니까?</string>
+    <string name="cancel">취소</string>
+
+    <!-- 연결 유지: 포그라운드 서비스의 상시 알림, 스캔 화면 카드, 뒤로 가기 안내, 기기 전환 확인 -->
+    <string name="connection_kept_title">연결 유지 중</string>
+    <string name="notification_channel_name">연결 유지</string>
+    <string name="notification_channel_description">다른 앱을 사용하는 동안 유지되는 블루투스 연결을 표시합니다.</string>
+    <string name="notification_text_connecting">%1$s에 연결 중…</string>
+    <string name="notification_text_connected">%1$s에 연결됨</string>
+    <string name="notification_action_open">제어 화면으로</string>
+    <string name="connection_kept_toast">연결이 백그라운드에서 유지됩니다</string>
+    <string name="scanner_switch_title">기기를 전환할까요?</string>
+    <string name="scanner_switch_text">현재 %1$s에 연결되어 있습니다. 연결을 끊고 %2$s에 연결할까요?</string>
+    <string name="scanner_switch_confirm">전환</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">키보드 모드</string>
+    <string name="mode_touchpad">터치패드 모드</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">메인</string>
+    <string name="keyboard_page_function">기능 키</string>
+    <string name="keyboard_page_numpad">숫자 키패드</string>
+
+    <!-- 호스트가 Num Lock을 무시할 때의 안내: 숫자 키패드를 쓸 수 없을 수 있음 -->
+    <string name="keyboard_numpad_warning">연결된 기기가 숫자 키패드를 지원하지 않을 수 있습니다. 숫자 키패드를 사용하는 템플릿 입력(Alt + 숫자)이 동작하지 않을 수 있습니다.</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">터치패드 버튼</string>
+
+    <!-- Settings -->
+    <string name="settings">설정</string>
+    <string name="theme_settings">테마 설정</string>
+    <string name="theme_mode">테마 모드</string>
+    <string name="theme_mode_system">시스템 설정 따르기</string>
+    <string name="theme_mode_light">밝게</string>
+    <string name="theme_mode_dark">어둡게</string>
+    <string name="hue_scheme">색상 구성</string>
+    <string name="language_settings">언어 설정</string>
+    <string name="language_mode">언어</string>
+    <string name="keyboard_settings">키보드</string>
+    <string name="keyboard_layout">호스트 키보드 배열</string>
+    <string name="keyboard_layout_follow_ui">앱 언어 따르기</string>
+    <string name="keyboard_layout_hint">앱은 연결된 기기의 키보드 배열을 읽을 수 없으므로 일치하는 항목을 선택하세요. 서로 다르면 키가 잘못된 문자를 입력합니다.</string>
+    <string name="keyboard_layout_send_hint">템플릿을 보낼 때 주의: 템플릿은 US 키 위치를 보냅니다. 호스트가 US 배열이 아니면(프랑스어 AZERTY, 독일어 QWERTZ, 러시아어, 아랍어 등) 먼저 US 키보드로 바꾸세요. 한국어, 일본어처럼 문자 키가 바뀌어 있어도 영어 모드에서 US 와 같은 경우에는 영어(영숫자) 모드로 바꾸는 것으로 충분합니다.</string>
+    <string name="charset_settings">문자 집합</string>
+    <string name="charset_settings_hint">사용 안 함으로 설정해도 템플릿 편집 목록에서 빠질 뿐, 이미 쓰고 있는 템플릿은 그대로 동작합니다.</string>
+    <string name="charset_add_label">문자 집합 추가</string>
+    <string name="charset_add">추가</string>
+    <string name="charset_add_ok">“%1$s”을(를) 추가했습니다</string>
+    <string name="charset_add_duplicate">이미 “%1$s”(으)로 목록에 있습니다</string>
+    <string name="charset_add_not_found">이 기기에서는 “%1$s”을(를) 사용할 수 없습니다</string>
+    <string name="charset_add_blank">문자 집합 이름을 입력하세요</string>
+    <string name="charset_delete">삭제</string>
+    <string name="charset_delete_confirm">문자 집합 “%1$s”을(를) 삭제할까요? 이 문자 집합을 쓰는 템플릿은 지원하지 않는 문자 집합으로 표시됩니다.</string>
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">Azure 블루</string>
+    <string name="hue_teal">Teal 청록</string>
+    <string name="hue_violet">Violet 보라</string>
+    <string name="hue_amber">Amber 앰버</string>
+    <string name="hue_rose">Rose 로즈</string>
+    <string name="hue_graphite">Graphite 흑연</string>
+
+    <!-- Languages -->
+    <string name="language_system">시스템 설정 따르기</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">알림</string>
+
+    <!-- Errors -->
+    <string name="error_title">오류</string>
+    <string name="error_unsupported">이 기기의 시스템에서 블루투스 HID 장치 프로필이 활성화되어 있지 않습니다. 시스템 설정을 확인해 주세요.</string>
+    <string name="error_device_not_ready">HID 서비스가 준비되지 않았습니다</string>
+    <string name="error_register_failed">HID 앱 등록에 실패했습니다</string>
+    <string name="error_register_exception">HID 앱 등록에 실패했습니다: %1$s</string>
+    <string name="error_pairing_failed">페어링에 실패했거나 취소되었습니다</string>
+    <string name="error_connect_failed">연결에 실패했습니다</string>
+    <string name="error_connect_exception">연결에 실패했습니다: %1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">템플릿 모드</string>
+    <string name="template_title">템플릿</string>
+    <string name="template_new">새로 만들기</string>
+    <string name="template_edit">편집</string>
+    <string name="template_copy">복사</string>
+    <string name="template_copy_name">%1$s 복사본</string>
+    <string name="template_delete">삭제</string>
+    <string name="template_save">저장</string>
+    <string name="template_name">템플릿 이름</string>
+    <string name="template_description">템플릿 설명</string>
+    <string name="template_description_label">"설명: "</string>
+    <string name="template_description_empty">탭하여 추가</string>
+    <string name="template_description_hint">이 템플릿의 용도와 호스트에서 필요한 설정</string>
+    <string name="template_empty_list">템플릿이 없습니다. \'새로 만들기\'로 만들어 보세요.</string>
+    <string name="template_preset_title">템플릿 선택</string>
+    <string name="template_preset_oem_alt_code_description">사용 방법: 환경에 맞게 문자 집합 변경(기본 문자 집합은 UI 언어를 따르며, Word에서는 Unicode로 변경) -> 숫자 키패드 켜기 -> 자기 언어의 IME로 전환(중국어 간체·번체, 일본어, 한국어는 미국 키보드로 전환) -> 텍스트 상자에 텍스트를 입력해 전송\n\n설명:\n\n1. 기본 문자 집합은 UI 언어를 따르며 그 언어의 호스트 OEM 코드 페이지입니다(중국어 간체 GBK, 중국어 번체 Big5, 일본어 windows-31j, 한국어 windows-949, 영어: 미국 IBM437, 영국/국제 IBM850(지역을 알 수 없으면 미국 페이지), 서유럽 언어 IBM850, 러시아어 IBM866, 아랍어 IBM720, 힌디어 US-ASCII). Windows의 다른 앱에서는 이 페이지를 쓰면 됩니다. Word에서는 Unicode로 바꾸세요. Alt Code는 숫자 키패드로 코드를 입력하므로 먼저 숫자 키패드를 켜야 합니다(Num Lock).\n\n2. 언어와 OEM 코드 페이지의 대응 관계는 문자 집합 옆의 동그란 물음표 아이콘에서 확인할 수 있습니다. 중국어 간체·번체, 일본어, 한국어는 ANSI와 OEM 코드 페이지가 같으므로 OEM 버전 템플릿을 그대로 쓰면 됩니다. 호스트의 OEMCP가 65001(UTF-8)이면 Alt Code가 동작하지 않습니다.\n\n3. 앞에 0을 붙이지 않은 숫자는 Windows 네이티브 Alt Code 방식의 OEM 버전입니다(앞에 0을 붙이면 ANSI 버전).\n\n4. 중국어 간체·번체, 일본어, 한국어의 Microsoft IME에서는 미국 키보드(또는 이전 버전 호환 모드 / 서드파티 IME)로 전환하세요. 이 IME들은 OEM 입력을 IBM437, ANSI를 windows-1252로 고정하기 때문에 Word에서는 2글자가 출력됩니다.</string>
+    <string name="template_preset_ansi_alt_code_description">사용 방법: 환경에 맞게 문자 집합 변경(기본 문자 집합은 UI 언어를 따르며, Word에서는 Unicode로 변경) -> 숫자 키패드 켜기 -> 자기 언어의 IME로 전환(중국어 간체·번체, 일본어, 한국어는 OEM 버전 권장) -> 텍스트 상자에 텍스트를 입력해 전송\n\n설명:\n\n1. 기본 문자 집합은 UI 언어를 따르며 그 언어의 호스트 ANSI 코드 페이지입니다(중국어 간체 GBK, 중국어 번체 Big5, 일본어 windows-31j, 한국어 windows-949, 영어 및 서유럽 언어 windows-1252, 러시아어 windows-1251, 아랍어 windows-1256, 힌디어 US-ASCII). Windows의 다른 앱에서는 이 페이지를 쓰면 됩니다. Word에서는 Unicode로 바꾸세요. Alt Code는 숫자 키패드로 코드를 입력하므로 먼저 숫자 키패드를 켜야 합니다(Num Lock).\n\n2. 언어와 ANSI 코드 페이지의 대응 관계는 문자 집합 옆의 동그란 물음표 아이콘에서 확인할 수 있습니다. 중국어 간체·번체, 일본어, 한국어는 ANSI와 OEM 코드 페이지가 같으므로 OEM 버전 템플릿을 그대로 쓰면 됩니다. 호스트의 ACP가 65001(UTF-8)이면 Alt Code가 동작하지 않습니다.\n\n3. 앞에 0을 붙인 숫자는 Windows 네이티브 Alt Code의 ANSI 버전입니다(붙이지 않으면 OEM 버전).\n\n4. 중국어 번체에서 Rime 번체 중국어 입력을 쓸 때 0을 붙이면 문자 집합은 Big5, 붙이지 않으면 GBK입니다.</string>
+    <string name="template_preset_richedit_alt_x_description">사용 방법: RichEdit 지원 프로그램의 입력 지점 열기 -> 입력기 조정(중국어 간체, 중국어 번체, 일본어, 한국어는 영어 모드 사용) -> 텍스트 상자에 텍스트를 입력해 전송(템플릿이 u+ 와 16진수 코드를 입력하고 마지막에 Alt+X 를 누름)\n\n참고:\n\nAlt+X 는 RichEdit(Word 의 텍스트 엔진)에 내장된 인라인 변환입니다. 코드 페이지를 확인하거나 문자 집합을 바꿀 필요가 없고, 숫자 키패드도 쓰지 않습니다.\n\n16진수 코드 바로 뒤에 커서를 두고 누르면 코드가 그 자리에서 문자로 바뀝니다. 다만 길이가 가변인 코드를 지원하므로, 이 부분만 정확히 변환하려면 텍스트를 선택하거나 먼저 u+ 를 입력해야 합니다(이 템플릿의 u+ 가 바로 그 용도이며, 변환할 때 접두사도 함께 지워집니다).\n\nRichEdit 호스트에서만 동작하며, 프로그램 이름으로 확인할 수 있습니다:\n지원: 모든 버전의 Word, Outlook 메일 본문, OneNote, Windows 11 메모장, WordPad(Windows 11 24H2 에서 제거), TortoiseSVN / Git 커밋 대화 상자;\n그 외: Excel, 브라우저, VS Code, PowerPoint 일반 텍스트 상자는 지원하지 않습니다(PPT 는 수식 편집 영역만). 프랑스어판 Word 는 Alt+C 입니다.</string>
+    <string name="template_preset_macos_hex_description">사용 방법: 호스트의 「키보드 → 입력 소스」에서 현재 입력 소스를 Unicode Hex Input 으로 바꾸기 -> 텍스트 상자에 텍스트를 입력해 전송하면 됩니다(템플릿이 Option 을 누른 채 4 자리 16진수를 입력하고, Option 을 떼어 문자를 확정합니다)\n\n참고:\n\n1. 코드는 4 자리로 0 을 채워야 합니다: 이 입력 소스는 한 번에 4 자리 16진수만 받으므로 템플릿의 코드 자리 표시자에 pad=4 가 붙어 있습니다. 4 자리에 모자라면 앞에 0 이 채워집니다. 예를 들어 「중」은 4E2D, 「A」는 0041 로 씁니다. 채우지 않으면 그 자리들은 다른 코드 포인트로 처리됩니다.\n\n2. 문자 집합은 UTF-16 이며 바꾸지 마세요: 보조 평면 문자(이모지 등)는 UTF-16 코드 단위마다 두 번의 Option+xxxx 로 나뉘고, macOS 가 두 서로게이트를 한 글자로 합칩니다. 예를 들어 😀 은 D83D 와 DE00 두 번입니다. Unicode 로 바꾸면 5 자리 코드 포인트를 보내게 되어 이 입력 소스가 받지 못합니다.\n\n3. 먼저 입력 소스를 Unicode Hex Input 으로 바꿔 두어야 합니다. 일반 키보드 배열에서는 Option 이 기호만 입력합니다. 전환은 사용자가 해야 하며(템플릿은 전환하지 않습니다), 다 쓰면 원래 입력 소스로 되돌리세요. 되돌리지 않으면 평소의 Option+숫자 단축키를 쓸 수 없습니다.\n\n4. 이 프리셋은 실기에서 검증하지 않았습니다: 곁에 macOS 기기가 없어 키 타이밍이 시스템 버전에 따라 달라질 수 있습니다. 동작하지 않으면 먼저 호스트에서 Option+4E2D 를 직접 입력해 보고 템플릿의 타이밍과 비교하세요(이름의 unverified 가 그 뜻입니다).</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">사용 방법: 호스트에서 따로 설정할 필요 없이 텍스트 상자에 텍스트를 입력해 전송하면 됩니다(템플릿이 먼저 Ctrl+Shift+U 를 눌렀다 모두 떼고, 16진수 코드를 한 자리씩 입력한 뒤 마지막에 스페이스로 확정합니다)\n\n참고:\n\n1. 이 시퀀스에는 두 가지 누르는 방법이 있고, 이 템플릿은 「분리식」을 씁니다: Ctrl+Shift+U 를 누른 뒤 곧바로 모두 떼면 시스템이 밑줄이 그어진 u 를 표시합니다. 그다음 16진수를 입력하고 마지막에 스페이스로 확정합니다. 다른 방법인 「유지식」은 Ctrl+Shift 를 누른 채 u 와 코드를 입력하고 손을 떼면 자동으로 확정되는 방식입니다. 확정 시점이 호스트에 달려 있어 기기 쪽에서 알 수 없으므로 이 템플릿은 쓰지 않습니다.\n\n2. 문자 집합은 Unicode 이며 바꿀 필요가 없습니다: 16진수를 1~6 자리 쓰고, 0 을 채울 필요도 없고, macOS 처럼 UTF-16 서로게이트 쌍으로 두 번 나눌 필요도 없습니다. 보조 평면 문자(이모지 등)도 한 번에 입력됩니다.\n\n3. 호스트에 데스크톱 입력기 프레임워크(GTK / IBus / Fcitx)가 있어야 합니다. 데스크톱 Linux 와 ChromeOS 에는 기본으로 들어 있어 바로 됩니다. 일부 프로그램이 이 단축키를 자체적으로 쓰면 그 프로그램에서는 동작하지 않습니다.\n\n4. 확정 키는 스페이스입니다. Enter 도 똑같이 됩니다. Enter 로 바꾸려면 템플릿의 마지막 단계를 tap Enter 로 바꾸면 됩니다.\n\n5. 단축키를 누른 뒤에는 입력기 내부 상태가 정리될 시간을 조금 두세요. 그렇지 않으면 앞의 몇 자리가 일반 글자로 텍스트 상자에 그대로 들어갑니다. 템플릿 헤더의 「키 간격」50 밀리초가 그 완충 시간이며, 줄이지 않는 것을 권합니다.</string>
+    <string name="template_host_layout_us_notice">호스트 키보드가 US 배열이 아닙니다. 누른 키는 다른 문자를 출력합니다: 전송 전에 호스트를 US 키보드로 바꾸거나(Windows) US 키보드 입력 소스를 추가하세요(Linux). macOS 의 Unicode Hex Input 은 원래 US 배열입니다.</string>
+    <string name="template_host_layout_english_notice">호스트 키보드의 문자 키가 라틴 문자가 아닙니다(한국어, 일본어 등): 전송 전에 영어(영숫자) 모드로 바꾸세요. 그 모드에서는 26 개 문자 키가 US 배열과 같습니다.</string>
+    <string name="template_send_unencodable_title">인코딩할 수 없는 문자가 있습니다</string>
+    <string name="template_send_unencodable_text">%1$d 번째 문자 「%2$s」(U+%3$s) 는 문자 집합 %4$s 로 인코딩할 수 없습니다. 그대로 보내면 이 문자는 빠집니다. 문자 집합을 확인하거나 옆의 도움말을 보거나, 텍스트가 잘못되었는지 확인하세요.</string>
+    <string name="template_send_anyway">그래도 전송</string>
+    <string name="template_preview_unencodable">예시에 인코딩할 수 없는 문자가 있습니다: 「%1$s」(U+%2$s) 는 %3$s 로 인코딩할 수 없어 펼칠 때 건너뜁니다.</string>
+    <string name="template_delete_confirm">템플릿 \'%1$s\'을(를) 삭제할까요?</string>
+    <string name="template_save_failed">템플릿 저장 실패:</string>
+    <string name="template_load_error_title">템플릿 불러오기 오류</string>
+    <string name="template_load_error_desc">다음 템플릿에 오류가 있습니다. 편집기에서 수정하세요:</string>
+    <string name="template_load_error_item">%1$s(오류 %2$d개)</string>
+    <string name="template_send_blocked">템플릿이 아직 텍스트를 입력할 수 없습니다. 수정한 뒤 전송하세요</string>
+    <string name="template_card_summary">%1$s · %2$d진 · %3$d단계</string>
+    <string name="template_expand_summary">%1$d단계 · %2$d프레임 · 약 %3$d ms</string>
+    <string name="template_editor_title">템플릿 편집</string>
+    <string name="template_empty_steps">단계가 없습니다. \'단계 추가\'로 만들어 보세요.</string>
+    <string name="template_step_summary">%1$d단계 · 유지 %2$d ms · 간격 %3$d ms</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">템플릿 매개변수</string>
+    <string name="template_header_summary">%1$s · %2$d진 · %3$d / %4$d / %5$d ms</string>
+    <string name="template_header_charset">문자 집합</string>
+    <string name="charset_hint_title">문자 집합과 별칭</string>
+    <string name="charset_hint_desc">반대쪽은 각 언어가 Windows에서 사용하는 문자 집합입니다. 템플릿에는 정식 이름(굵은 고정폭)을 적어 주세요. 아래의 별칭도 인식합니다.</string>
+    <string name="charset_hint_limits">참고: 대부분의 문자 집합은 Unicode 의 모든 문자를 담고 있지 않으며, 없는 문자는 보낼 수 없습니다(보내기 전에 알려 줍니다). 또한 문자 집합마다 같은 문자의 코드 포인트가 다를 수 있어(예: windows-1252 와 IBM850, GBK 와 Big5) 페이지를 잘못 고르면 다른 문자가 나갑니다. 모든 문자를 다루려면 Unicode 나 UTF-16 을 쓰세요.</string>
+    <string name="charset_word_alt_code_hint">Word 에서는 이 항목을 쓰세요(Alt Code 가 재정의됩니다)</string>
+    <string name="charset_lang_gbk">중국어 간체(ansi/oem)</string>
+    <string name="charset_lang_big5">중국어 번체(ansi/oem)</string>
+    <string name="charset_lang_windows_31j">일본어(ansi/oem)</string>
+    <string name="charset_lang_windows_949">한국어(ansi/oem)</string>
+    <string name="charset_lang_windows_1252">영어 · 스페인어 · 프랑스어 · 포르투갈어 · 독일어(ansi)</string>
+    <string name="charset_lang_ibm437">영어(미국)(oem)</string>
+    <string name="charset_lang_ibm850">영어(영국/국제) · 스페인어 · 프랑스어 · 포르투갈어 · 독일어(oem)</string>
+    <string name="charset_lang_windows_1251">러시아어(ansi)</string>
+    <string name="charset_lang_ibm866">러시아어(oem)</string>
+    <string name="charset_lang_windows_1256">아랍어(ansi)</string>
+    <string name="charset_lang_ibm720">아랍어(oem)</string>
+    <string name="charset_lang_unicode">모든 현대 언어(unicode) · 완전한 코드 포인트(UTF-32 제로 패딩 없음, 1~6자리)</string>
+    <string name="charset_lang_utf16">보조 평면 문자는 2단위로 전송(UTF-16 코드 단위)</string>
+    <string name="charset_lang_us_ascii">영어(ascii) · 힌디어(ansi/oem 코드 페이지 없음)</string>
+    <string name="template_header_radix">진법</string>
+    <string name="template_header_template_gap">템플릿 간격</string>
+    <string name="template_header_key_hold">누름 유지</string>
+    <string name="template_header_key_gap">키 간격</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">키</string>
+    <string name="template_modifier_section">보조 키: 선택하면 다음 추가가 조합 키로 묶입니다</string>
+    <string name="template_key_section">키: 한 번 눌러 \'tap\' 한 단계 추가</string>
+    <string name="template_add">추가</string>
+    <string name="template_add_delay">지연</string>
+    <string name="template_add_code">코드 자리 표시자</string>
+    <string name="template_add_custom">사용자 지정 키</string>
+    <string name="template_custom_key_title">사용자 지정 키</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">단계 편집</string>
+    <string name="template_step_key">키 이름</string>
+    <string name="template_step_duration">길이(밀리초)</string>
+    <string name="template_step_pad">N 자리까지 0 채움</string>
+    <string name="template_step_enable">사용</string>
+    <string name="template_step_code_hint">각 자리의 유지와 간격은 템플릿의 \'누름 유지 / 키 간격\' 값을 사용합니다.</string>
+    <string name="template_step_keys">숫자 키 위치</string>
+    <string name="template_keys_numpad">숫자 키패드</string>
+    <string name="template_keys_main">기본 키보드</string>
+    <string name="template_step_split">분리</string>
+    <string name="template_step_chord_hint">한꺼번에 눌렀다 한꺼번에 뗍니다. \'분리\'하면 같은 동작의 여러 단계가 됩니다.</string>
+    <string name="template_step_split_hint">분리하면 \'tap\'이 \'누름\' + \'뗌\' 두 단계가 되어, 해당 \'뗌\' 단계까지 키가 눌린 상태로 유지됩니다.</string>
+    <string name="template_step_modifier_hint">보조 키: 이 단계가 누름 / 뗌을 담당합니다.</string>
+    <string name="template_step_unknown_hint">이 줄을 알아보지 못했습니다. “down Alt”, “sleep 20”, “&lt;code&gt;”처럼 올바른 한 줄로 고쳐 주세요.</string>
+    <string name="template_step_line">줄</string>
+    <string name="template_status_ok">문법 정상</string>
+    <string name="template_status_error">오류 %1$d개</string>
+    <string name="template_status_warning">경고 %1$d개</string>
+    <string name="template_preview">펼친 미리보기</string>
+    <string name="template_preview_empty">미리 볼 내용이 없습니다</string>
+    <string name="template_preview_sample">미리보기 문자</string>
+    <string name="template_preview_test">테스트</string>
+    <string name="template_preview_header_action">동작</string>
+    <string name="template_preview_header_report">보조 키 / 키 코드</string>
+    <string name="template_preview_header_duration">유지</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">템플릿이 비어 있습니다</string>
+    <string name="template_error_missing_code">&lt;code&gt; 자리 표시자가 없어 텍스트 입력에 사용할 수 없습니다</string>
+    <string name="template_warn_code_disabled">&lt;code&gt;가 사용 중지되어 텍스트 입력에 사용할 수 없습니다</string>
+    <string name="template_error_unknown_key">알 수 없는 키 이름 \'%1$s\'</string>
+    <string name="template_error_unknown_key_suggest">알 수 없는 키 이름 \'%1$s\'. \'%2$s\'을(를) 입력하려던 것 아닌가요?</string>
+    <string name="template_error_invalid_number">잘못된 숫자 \'%1$s\'</string>
+    <string name="template_error_invalid_value">잘못된 값 \'%1$s\'</string>
+    <string name="template_error_unclosed_placeholder">\'&lt;\' 뒤에 \'&gt;\'가 없습니다</string>
+    <string name="template_error_unknown_step">인식할 수 없는 단계 \'%1$s\'</string>
+    <string name="template_error_unknown_charset">지원하지 않는 문자 집합 \'%1$s\'</string>
+    <string name="template_error_invalid_radix">진법은 10 또는 16만 가능합니다. 현재 \'%1$s\'</string>
+    <string name="template_error_unbalanced_key">키 \'%1$s\'이(가) 눌린 채 떼지지 않아 계속 눌린 상태로 남습니다</string>
+    <string name="template_warn_unknown_param">알 수 없는 매개변수 \'%1$s\'</string>
+    <string name="template_warn_duplicate_code">템플릿 하나는 문자 하나만 전송합니다. &lt;code&gt;가 여러 개면 같은 숫자열이 반복 전송됩니다</string>
+    <string name="template_warn_multiple_held_keys">일반 키 여러 개(%1$s)가 동시에 눌려 있지만, 키보드 보고서에는 일반 키를 하나만 담을 수 있습니다</string>
+    <string name="template_warn_small_delay">지연 %1$s ms는 너무 짧아 블루투스에서 압축될 수 있습니다</string>
+    <string name="template_warn_small_delay_header">템플릿의 누름 유지 / 간격 %1$s ms가 10 ms 미만이라 블루투스에서 압축될 수 있습니다</string>
+    <string name="template_warn_ignored_attr">속성 \'%1$s\'은(는) 더 이상 적용되지 않습니다: 키 타이밍은 템플릿 매개변수를 따르며, 저장할 때 제거됩니다</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  RemoteInput 启动器图标：一套固定的黑底白键帽，不随界面主题色变化。
+
+  背景与前景见 drawable/ic_launcher_background.xml 与 ic_launcher_foreground.xml，
+  深色模式下的"主题图标"单色层见 ic_launcher_monochrome.xml。
+  应用信息页与桌面用的是同一份（adaptive-icon 自己能套圆蒙版，manifest 的 roundIcon 也指它）。
+-->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_background" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+    <monochrome android:drawable="@drawable/ic_launcher_monochrome" />
+</adaptive-icon>

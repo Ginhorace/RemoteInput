@@ -1,0 +1,241 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="fr">
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">Contrôle à distance</string>
+    <string name="shortcut_connect_to">Se connecter à %1$s</string>
+
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">Demander l\'autorisation Bluetooth</string>
+    <string name="turn_on_bluetooth">Activer le Bluetooth</string>
+    <string name="scanning">Recherche…</string>
+    <string name="bluetooth_ready">Bluetooth prêt</string>
+    <string name="stop_scanning">Arrêter la recherche</string>
+    <string name="start_scanning">Lancer la recherche</string>
+    <string name="app_description">Cette application sert à rechercher et à connecter des appareils Bluetooth.\n\nFonctionnalités :\n- Rechercher les appareils Bluetooth à proximité\n- Afficher les appareils Bluetooth enregistrés\n- Prendre en charge la connexion des appareils Bluetooth\n\nTouchez le bouton ci-dessus pour autoriser l\'accès Bluetooth et utiliser l\'application.</string>
+    <string name="saved_devices">Appareils enregistrés</string>
+    <string name="nearby_devices">Appareils à proximité</string>
+    <string name="click_to_scan">Touchez « Lancer la recherche » pour trouver des appareils</string>
+    <string name="connect">Connecter</string>
+    <string name="bluetooth_device">Appareil Bluetooth</string>
+    <string name="unknown_device">Appareil inconnu</string>
+
+    <!-- ControlActivity -->
+    <string name="back">Retour</string>
+    <string name="connected">Connecté</string>
+    <string name="connecting">Connexion…</string>
+    <string name="disconnecting">Déconnexion…</string>
+    <string name="disconnected">Non connecté</string>
+    <string name="initializing">Initialisation…</string>
+    <string name="registering">Enregistrement…</string>
+    <string name="init_failed">Échec de l\'initialisation</string>
+    <string name="left_button">Bouton gauche</string>
+    <string name="right_button">Bouton droit</string>
+    <string name="input_text">Saisir du texte…</string>
+    <string name="send">Envoyer</string>
+    <string name="sending">Envoi…</string>
+    <string name="sending_text_hint">Envoi du texte en cours, veuillez patienter…</string>
+    <string name="ok">OK</string>
+    <string name="disconnect">Déconnecter</string>
+    <string name="confirm_disconnect">Voulez-vous vraiment déconnecter la liaison Bluetooth ?</string>
+    <string name="cancel">Annuler</string>
+
+    <!-- Connexion maintenue : notification permanente du service de premier plan, carte de l’écran de balayage, message au retour et confirmation de changement d’appareil -->
+    <string name="connection_kept_title">Connexion maintenue</string>
+    <string name="notification_channel_name">Connexion maintenue</string>
+    <string name="notification_channel_description">Affiche la connexion Bluetooth maintenue pendant que vous utilisez d’autres applications.</string>
+    <string name="notification_text_connecting">Connexion à %1$s…</string>
+    <string name="notification_text_connected">Connecté à %1$s</string>
+    <string name="notification_action_open">Revenir aux commandes</string>
+    <string name="connection_kept_toast">La connexion reste active en arrière-plan</string>
+    <string name="scanner_switch_title">Changer d’appareil ?</string>
+    <string name="scanner_switch_text">Connecté à %1$s. Le déconnecter et se connecter à %2$s ?</string>
+    <string name="scanner_switch_confirm">Changer</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">Mode clavier</string>
+    <string name="mode_touchpad">Mode pavé tactile</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">Principal</string>
+    <string name="keyboard_page_function">Fonctions</string>
+    <string name="keyboard_page_numpad">Pavé num.</string>
+
+    <!-- L\'hôte ignore la touche Verr. Num. : le pavé numérique est peut-être inutilisable -->
+    <string name="keyboard_numpad_warning">L\'appareil connecté ne prend peut-être pas en charge le pavé numérique. La saisie par modèle qui l\'utilise (Alt + chiffres) risque de ne pas fonctionner.</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">Boutons du pavé tactile</string>
+
+    <!-- Settings -->
+    <string name="settings">Paramètres</string>
+    <string name="theme_settings">Paramètres du thème</string>
+    <string name="theme_mode">Mode du thème</string>
+    <string name="theme_mode_system">Suivre le système</string>
+    <string name="theme_mode_light">Clair</string>
+    <string name="theme_mode_dark">Sombre</string>
+    <string name="hue_scheme">Nuance de couleur</string>
+    <string name="language_settings">Paramètres de langue</string>
+    <string name="language_mode">Langue</string>
+    <string name="keyboard_settings">Clavier</string>
+    <string name="keyboard_layout">Disposition du clavier de l\'hôte</string>
+    <string name="keyboard_layout_follow_ui">Suivre la langue de l\'appli</string>
+    <string name="keyboard_layout_hint">L\'appli ne peut pas lire la disposition de l\'appareil connecté : choisissez celle qui correspond. Sinon, les touches saisiront de mauvais caractères.</string>
+    <string name="keyboard_layout_send_hint">Lors de l’envoi d’un modèle, notez qu’il envoie des positions de touches US : si la disposition de l’hôte n’est pas US (français AZERTY, allemand QWERTZ, russe, arabe, etc.), passez d’abord sur un clavier US ; pour le coréen, le japonais et autres, les touches de lettres sont remplacées mais correspondent à US en mode anglais : passer en mode anglais (alphanumérique) suffit.</string>
+    <string name="charset_settings">Jeux de caractères</string>
+    <string name="charset_settings_hint">Désactiver un jeu de caractères le masque seulement dans la liste d’édition des modèles ; ceux qui l’utilisent déjà continuent de fonctionner.</string>
+    <string name="charset_add_label">Ajouter un jeu de caractères</string>
+    <string name="charset_add">Ajouter</string>
+    <string name="charset_add_ok">« %1$s » ajouté</string>
+    <string name="charset_add_duplicate">Déjà présent sous « %1$s »</string>
+    <string name="charset_add_not_found">« %1$s » n’est pas disponible sur cet appareil</string>
+    <string name="charset_add_blank">Saisissez un nom de jeu de caractères</string>
+    <string name="charset_delete">Supprimer</string>
+    <string name="charset_delete_confirm">Supprimer le jeu de caractères « %1$s » ? Les modèles qui l’utilisent signaleront un jeu de caractères non pris en charge.</string>
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">Azure</string>
+    <string name="hue_teal">Turquoise</string>
+    <string name="hue_violet">Violet</string>
+    <string name="hue_amber">Ambre</string>
+    <string name="hue_rose">Rose</string>
+    <string name="hue_graphite">Graphite</string>
+
+    <!-- Languages -->
+    <string name="language_system">Suivre le système</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">Astuce</string>
+
+    <!-- Errors -->
+    <string name="error_title">Erreur</string>
+    <string name="error_unsupported">Le système de ce téléphone n\'active pas le profil Bluetooth HID Device. Vérifiez les paramètres du système.</string>
+    <string name="error_device_not_ready">Le service HID n\'est pas prêt</string>
+    <string name="error_register_failed">Échec de l\'enregistrement de l\'application HID</string>
+    <string name="error_register_exception">Échec de l\'enregistrement de l\'application HID : %1$s</string>
+    <string name="error_pairing_failed">Appairage échoué ou annulé</string>
+    <string name="error_connect_failed">Échec de la connexion</string>
+    <string name="error_connect_exception">Échec de la connexion : %1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">Mode modèle</string>
+    <string name="template_title">Modèles</string>
+    <string name="template_new">Nouveau</string>
+    <string name="template_edit">Modifier</string>
+    <string name="template_copy">Copier</string>
+    <string name="template_copy_name">Copie de %1$s</string>
+    <string name="template_delete">Supprimer</string>
+    <string name="template_save">Enregistrer</string>
+    <string name="template_name">Nom du modèle</string>
+    <string name="template_description">Description du modèle</string>
+    <!-- 法语排版：冒号前留一个空格 -->
+    <string name="template_description_label">"Description : "</string>
+    <string name="template_description_empty">Touchez pour ajouter</string>
+    <string name="template_description_hint">À quoi sert ce modèle et ce qu\'il faut configurer sur l\'hôte</string>
+    <string name="template_empty_list">Aucun modèle. Touchez « Nouveau » pour en créer un.</string>
+    <string name="template_preset_title">Choisir un modèle</string>
+    <string name="template_preset_oem_alt_code_description">Mode d\'emploi : adapter le jeu de caractères à l\'environnement (le jeu de caractères par défaut suit la langue de l\'interface ; pour Word, le passer à Unicode) -> activer le pavé numérique -> basculer sur la méthode de saisie de votre langue (chinois simplifié, chinois traditionnel, japonais, coréen : basculer sur le clavier US) -> saisir le texte dans la zone de texte et l\'envoyer\n\nRemarques :\n\n1. Le jeu de caractères par défaut suit la langue de l\'interface et correspond à la page de code OEM de cette langue sur l\'hôte (chinois simplifié GBK, chinois traditionnel Big5, japonais windows-31j, coréen windows-949, anglais : IBM437 aux États-Unis, IBM850 au Royaume-Uni/international (la page américaine est utilisée si la région n\'est pas connue), langues d\'Europe occidentale IBM850, russe IBM866, arabe IBM720, hindi US-ASCII) : c\'est celle à utiliser dans les autres applications Windows ; dans Word, passez-la à Unicode. Alt Code saisit le code au pavé numérique : activez d\'abord le pavé numérique (Ver num).\n\n2. La correspondance langue -> page de code OEM se consulte sur le point d\'interrogation cerclé à côté du jeu de caractères. Le chinois simplifié, le chinois traditionnel, le japonais et le coréen utilisent la même page de code pour ANSI et OEM : prenez donc directement le modèle OEM. Alt Code ne fonctionne pas si l\'OEMCP de l\'hôte est 65001 (UTF-8).\n\n3. Sans zéro initial, il s\'agit de la variante OEM du mécanisme natif Alt Code de Windows (avec un zéro initial, la variante ANSI).\n\n4. Avec la méthode de saisie Microsoft du chinois simplifié, du chinois traditionnel, du japonais ou du coréen, basculez sur le clavier US (ou le mode de compatibilité avec l\'ancienne version / une méthode de saisie tierce) : ces méthodes fixent l\'entrée OEM sur IBM437 et l\'ANSI sur windows-1252, et Word affiche 2 caractères.</string>
+    <string name="template_preset_ansi_alt_code_description">Mode d\'emploi : adapter le jeu de caractères à l\'environnement (le jeu de caractères par défaut suit la langue de l\'interface ; pour Word, le passer à Unicode) -> activer le pavé numérique -> basculer sur la méthode de saisie de votre langue (chinois simplifié, chinois traditionnel, japonais, coréen : la version OEM est recommandée) -> saisir le texte dans la zone de texte et l\'envoyer\n\nRemarques :\n\n1. Le jeu de caractères par défaut suit la langue de l\'interface et correspond à la page de code ANSI de cette langue sur l\'hôte (chinois simplifié GBK, chinois traditionnel Big5, japonais windows-31j, coréen windows-949, anglais et langues d\'Europe occidentale windows-1252, russe windows-1251, arabe windows-1256, hindi US-ASCII) : c\'est celle à utiliser dans les autres applications Windows ; dans Word, passez-la à Unicode. Alt Code saisit le code au pavé numérique : activez d\'abord le pavé numérique (Ver num).\n\n2. La correspondance langue -> page de code ANSI se consulte sur le point d\'interrogation cerclé à côté du jeu de caractères. Le chinois simplifié, le chinois traditionnel, le japonais et le coréen utilisent la même page de code pour ANSI et OEM : prenez donc directement le modèle OEM. Alt Code ne fonctionne pas si l\'ACP de l\'hôte est 65001 (UTF-8).\n\n3. Avec un zéro initial, il s\'agit de la variante ANSI de l\'Alt Code natif de Windows (sans zéro initial, la variante OEM).\n\n4. Avec Rime pour le chinois traditionnel, un zéro initial correspond à Big5 et l\'absence de zéro initial à GBK.</string>
+    <string name="template_preset_richedit_alt_x_description">Utilisation : ouvrir le point de saisie d’un programme compatible RichEdit -> régler la méthode de saisie (chinois simplifié, chinois traditionnel, japonais, coréen : utiliser le mode anglais) -> saisir le texte dans la zone de texte et l’envoyer (le modèle tape u+ et le code hex, puis appuie sur Alt+X)\n\nRemarques :\n\nAlt+X est la conversion en ligne intégrée à RichEdit (le moteur de texte de Word). Pas besoin de vérifier la page de codes ni de changer le jeu de caractères, et le pavé numérique n’est pas utilisé.\n\nLe curseur juste après un code hex, une pression convertit le code sur place en caractère ; mais comme les codes sont de longueur variable, pour convertir uniquement ce fragment il faut sélectionner le texte ou taper d’abord u+ (le u+ de ce modèle sert à cela, et le préfixe est supprimé en même temps que la conversion).\n\nFonctionne uniquement dans les hôtes RichEdit, consultable par nom de logiciel :\nPris en charge : toutes les versions de Word, le corps du message Outlook, OneNote, le Bloc-notes de Windows 11, WordPad (supprimé dans Windows 11 24H2), les boîtes de validation de TortoiseSVN / Git ;\nAutres : pas dans Excel, les navigateurs, VS Code ni les zones de texte ordinaires de PowerPoint (dans PPT seulement l’éditeur d’équations). Le Word français utilise Alt+C.</string>
+    <string name="template_preset_macos_hex_description">Utilisation : passer la source de saisie courante à Unicode Hex Input (Réglages du système -> Clavier) -> saisir le texte dans la zone de texte et l’envoyer (le modèle maintient Option enfoncé, tape 4 chiffres hex, puis relâche Option pour que le caractère apparaisse)\n\nRemarques :\n\n1. Le code doit être complété par des zéros sur 4 chiffres : cette source de saisie n’accepte que 4 chiffres hex par appel, c’est pourquoi le paramètre de code du modèle porte pad=4 ; les valeurs plus courtes reçoivent des zéros en tête, par exemple 中 vaut 4E2D et A doit s’écrire 0041 ; sans ce complément, ces chiffres correspondent à une autre position de code.\n\n2. Le jeu de caractères est UTF-16 et mieux vaut ne pas le changer : les caractères hors BMP (emoji, etc.) sont répartis en deux appels Option+xxxx, un par unité de code UTF-16, et macOS fusionne lui-même les deux substituts en un seul caractère : 😀 vaut D83D et DE00, deux appels. Avec Unicode, 5 chiffres hex seraient envoyés, ce que cette source de saisie n’accepte pas.\n\n3. Il faut d’abord mettre la source de saisie sur Unicode Hex Input ; avec une disposition de clavier normale, Option ne tape que des symboles. Ce changement revient à l’utilisateur (le modèle ne le fait pas) ; ensuite, remettez la source précédente, sinon les raccourcis Option+chiffre du quotidien seront pris.\n\n4. Ce modèle n’est pas vérifié sur une machine réelle : aucun appareil macOS n’était disponible, le minutage des touches peut donc varier selon la version du système. S’il ne se passe rien, essayez d’abord Option+4E2D à la main sur l’hôte et comparez avec le minutage du modèle (c’est ce que veut dire le unverified du nom).</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">Utilisation : aucune configuration n’est nécessaire sur l’hôte, il suffit de saisir le texte dans la zone de texte et de l’envoyer (le modèle presse Ctrl+Shift+U puis relâche tout, tape les chiffres hex et confirme à la fin avec l’espace)\n\nRemarques :\n\n1. Cette séquence se presse de deux façons et ce modèle utilise la discrète : presser Ctrl+Shift+U puis tout relâcher aussitôt (le système affiche alors un u souligné), taper les chiffres hex et confirmer avec l’espace. L’autre, la maintenue, garde Ctrl+Shift enfoncé, tape u et les chiffres puis relâche tout à la fin pour valider automatiquement : le moment de la validation dépend alors de l’hôte et l’appareil ne peut pas le connaître, donc le modèle ne l’utilise pas.\n\n2. Le jeu de caractères est Unicode et n’a pas besoin d’être changé : on écrit de 1 à 6 chiffres hex, sans remplissage par des zéros et sans découpage en paires de substitution UTF-16 comme sous macOS ; les caractères hors BMP (emoji, etc.) passent en une seule fois.\n\n3. L’hôte doit disposer d’un cadre de méthode de saisie de bureau (GTK / IBus / Fcitx) ; le Linux de bureau et ChromeOS en embarquent un, cela fonctionne donc sans rien installer. Quelques programmes accaparent ce raccourci et il n’y fonctionne pas.\n\n4. La touche de validation est l’espace ; Entrée fonctionne aussi. Pour passer à Entrée, modifiez la dernière étape du modèle en tap Enter.\n\n5. Après le raccourci, laissez un instant à la méthode de saisie pour que son état interne se mette en place, sinon les premiers chiffres hex arriveront dans la zone de texte comme de simples lettres. Les 50 millisecondes d’intervalle entre les touches, dans l’en-tête du modèle, sont ce délai : mieux vaut ne pas les réduire.</string>
+    <string name="template_host_layout_us_notice">Le clavier de l’hôte n’est pas une disposition US : les touches produiront d’autres caractères. Avant d’envoyer, passez l’hôte sur un clavier US (Windows) ou ajoutez une méthode de saisie clavier US (Linux) ; le Unicode Hex Input de macOS est déjà en US.</string>
+    <string name="template_host_layout_english_notice">Les touches de lettres du clavier de l’hôte ne sont pas des lettres latines (coréen, japonais, etc.) : avant d’envoyer, passez en mode anglais (alphanumérique) ; dans ce mode, les 26 touches de lettres correspondent à un clavier US.</string>
+    <string name="template_send_unencodable_title">Un caractère non codable</string>
+    <string name="template_send_unencodable_text">Le caractère %1$d « %2$s » (U+%3$s) ne peut pas être codé avec le jeu de caractères %4$s ; l’envoyer le ferait disparaître. Vérifiez le jeu de caractères ou l’aide à côté, ou si le texte est erroné.</string>
+    <string name="template_send_anyway">Envoyer quand même</string>
+    <string name="template_preview_unencodable">L’exemple contient un caractère non codable : « %1$s » (U+%2$s) ne peut pas être codé avec %3$s et est ignoré à l’expansion.</string>
+    <string name="template_delete_confirm">Supprimer le modèle « %1$s » ?</string>
+    <string name="template_save_failed">Échec de l\'enregistrement du modèle :</string>
+    <string name="template_load_error_title">Erreurs de chargement des modèles</string>
+    <string name="template_load_error_desc">Ces modèles contiennent des erreurs. Ouvrez-les dans l\'éditeur pour les corriger :</string>
+    <string name="template_load_error_item">%1$s (%2$d erreur(s))</string>
+    <string name="template_send_blocked">Le modèle ne peut pas encore saisir de texte — corrigez-le avant d\'envoyer</string>
+    <string name="template_card_summary">%1$s · base %2$d · %3$d étapes</string>
+    <string name="template_expand_summary">%1$d étapes · %2$d trames · ~%3$d ms</string>
+    <string name="template_editor_title">Modifier le modèle</string>
+    <string name="template_empty_steps">Aucune étape. Utilisez « Ajouter une étape » pour en créer une.</string>
+    <string name="template_step_summary">%1$d étapes · maintien %2$d ms · intervalle %3$d ms</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">Paramètres du modèle</string>
+    <string name="template_header_summary">%1$s · base %2$d · %3$d / %4$d / %5$d ms</string>
+    <string name="template_header_charset">Jeu de caractères</string>
+    <string name="charset_hint_title">Jeux de caractères et alias</string>
+    <string name="charset_hint_desc">En face figure le jeu de caractères utilisé par chaque langue sous Windows. Écrivez le nom canonique (en gras, à chasse fixe) dans le modèle ; les alias ci-dessous sont également acceptés.</string>
+    <string name="charset_hint_limits">Remarque : la plupart des jeux de caractères ne contiennent pas tout Unicode, et les caractères absents ne peuvent pas être envoyés (un avertissement s’affiche avant l’envoi) ; de plus, certains jeux utilisent d’autres positions pour le même caractère (windows-1252 vs IBM850, GBK vs Big5), donc choisir la mauvaise page tape d’autres caractères. Pour tout couvrir, utilisez Unicode ou UTF-16.</string>
+    <string name="charset_word_alt_code_hint">Dans Word, utilisez cette ligne (Alt Code est écrasé)</string>
+    <string name="charset_lang_gbk">Chinois simplifié (ansi/oem)</string>
+    <string name="charset_lang_big5">Chinois traditionnel (ansi/oem)</string>
+    <string name="charset_lang_windows_31j">Japonais (ansi/oem)</string>
+    <string name="charset_lang_windows_949">Coréen (ansi/oem)</string>
+    <string name="charset_lang_windows_1252">Anglais · espagnol · français · portugais · allemand (ansi)</string>
+    <string name="charset_lang_ibm437">Anglais (États-Unis) (oem)</string>
+    <string name="charset_lang_ibm850">Anglais (Royaume-Uni / international) · espagnol · français · portugais · allemand (oem)</string>
+    <string name="charset_lang_windows_1251">Russe (ansi)</string>
+    <string name="charset_lang_ibm866">Russe (oem)</string>
+    <string name="charset_lang_windows_1256">Arabe (ansi)</string>
+    <string name="charset_lang_ibm720">Arabe (oem)</string>
+    <string name="charset_lang_unicode">Toutes les langues modernes (unicode) · points de code complets (UTF-32 sans zéros de remplissage, 1-6 chiffres)</string>
+    <string name="charset_lang_utf16">Les caractères du plan supplémentaire sont envoyés en 2 unités (unités de code UTF-16)</string>
+    <string name="charset_lang_us_ascii">Anglais (ascii) · Hindi (aucune page de code ansi/oem)</string>
+    <string name="template_header_radix">Base</string>
+    <string name="template_header_template_gap">Intervalle du modèle</string>
+    <string name="template_header_key_hold">Maintien</string>
+    <string name="template_header_key_gap">Intervalle des touches</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">Touches</string>
+    <string name="template_modifier_section">Modificateurs : le prochain ajout devient une combinaison</string>
+    <string name="template_key_section">Touches : un appui ajoute une étape « tap »</string>
+    <string name="template_add">Ajouter</string>
+    <string name="template_add_delay">Délai</string>
+    <string name="template_add_code">Emplacement du code</string>
+    <string name="template_add_custom">Touche personnalisée</string>
+    <string name="template_custom_key_title">Touche personnalisée</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">Modifier l\'étape</string>
+    <string name="template_step_key">Nom de la touche</string>
+    <string name="template_step_duration">Durée (ms)</string>
+    <string name="template_step_pad">Compléter à N chiffres</string>
+    <string name="template_step_enable">Activé</string>
+    <string name="template_step_code_hint">Le maintien et l\'intervalle de chaque chiffre proviennent des paramètres « maintien / intervalle » du modèle.</string>
+    <string name="template_step_keys">Source des chiffres</string>
+    <string name="template_keys_numpad">Pavé numérique</string>
+    <string name="template_keys_main">Clavier principal</string>
+    <string name="template_step_split">Scinder</string>
+    <string name="template_step_chord_hint">Le groupe est enfoncé puis relâché ensemble ; « Scinder » donne les étapes séparées équivalentes.</string>
+    <string name="template_step_split_hint">Scinder transforme « tap » en « appui » + « relâchement » : la touche reste enfoncée jusqu\'à l\'étape de relâchement correspondante.</string>
+    <string name="template_step_modifier_hint">Touche modificatrice : cette étape gère l\'appui et le relâchement.</string>
+    <string name="template_step_unknown_hint">Cette ligne n’a pas été reconnue. Réécrivez-la comme une seule étape valide, par exemple « down Alt », « sleep 20 » ou « &lt;code&gt; ».</string>
+    <string name="template_step_line">Ligne</string>
+    <string name="template_status_ok">Syntaxe correcte</string>
+    <string name="template_status_error">%1$d erreur(s)</string>
+    <string name="template_status_warning">%1$d avertissement(s)</string>
+    <string name="template_preview">Aperçu développé</string>
+    <string name="template_preview_empty">Rien à prévisualiser</string>
+    <string name="template_preview_sample">Exemple</string>
+    <string name="template_preview_test">Tester</string>
+    <string name="template_preview_header_action">Action</string>
+    <string name="template_preview_header_report">Modificateur / Touche</string>
+    <string name="template_preview_header_duration">Maintien</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">Le modèle est vide</string>
+    <string name="template_error_missing_code">Emplacement &lt;code&gt; manquant : le modèle ne peut pas servir à saisir du texte</string>
+    <string name="template_warn_code_disabled">&lt;code&gt; est désactivé : le modèle ne peut pas servir à saisir du texte</string>
+    <string name="template_error_unknown_key">Nom de touche inconnu « %1$s »</string>
+    <string name="template_error_unknown_key_suggest">Nom de touche inconnu « %1$s », vouliez-vous écrire « %2$s » ?</string>
+    <string name="template_error_invalid_number">Nombre invalide « %1$s »</string>
+    <string name="template_error_invalid_value">Valeur invalide « %1$s »</string>
+    <string name="template_error_unclosed_placeholder">Il manque « &gt; » après « &lt; »</string>
+    <string name="template_error_unknown_step">Étape non reconnue « %1$s »</string>
+    <string name="template_error_unknown_charset">Jeu de caractères non pris en charge « %1$s »</string>
+    <string name="template_error_invalid_radix">La base doit être 10 ou 16, valeur actuelle « %1$s »</string>
+    <string name="template_error_unbalanced_key">La touche « %1$s » est enfoncée et jamais relâchée : elle reste maintenue</string>
+    <string name="template_warn_unknown_param">Paramètre inconnu « %1$s »</string>
+    <string name="template_warn_duplicate_code">Un modèle envoie exactement un caractère ; plusieurs emplacements &lt;code&gt; renvoient la même suite de chiffres</string>
+    <string name="template_warn_multiple_held_keys">Plusieurs touches normales sont maintenues (%1$s), mais le rapport clavier n\'en transporte qu\'une</string>
+    <string name="template_warn_small_delay">Le délai %1$s ms est très court et peut être compressé en Bluetooth</string>
+    <string name="template_warn_small_delay_header">Le maintien ou l\'intervalle du modèle (%1$s ms) est inférieur à 10 ms et peut être compressé en Bluetooth</string>
+    <string name="template_warn_ignored_attr">L\'attribut « %1$s » n\'a plus d\'effet : le rythme des touches suit désormais les paramètres du modèle et il est supprimé à l\'enregistrement</string>
+</resources>

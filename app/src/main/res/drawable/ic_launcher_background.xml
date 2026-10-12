@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  RemoteInput 应用图标背景：一条由 #21262D 到 #0D1117 的对角暗底，衬白色的立体键帽。
+
+  底色**固定为暗**，不写 values-night 变体：前景的键帽是白的，翻成亮底会连字形一起消失。
+  色值取的是界面暗色 token 里的 panel 与 background，所以图标底色和应用暗色界面是同一档。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="108"
+                android:endY="108"
+                android:startX="0"
+                android:startY="0"
+                android:type="linear">
+                <item android:color="#FF21262D" android:offset="0" />
+                <item android:color="#FF0D1117" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

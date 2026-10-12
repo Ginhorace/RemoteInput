@@ -1,0 +1,240 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="ar">
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">التحكم عن بُعد</string>
+    <string name="shortcut_connect_to">الاتصال بـ %1$s</string>
+
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">طلب إذن البلوتوث</string>
+    <string name="turn_on_bluetooth">تشغيل البلوتوث</string>
+    <string name="scanning">جارٍ البحث…</string>
+    <string name="bluetooth_ready">البلوتوث جاهز</string>
+    <string name="stop_scanning">إيقاف البحث</string>
+    <string name="start_scanning">بدء البحث</string>
+    <string name="app_description">يُستخدم هذا التطبيق للبحث عن أجهزة البلوتوث وتوصيلها.\n\nالميزات:\n- البحث عن أجهزة البلوتوث القريبة\n- عرض أجهزة البلوتوث المحفوظة\n- دعم توصيل أجهزة البلوتوث\n\nاضغط الزر أعلاه لمنح إذن البلوتوث واستخدام ميزات التطبيق.</string>
+    <string name="saved_devices">الأجهزة المحفوظة</string>
+    <string name="nearby_devices">الأجهزة القريبة</string>
+    <string name="click_to_scan">اضغط «بدء البحث» للبحث عن الأجهزة</string>
+    <string name="connect">توصيل</string>
+    <string name="bluetooth_device">جهاز بلوتوث</string>
+    <string name="unknown_device">جهاز غير معروف</string>
+
+    <!-- ControlActivity -->
+    <string name="back">رجوع</string>
+    <string name="connected">متصل</string>
+    <string name="connecting">جارٍ الاتصال…</string>
+    <string name="disconnecting">جارٍ قطع الاتصال…</string>
+    <string name="disconnected">غير متصل</string>
+    <string name="initializing">جارٍ التهيئة…</string>
+    <string name="registering">جارٍ التسجيل…</string>
+    <string name="init_failed">فشلت التهيئة</string>
+    <string name="left_button">الزر الأيسر</string>
+    <string name="right_button">الزر الأيمن</string>
+    <string name="input_text">أدخل النص…</string>
+    <string name="send">إرسال</string>
+    <string name="sending">جارٍ الإرسال…</string>
+    <string name="sending_text_hint">جارٍ إرسال النص، يُرجى الانتظار…</string>
+    <string name="ok">موافق</string>
+    <string name="disconnect">قطع الاتصال</string>
+    <string name="confirm_disconnect">هل تريد بالتأكيد قطع اتصال البلوتوث؟</string>
+    <string name="cancel">إلغاء</string>
+
+    <!-- الاتصال محتفظ به: إشعار دائم من خدمة المقدمة، وبطاقة في شاشة البحث، وتنبيه عند الرجوع، وتأكيد تبديل الجهاز -->
+    <string name="connection_kept_title">الاتصال محتفظ به</string>
+    <string name="notification_channel_name">اتصال محتفظ به</string>
+    <string name="notification_channel_description">يعرض اتصال البلوتوث الذي يبقى قائمًا أثناء استخدام تطبيقات أخرى.</string>
+    <string name="notification_text_connecting">جارٍ الاتصال بـ %1$s…</string>
+    <string name="notification_text_connected">متصل بـ %1$s</string>
+    <string name="notification_action_open">العودة إلى التحكم</string>
+    <string name="connection_kept_toast">يبقى الاتصال قائمًا في الخلفية</string>
+    <string name="scanner_switch_title">تبديل الجهاز؟</string>
+    <string name="scanner_switch_text">متصل حاليًا بـ %1$s. هل تريد قطع الاتصال والاتصال بـ %2$s؟</string>
+    <string name="scanner_switch_confirm">تبديل</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">وضع لوحة المفاتيح</string>
+    <string name="mode_touchpad">وضع لوحة اللمس</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">الرئيسية</string>
+    <string name="keyboard_page_function">الوظائف</string>
+    <string name="keyboard_page_numpad">لوحة الأرقام</string>
+
+    <!-- يتجاهل المضيف مفتاح Num Lock: قد تكون لوحة الأرقام غير قابلة للاستخدام -->
+    <string name="keyboard_numpad_warning">قد لا يدعم الجهاز المتصل لوحة الأرقام. قد لا يعمل إدخال القالب الذي يعتمد عليها (Alt + الأرقام).</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">أزرار لوحة اللمس</string>
+
+    <!-- Settings -->
+    <string name="settings">الإعدادات</string>
+    <string name="theme_settings">إعدادات المظهر</string>
+    <string name="theme_mode">وضع المظهر</string>
+    <string name="theme_mode_system">اتباع النظام</string>
+    <string name="theme_mode_light">فاتح</string>
+    <string name="theme_mode_dark">داكن</string>
+    <string name="hue_scheme">مخطط اللون</string>
+    <string name="language_settings">إعدادات اللغة</string>
+    <string name="language_mode">اللغة</string>
+    <string name="keyboard_settings">لوحة المفاتيح</string>
+    <string name="keyboard_layout">تخطيط لوحة مفاتيح الجهاز</string>
+    <string name="keyboard_layout_follow_ui">اتباع لغة التطبيق</string>
+    <string name="keyboard_layout_hint">لا يمكن للتطبيق قراءة تخطيط لوحة مفاتيح الجهاز المتصل، لذا اختر التخطيط المطابق له. إذا اختلفا فستُدخل المفاتيح أحرفًا خاطئة.</string>
+    <string name="keyboard_layout_send_hint">عند إرسال قالب تذكّر أن القوالب ترسل مواضع مفاتيح US: إن كان تخطيط المضيف غير US (الفرنسية AZERTY، الألمانية QWERTZ، الروسية، العربية وغيرها) فبدّل أولاً إلى لوحة US؛ وفي الكورية واليابانية وما شابه تُستبدل مفاتيح الحروف لكنها تطابق US في الوضع الإنجليزي، فيكفي التبديل إلى الوضع الإنجليزي.</string>
+    <string name="charset_settings">مجموعات المحارف</string>
+    <string name="charset_settings_hint">تعطيل مجموعة محارف يخفيها فقط من قائمة تحرير القالب؛ أما القوالب التي تستخدمها بالفعل فتبقى تعمل.</string>
+    <string name="charset_add_label">إضافة مجموعة محارف</string>
+    <string name="charset_add">إضافة</string>
+    <string name="charset_add_ok">تمت إضافة «%1$s»</string>
+    <string name="charset_add_duplicate">موجودة بالفعل باسم «%1$s»</string>
+    <string name="charset_add_not_found">«%1$s» غير متاحة على هذا الجهاز</string>
+    <string name="charset_add_blank">أدخل اسم مجموعة المحارف</string>
+    <string name="charset_delete">حذف</string>
+    <string name="charset_delete_confirm">حذف مجموعة المحارف «%1$s»؟ ستبلّغ القوالب التي تستخدمها عن مجموعة محارف غير مدعومة.</string>
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">أزور</string>
+    <string name="hue_teal">تركوازي</string>
+    <string name="hue_violet">بنفسجي</string>
+    <string name="hue_amber">كهرماني</string>
+    <string name="hue_rose">وردي</string>
+    <string name="hue_graphite">جرافيت</string>
+
+    <!-- Languages -->
+    <string name="language_system">اتباع النظام</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">تنبيه</string>
+
+    <!-- Errors -->
+    <string name="error_title">خطأ</string>
+    <string name="error_unsupported">لا يُمكِّن نظام هذا الهاتف ملف تعريف Bluetooth HID Device. تحقق من إعدادات النظام.</string>
+    <string name="error_device_not_ready">خدمة HID غير جاهزة</string>
+    <string name="error_register_failed">فشل تسجيل تطبيق HID</string>
+    <string name="error_register_exception">فشل تسجيل تطبيق HID: %1$s</string>
+    <string name="error_pairing_failed">فشل الاقتران أو أُلغي</string>
+    <string name="error_connect_failed">فشل الاتصال</string>
+    <string name="error_connect_exception">فشل الاتصال: %1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">وضع القوالب</string>
+    <string name="template_title">القوالب</string>
+    <string name="template_new">جديد</string>
+    <string name="template_edit">تعديل</string>
+    <string name="template_copy">نسخ</string>
+    <string name="template_copy_name">نسخة من %1$s</string>
+    <string name="template_delete">حذف</string>
+    <string name="template_save">حفظ</string>
+    <string name="template_name">اسم القالب</string>
+    <string name="template_description">وصف القالب</string>
+    <string name="template_description_label">"الوصف: "</string>
+    <string name="template_description_empty">اضغط للإضافة</string>
+    <string name="template_description_hint">الغرض من هذا القالب وما يجب إعداده على المضيف</string>
+    <string name="template_empty_list">لا توجد قوالب بعد. اضغط «جديد» لإنشاء قالب.</string>
+    <string name="template_preset_title">اختر قالبًا</string>
+    <string name="template_preset_oem_alt_code_description">طريقة الاستخدام: غيّر مجموعة المحارف حسب بيئتك (مجموعة المحارف الافتراضية تتبع لغة الواجهة، وفي Word يلزم تغييرها إلى Unicode) -> شغّل لوحة الأرقام -> بدّل إلى IME لغتك (الصينية المبسطة والتقليدية واليابانية والكورية: بدّل إلى لوحة المفاتيح الأمريكية) -> اكتب النص في حقل النص ثم أرسله\n\nملاحظات:\n\n1. مجموعة المحارف الافتراضية تتبع لغة الواجهة وهي صفحة ترميز OEM لتلك اللغة على المضيف (الصينية المبسطة GBK، والصينية التقليدية Big5، واليابانية windows-31j، والكورية windows-949، والإنجليزية: IBM437 في الولايات المتحدة، IBM850 في المملكة المتحدة/الدولي (تُستخدم صفحة الولايات المتحدة عند عدم تحديد المنطقة)، ولغات أوروبا الغربية IBM850، والروسية IBM866، والعربية IBM720، والهندية US-ASCII)، وهي الصفحة التي تُستخدم في تطبيقات Windows الأخرى؛ وفي Word يلزم تغييرها إلى Unicode. يعتمد Alt Code على لوحة الأرقام في إدخال الترميز، لذا شغّل لوحة الأرقام أولًا (Num Lock).\n\n2. يمكن الاطلاع على علاقة اللغة بصفحة ترميز OEM من علامة الاستفهام داخل الدائرة بجانب مجموعة المحارف. الصينية المبسطة والتقليدية واليابانية والكورية تستخدم صفحة الترميز نفسها لـ ANSI و OEM، لذا اختر قالب OEM مباشرة. وإذا كانت OEMCP للمضيف 65001 (UTF-8) فلا يعمل Alt Code.\n\n3. بدون صفر بادئ هذا هو إصدار OEM من آلية Alt Code الأصلية في Windows (ومع الصفر البادئ إصدار ANSI).\n\n4. مع IME مايكروسوفت للصينية المبسطة أو التقليدية أو اليابانية أو الكورية بدّل إلى لوحة المفاتيح الأمريكية (أو وضع التوافق مع الإصدار السابق / IME من طرف ثالث): فهذه الـ IME تثبّت إدخال OEM على IBM437 و ANSI على windows-1252، ويكتب Word حرفين.</string>
+    <string name="template_preset_ansi_alt_code_description">طريقة الاستخدام: غيّر مجموعة المحارف حسب بيئتك (مجموعة المحارف الافتراضية تتبع لغة الواجهة، وفي Word يلزم تغييرها إلى Unicode) -> شغّل لوحة الأرقام -> بدّل إلى IME لغتك (الصينية المبسطة والتقليدية واليابانية والكورية: يُفضَّل إصدار OEM) -> اكتب النص في حقل النص ثم أرسله\n\nملاحظات:\n\n1. مجموعة المحارف الافتراضية تتبع لغة الواجهة وهي صفحة ترميز ANSI لتلك اللغة على المضيف (الصينية المبسطة GBK، والصينية التقليدية Big5، واليابانية windows-31j، والكورية windows-949، والإنجليزية ولغات أوروبا الغربية windows-1252، والروسية windows-1251، والعربية windows-1256، والهندية US-ASCII)، وهي الصفحة التي تُستخدم في تطبيقات Windows الأخرى؛ وفي Word يلزم تغييرها إلى Unicode. يعتمد Alt Code على لوحة الأرقام في إدخال الترميز، لذا شغّل لوحة الأرقام أولًا (Num Lock).\n\n2. يمكن الاطلاع على علاقة اللغة بصفحة ترميز ANSI من علامة الاستفهام داخل الدائرة بجانب مجموعة المحارف. الصينية المبسطة والتقليدية واليابانية والكورية تستخدم صفحة الترميز نفسها لـ ANSI و OEM، لذا اختر قالب OEM مباشرة. وإذا كانت ACP للمضيف 65001 (UTF-8) فلا يعمل Alt Code.\n\n3. مع صفر بادئ هذا هو إصدار ANSI من Alt Code الأصلي في Windows (وبدونه إصدار OEM).\n\n4. مع Rime للصينية التقليدية يعني الصفر البادئ Big5 وبدونه GBK.</string>
+    <string name="template_preset_richedit_alt_x_description">طريقة الاستخدام: افتح نقطة الإدخال في برنامج يدعم RichEdit -> اضبط طريقة الإدخال (الصينية المبسطة، الصينية التقليدية، اليابانية، الكورية: استخدم الوضع الإنجليزي) -> اكتب النص في مربع النص وأرسله (يكتب القالب u+ ورمز ست عشري، ثم يضغط Alt+X في النهاية)\n\nملاحظات:\n\nAlt+X هو التحويل المضمّن في RichEdit (محرّك النص في Word). لا حاجة لفحص صفحة الرموز أو تغيير مجموعة المحارف، ولا تُستخدم لوحة الأرقام.\n\nعند وضع المؤشر مباشرة بعد رمز ست عشري، يؤدي الضغط إلى تحويل الرمز إلى الحرف في مكانه؛ لكن لأن الرمز متغيّر الطول، لتحويل هذا الجزء فقط بدقة يجب تحديد النص أو كتابة u+ أولاً (u+ في هذا القالب لهذا الغرض، ويُحذف السابقة مع التحويل).\n\nيعمل فقط في برامج RichEdit المضيفة، ويمكن البحث باسم البرنامج:\nمدعوم: كل إصدارات Word، ونص رسالة Outlook، وOneNote، ومفكرة Windows 11، وWordPad (أُزيل في Windows 11 24H2)، ونوافذ إيداع TortoiseSVN / Git؛\nغير ذلك: لا يعمل في Excel أو المتصفحات أو VS Code أو مربعات النص العادية في PowerPoint (في PPT فقط محرّر المعادلات). نسخة Word الفرنسية تستخدم Alt+C.</string>
+    <string name="template_preset_macos_hex_description">طريقة الاستخدام: بدّل مصدر الإدخال الحالي إلى Unicode Hex Input من إعدادات النظام ثم لوحة المفاتيح -> اكتب النص في مربع النص وأرسله (يُبقي القالب مفتاح Option مضغوطاً ويكتب 4 أرقام ست عشرية ثم يُفلت Option ليظهر الحرف)\n\nملاحظات:\n\n1. يجب حشو الرمز بالأصفار إلى 4 أرقام: مصدر الإدخال هذا لا يقبل إلا 4 أرقام ست عشرية في المرة، لذلك يحمل موضع الرمز في القالب pad=4، والقيم الأقصر تحصل على أصفار في المقدمة، فمثلاً 中 هو 4E2D وA يُكتب 0041؛ وبدون الحشو تعني هذه الأرقام موضعاً آخر.\n\n2. مجموعة المحارف هي UTF-16 ولا يُستحسن تغييرها: المحارف خارج المستوى الأساسي (الرموز التعبيرية وغيرها) تُقسَّم إلى استدعاءين Option+xxxx، واحد لكل وحدة رمز UTF-16، ويجمع macOS البديلين في حرف واحد: 😀 هو D83D وDE00، استدعاءان. أما Unicode فيرسل 5 أرقام ست عشرية لا يقبلها مصدر الإدخال هذا.\n\n3. يلزم أولاً تحويل مصدر الإدخال إلى Unicode Hex Input؛ فمع تخطيط لوحة مفاتيح عادي لا يكتب Option سوى الرموز. هذا التحويل يقوم به المستخدم (القالب لا يقوم به)، ثم أعد المصدر السابق بعد الاستخدام، وإلا صارت اختصارات Option+رقم اليومية مشغولة.\n\n4. هذا القالب غير مُتحقق منه على جهاز حقيقي: لم يتوفر جهاز macOS، لذلك قد تختلف أوقات الضغط بحسب إصدار النظام. إذا لم يحدث شيء، جرّب أولاً Option+4E2D يدوياً على المضيف وقارنه بأوقات القالب (هذا معنى unverified في الاسم).</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">طريقة الاستخدام: لا حاجة إلى أي إعداد في المضيف، ما عليك سوى كتابة النص في مربع النص وإرساله (يضغط القالب Ctrl+Shift+U ثم يُفلت كل شيء، ويكتب أرقام النظام الست عشري، ويؤكد في النهاية بمفتاح المسافة)\n\nملاحظات:\n\n1. يمكن ضغط هذا التسلسل بطريقتين، وهذا القالب يستخدم الطريقة المنفصلة: اضغط Ctrl+Shift+U ثم أفلت كل شيء فوراً (يعرض النظام حينها حرف u تحته خط)، ثم اكتب الأرقام الست عشرية وأكّد بمفتاح المسافة. أما الطريقة الأخرى، أي المستمرة، فتُبقي Ctrl+Shift مضغوطين وتكتب u والأرقام ثم تُفلت في النهاية للتأكيد تلقائياً: في هذه الحالة يعتمد وقت التأكيد على المضيف ولا يمكن للجهاز معرفته، لذلك لا يستخدمها القالب.\n\n2. مجموعة المحارف هي Unicode ولا حاجة إلى تغييرها: تُكتب من 1 إلى 6 أرقام ست عشرية، دون حشو بالأصفار ودون تقسيم إلى أزواج بديلة UTF-16 كما في macOS؛ والمحارف خارج المستوى الأساسي (الرموز التعبيرية وغيرها) تُدخل مرة واحدة.\n\n3. يحتاج المضيف إلى إطار عمل لإدخال سطح المكتب (GTK / IBus / Fcitx)؛ وكل من سطح مكتب Linux وChromeOS يتضمنه، لذا يعمل مباشرة. بعض البرامج تحتكر هذا الاختصار، فلا يعمل فيها.\n\n4. مفتاح التأكيد هو المسافة؛ ويعمل Enter أيضاً. لتغييره إلى Enter، عدّل الخطوة الأخيرة في القالب إلى tap Enter.\n\n5. بعد الاختصار اترك لحظة لطريقة الإدخال كي تستقر حالتها الداخلية، وإلا دخلت أول أرقام ست عشرية في مربع النص كحروف عادية. الفاصل الزمني 50 مللي ثانية بين المفاتيح في رأس القالب هو تلك المهلة، ويُفضل عدم تقليله.</string>
+    <string name="template_host_layout_us_notice">لوحة مفاتيح المضيف ليست تخطيط US: ستكتب المفاتيح محارف أخرى. قبل الإرسال بدّل المضيف إلى لوحة مفاتيح US (Windows) أو أضف طريقة إدخال بلوحة US (Linux)؛ أما Unicode Hex Input في macOS فهو قائم على US أصلاً.</string>
+    <string name="template_host_layout_english_notice">مفاتيح الحروف في لوحة المضيف ليست حروفاً لاتينية (الكورية واليابانية وما شابه): قبل الإرسال بدّل إلى الوضع الإنجليزي (الأبجدي الرقمي)؛ في هذا الوضع تتطابق مفاتيح الحروف الـ26 مع لوحة US.</string>
+    <string name="template_send_unencodable_title">هناك محرف لا يمكن ترميزه</string>
+    <string name="template_send_unencodable_text">المحرف رقم %1$d «%2$s» (U+%3$s) لا يمكن ترميزه بمجموعة المحارف %4$s؛ وإرساله سيُسقط هذا المحرف. تحقق من مجموعة المحارف أو من المساعدة بجانبها، أو من النص.</string>
+    <string name="template_send_anyway">أرسل على أي حال</string>
+    <string name="template_preview_unencodable">في النموذج محرف لا يمكن ترميزه: «%1$s» (U+%2$s) لا يمكن ترميزه بـ %3$s ويُتخطى عند التوسيع.</string>
+    <string name="template_delete_confirm">هل تريد حذف القالب «%1$s»؟</string>
+    <string name="template_save_failed">فشل حفظ القالب:</string>
+    <string name="template_load_error_title">أخطاء تحميل القوالب</string>
+    <string name="template_load_error_desc">تحتوي هذه القوالب على أخطاء. افتحها في المحرر لتصحيحها:</string>
+    <string name="template_load_error_item">%1$s (%2$d خطأ)</string>
+    <string name="template_send_blocked">لا يمكن للقالب إدخال نص بعد — أصلحه قبل الإرسال</string>
+    <string name="template_card_summary">%1$s · الأساس %2$d · %3$d خطوة</string>
+    <string name="template_expand_summary">%1$d خطوة · %2$d إطار · نحو %3$d مللي ثانية</string>
+    <string name="template_editor_title">تعديل القالب</string>
+    <string name="template_empty_steps">لا توجد خطوات بعد. استخدم «إضافة خطوة» لإنشاء خطوة.</string>
+    <string name="template_step_summary">%1$d خطوة · الإمساك %2$d مللي ثانية · الفاصل %3$d مللي ثانية</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">معاملات القالب</string>
+    <string name="template_header_summary">%1$s · الأساس %2$d · %3$d / %4$d / %5$d مللي ثانية</string>
+    <string name="template_header_charset">مجموعة المحارف</string>
+    <string name="charset_hint_title">مجموعات المحارف والأسماء البديلة</string>
+    <string name="charset_hint_desc">في الجهة المقابلة مجموعة المحارف التي تستخدمها كل لغة في Windows. اكتب في القالب الاسم المعياري (المكتوب بخط ثابت وعريض)؛ الأسماء البديلة أدناه مقبولة أيضًا.</string>
+    <string name="charset_hint_limits">ملاحظة: معظم مجموعات المحارف لا تشمل كل رموز Unicode، والمحارف غير الموجودة لا يمكن إرسالها (يظهر تنبيه قبل الإرسال)؛ كما أن بعض المجموعات تستخدم مواضع مختلفة للمحرف نفسه (windows-1252 مقابل IBM850، GBK مقابل Big5)، لذا فاختيار الصفحة الخطأ يكتب محارف أخرى. لتغطية كل شيء استخدم Unicode أو UTF-16.</string>
+    <string name="charset_word_alt_code_hint">في Word استخدم هذا السطر (يُستبدل Alt Code)</string>
+    <string name="charset_lang_gbk">الصينية المبسطة (ansi/oem)</string>
+    <string name="charset_lang_big5">الصينية التقليدية (ansi/oem)</string>
+    <string name="charset_lang_windows_31j">اليابانية (ansi/oem)</string>
+    <string name="charset_lang_windows_949">الكورية (ansi/oem)</string>
+    <string name="charset_lang_windows_1252">الإنجليزية · الإسبانية · الفرنسية · البرتغالية · الألمانية (ansi)</string>
+    <string name="charset_lang_ibm437">الإنجليزية (الولايات المتحدة) (oem)</string>
+    <string name="charset_lang_ibm850">الإنجليزية (المملكة المتحدة / الدولية) · الإسبانية · الفرنسية · البرتغالية · الألمانية (oem)</string>
+    <string name="charset_lang_windows_1251">الروسية (ansi)</string>
+    <string name="charset_lang_ibm866">الروسية (oem)</string>
+    <string name="charset_lang_windows_1256">العربية (ansi)</string>
+    <string name="charset_lang_ibm720">العربية (oem)</string>
+    <string name="charset_lang_unicode">جميع اللغات الحديثة (unicode) · نقاط ترميز كاملة (UTF-32 بدون حشو أصفار، 1-6 أرقام)</string>
+    <string name="charset_lang_utf16">تُرسل محارف المستوى الإضافي على وحدتين (وحدات ترميز UTF-16)</string>
+    <string name="charset_lang_us_ascii">الإنجليزية (ascii) · الهندية (لا صفحة رموز ansi/oem)</string>
+    <string name="template_header_radix">الأساس</string>
+    <string name="template_header_template_gap">فاصل القالب</string>
+    <string name="template_header_key_hold">مدة الإمساك</string>
+    <string name="template_header_key_gap">فاصل المفاتيح</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">المفاتيح</string>
+    <string name="template_modifier_section">مفاتيح التعديل: الإضافة التالية تصبح خطوة مركّبة</string>
+    <string name="template_key_section">المفاتيح: نقرة تضيف خطوة «tap»</string>
+    <string name="template_add">إضافة</string>
+    <string name="template_add_delay">تأخير</string>
+    <string name="template_add_code">عنصر نائب للرمز</string>
+    <string name="template_add_custom">مفتاح مخصص</string>
+    <string name="template_custom_key_title">مفتاح مخصص</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">تعديل الخطوة</string>
+    <string name="template_step_key">اسم المفتاح</string>
+    <string name="template_step_duration">المدة (مللي ثانية)</string>
+    <string name="template_step_pad">الحشو إلى N خانة</string>
+    <string name="template_step_enable">مُفعَّل</string>
+    <string name="template_step_code_hint">مدة الإمساك والفاصل لكل رقم مأخوذان من معاملات القالب «مدة الإمساك / فاصل المفاتيح».</string>
+    <string name="template_step_keys">مصدر الأرقام</string>
+    <string name="template_keys_numpad">لوحة الأرقام</string>
+    <string name="template_keys_main">اللوحة الرئيسية</string>
+    <string name="template_step_split">تقسيم</string>
+    <string name="template_step_chord_hint">تُضغط المجموعة وتُفلت معًا، و«تقسيم» يعطي الخطوات المنفصلة المكافئة.</string>
+    <string name="template_step_split_hint">يحوّل التقسيم «tap» إلى «ضغط» + «إفلات»، فيبقى المفتاح مضغوطًا حتى خطوة الإفلات المقابلة.</string>
+    <string name="template_step_modifier_hint">مفتاح تعديل: هذه الخطوة تتولى الضغط والإفلات.</string>
+    <string name="template_step_unknown_hint">لم يتم التعرف على هذا السطر. أعد كتابته كخطوة واحدة صحيحة، مثل «down Alt» أو «sleep 20» أو «&lt;code&gt;».</string>
+    <string name="template_step_line">السطر</string>
+    <string name="template_status_ok">الصياغة سليمة</string>
+    <string name="template_status_error">%1$d خطأ</string>
+    <string name="template_status_warning">%1$d تحذير</string>
+    <string name="template_preview">معاينة موسّعة</string>
+    <string name="template_preview_empty">لا يوجد ما يمكن معاينته</string>
+    <string name="template_preview_sample">معاينة المحرف</string>
+    <string name="template_preview_test">اختبار</string>
+    <string name="template_preview_header_action">الإجراء</string>
+    <string name="template_preview_header_report">مفتاح التعديل / رمز المفتاح</string>
+    <string name="template_preview_header_duration">الإمساك</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">القالب فارغ</string>
+    <string name="template_error_missing_code">عنصر &lt;code&gt; مفقود: لا يمكن استخدام القالب لكتابة نص</string>
+    <string name="template_warn_code_disabled">عنصر &lt;code&gt; معطّل: لا يمكن استخدام القالب لكتابة نص</string>
+    <string name="template_error_unknown_key">اسم مفتاح غير معروف «%1$s»</string>
+    <string name="template_error_unknown_key_suggest">اسم مفتاح غير معروف «%1$s»، هل تقصد «%2$s»؟</string>
+    <string name="template_error_invalid_number">رقم غير صالح «%1$s»</string>
+    <string name="template_error_invalid_value">قيمة غير صالحة «%1$s»</string>
+    <string name="template_error_unclosed_placeholder">«&gt;» مفقودة بعد «&lt;»</string>
+    <string name="template_error_unknown_step">خطوة غير معروفة «%1$s»</string>
+    <string name="template_error_unknown_charset">مجموعة محارف غير مدعومة «%1$s»</string>
+    <string name="template_error_invalid_radix">يجب أن يكون الأساس 10 أو 16، والقيمة الحالية «%1$s»</string>
+    <string name="template_error_unbalanced_key">المفتاح «%1$s» مضغوط ولم يُفلت: سيبقى مضغوطًا</string>
+    <string name="template_warn_unknown_param">معامل غير معروف «%1$s»</string>
+    <string name="template_warn_duplicate_code">يرسل القالب محرفًا واحدًا فقط؛ وتكرار &lt;code&gt; يعيد إرسال تسلسل الأرقام نفسه</string>
+    <string name="template_warn_multiple_held_keys">هناك عدة مفاتيح عادية مضغوطة في الوقت نفسه (%1$s)، لكن تقرير لوحة المفاتيح يحمل مفتاحًا واحدًا فقط</string>
+    <string name="template_warn_small_delay">التأخير %1$s مللي ثانية قصير جدًا وقد يُضغط عبر البلوتوث</string>
+    <string name="template_warn_small_delay_header">مدة الإمساك أو الفاصل في القالب %1$s مللي ثانية أقل من 10 مللي ثانية وقد تُضغط عبر البلوتوث</string>
+    <string name="template_warn_ignored_attr">لم تعد السمة «%1$s» فعّالة: إيقاع المفاتيح يتبع معاملات القالب، وتُزال عند الحفظ</string>
+</resources>

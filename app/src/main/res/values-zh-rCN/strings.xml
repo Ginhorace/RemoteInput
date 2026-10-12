@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RemoteInput</string>
+    <string name="control_title">远程控制</string>
+    <string name="shortcut_connect_to">连接到 %1$s</string>
+    
+    <!-- MainActivity -->
+    <string name="request_bluetooth_permission">请求蓝牙权限</string>
+    <string name="turn_on_bluetooth">打开蓝牙</string>
+    <string name="scanning">正在扫描…</string>
+    <string name="bluetooth_ready">蓝牙已就绪</string>
+    <string name="stop_scanning">停止扫描</string>
+    <string name="start_scanning">开始扫描</string>
+    <string name="app_description">本应用用于扫描和连接蓝牙设备。\n\n功能特点：\n- 扫描附近的蓝牙设备\n- 显示已保存的蓝牙设备\n- 支持蓝牙设备连接\n\n请点击上方按钮请求蓝牙权限以使用应用功能。</string>
+    <string name="saved_devices">已保存的设备</string>
+    <string name="nearby_devices">附近的设备</string>
+    <string name="click_to_scan">点击开始扫描按钮搜索设备</string>
+    <string name="connect">连接</string>
+    <string name="bluetooth_device">蓝牙设备</string>
+    <string name="unknown_device">未知设备</string>
+    
+    <!-- ControlActivity -->
+    <string name="back">返回</string>
+    <string name="connected">已连接</string>
+    <string name="connecting">连接中…</string>
+    <string name="disconnecting">断开中…</string>
+    <string name="disconnected">未连接</string>
+    <string name="initializing">正在初始化…</string>
+    <string name="registering">注册中…</string>
+    <string name="init_failed">初始化失败</string>
+    <string name="left_button">左键</string>
+    <string name="right_button">右键</string>
+    <string name="input_text">输入文本…</string>
+    <string name="send">发送</string>
+    <string name="sending">发送中…</string>
+    <string name="sending_text_hint">正在发送文本，请稍候…</string>
+    <string name="ok">确定</string>
+    <string name="disconnect">断开连接</string>
+    <string name="confirm_disconnect">确定要断开蓝牙连接吗？</string>
+    <string name="cancel">取消</string>
+
+    <!-- 连接保持：前台服务的常驻通知、扫描页连接卡片、后退提示、换设备确认 -->
+    <string name="connection_kept_title">连接保持中</string>
+    <string name="notification_channel_name">连接保持</string>
+    <string name="notification_channel_description">在使用其它应用时显示仍在保持的蓝牙连接。</string>
+    <string name="notification_text_connecting">正在连接 %1$s…</string>
+    <string name="notification_text_connected">已连接 %1$s</string>
+    <string name="notification_action_open">回到控制页</string>
+    <string name="connection_kept_toast">连接仍在后台保持</string>
+    <string name="scanner_switch_title">切换设备？</string>
+    <string name="scanner_switch_text">当前已连接 %1$s。要断开它并连接到 %2$s 吗？</string>
+    <string name="scanner_switch_confirm">切换</string>
+
+    <!-- Mode Names -->
+    <string name="mode_keyboard">键盘模式</string>
+    <string name="mode_touchpad">触摸板模式</string>
+
+    <!-- Keyboard pages (page indicator labels) -->
+    <string name="keyboard_page_main">主键盘</string>
+    <string name="keyboard_page_function">功能键</string>
+    <string name="keyboard_page_numpad">小键盘</string>
+
+    <!-- 主机不理 Num Lock 时的提示：小键盘可能用不了 -->
+    <string name="keyboard_numpad_warning">连接的设备可能不支持小键盘。依赖小键盘的模板输入（Alt + 数字）可能无法使用。</string>
+
+    <!-- Touchpad -->
+    <string name="touchpad_buttons">触摸板按键</string>
+
+    <!-- Settings -->
+    <string name="settings">设置</string>
+    <string name="theme_settings">主题设置</string>
+    <string name="theme_mode">主题模式</string>
+    <string name="theme_mode_system">跟随系统</string>
+    <string name="theme_mode_light">浅色</string>
+    <string name="theme_mode_dark">深色</string>
+    <string name="hue_scheme">色相方案</string>
+    <string name="language_settings">语言设置</string>
+    <string name="language_mode">语言</string>
+    <string name="keyboard_settings">键盘</string>
+    <string name="keyboard_layout">宿主键盘布局</string>
+    <string name="keyboard_layout_follow_ui">跟随界面语言</string>
+    <string name="keyboard_layout_hint">应用无法读取已连接设备的键盘布局，请选择与之一致的一项；两者不一致时按键会输出错误字符。</string>
+    <string name="keyboard_layout_send_hint">发送模板时注意：模板按美式键位发出，宿主布局不是美式时(法语 AZERTY、德语 QWERTZ、俄语、阿拉伯语等)要先换成美式键盘；朝鲜语、日语这类字母位被替换但英文模式下与美式一致的，切到英文(英数)模式即可。</string>
+    <string name="charset_settings">字符集</string>
+    <string name="charset_settings_hint">禁用只影响编辑模板时的下拉选项；已经在用该字符集的模板照常执行。</string>
+    <string name="charset_add_label">新增字符集</string>
+    <string name="charset_add">添加</string>
+    <string name="charset_add_ok">已添加“%1$s”</string>
+    <string name="charset_add_duplicate">与列表里的“%1$s”重复</string>
+    <string name="charset_add_not_found">这台设备没有字符集“%1$s”</string>
+    <string name="charset_add_blank">请输入字符集名</string>
+    <string name="charset_delete">删除</string>
+    <string name="charset_delete_confirm">确定删除字符集“%1$s”？正在使用它的模板会报字符集不可用。</string>
+
+
+    <!-- Hue schemes -->
+    <string name="hue_azure">Azure 蓝</string>
+    <string name="hue_teal">Teal 青绿</string>
+    <string name="hue_violet">Violet 紫</string>
+    <string name="hue_amber">Amber 琥珀</string>
+    <string name="hue_rose">Rose 玫红</string>
+    <string name="hue_graphite">Graphite 石墨</string>
+
+    <!-- Languages -->
+    <!-- 语言名是原生写法，放在默认语包里（translatable="false"），这里只留需要本地化的「跟随系统」 -->
+    <string name="language_system">跟随系统</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_tip">提示</string>
+
+    <!-- Errors -->
+    <string name="error_title">错误</string>
+    <string name="error_unsupported">系统未启用蓝牙 HID 设备功能，请检查手机系统设置</string>
+    <string name="error_device_not_ready">HID 服务未就绪</string>
+    <string name="error_register_failed">注册 HID 应用失败</string>
+    <string name="error_register_exception">注册 HID 应用失败：%1$s</string>
+    <string name="error_pairing_failed">配对失败或已取消</string>
+    <string name="error_connect_failed">连接失败</string>
+    <string name="error_connect_exception">连接失败：%1$s</string>
+
+    <!-- Template Mode -->
+    <string name="mode_template">模板模式</string>
+    <string name="template_title">模板</string>
+    <string name="template_new">新建</string>
+    <string name="template_edit">编辑</string>
+    <string name="template_copy">复制</string>
+    <string name="template_copy_name">%1$s 副本</string>
+    <string name="template_delete">删除</string>
+    <string name="template_save">保存</string>
+    <string name="template_name">模板名称</string>
+    <string name="template_description">模板描述</string>
+    <string name="template_description_label">描述：</string>
+    <string name="template_description_empty">点击添加</string>
+    <string name="template_description_hint">这张模板干什么用，宿主上要先做什么设置</string>
+    <string name="template_empty_list">还没有模板，点击「新建」创建一个</string>
+    <string name="template_preset_title">选择模板</string>
+    <string name="template_preset_oem_alt_code_description">使用方法：根据环境修改字符集(默认字符集跟随界面语言，Word 环境需要改成 Unicode) -> 打开小键盘 -> 切换到自己语言的输入法(简体中文、繁体中文、日语、朝鲜语切换到美式键盘) -> 文本框输入文本发送\n\n注释说明：\n\n1. 默认字符集是当前界面语言对应的宿主 OEM 码页(简体中文 GBK、繁体中文 Big5、日语 windows-31j、朝鲜语 windows-949、英语：美国 IBM437、英国/国际 IBM850（未区分地区时默认美国），西欧各语言 IBM850、俄语 IBM866、阿拉伯语 IBM720、印地语 US-ASCII)，也就是在 Windows 其他界面下该用的那一张；Word 里需要改成 Unicode。Alt Code 依赖小键盘输入编码，使用时要先把小键盘打开(Num Lock)。\n\n2. 语言和 OEM 代码页的对应关系可以点字符集旁边的圆圈问号图标查询。简体中文、繁体中文、日语、朝鲜语的 ANSI 与 OEM 代码页是同一张，所以直接选择 OEM 版本的模板就行。宿主的 OEMCP 是 65001(UTF-8)时，Alt Code 不生效。\n\n3. 数字不带前导 0，是 Windows 原生机制 Alt Code 的 OEM 版本(带前导 0 的是 ANSI 版本)。\n\n4. 简体中文、繁体中文、日语、朝鲜语的微软输入法下要切换到美式键盘(或改用旧版兼容模式 / 第三方输入法)，因为这四种语言的微软输入法把 OEM 输入固定成 IBM437、ANSI 固定成 windows-1252，Word 里还会输出 2 个字符。</string>
+    <string name="template_preset_ansi_alt_code_description">使用方法：根据环境修改字符集(默认字符集跟随界面语言，Word 环境需要改成 Unicode) -> 打开小键盘 -> 切换到自己语言的输入法(简体中文、繁体中文、日语、朝鲜语建议用 OEM 版本) -> 文本框输入文本发送\n\n注释说明：\n\n1. 默认字符集是当前界面语言对应的宿主 ANSI 码页(简体中文 GBK、繁体中文 Big5、日语 windows-31j、朝鲜语 windows-949、英语与西欧各语言 windows-1252、俄语 windows-1251、阿拉伯语 windows-1256、印地语 US-ASCII)，也就是在 Windows 其他界面下该用的那一张；Word 里需要改成 Unicode。Alt Code 依赖小键盘输入编码，使用时要先把小键盘打开(Num Lock)。\n\n2. 语言和 ANSI 代码页的对应关系可以点字符集旁边的圆圈问号图标查询。简体中文、繁体中文、日语、朝鲜语的 ANSI 与 OEM 代码页是同一张，所以直接选择 OEM 版本的模板就行。宿主的 ACP 是 65001(UTF-8)时，Alt Code 不生效。\n\n3. 输入数字带前导 0，是 Windows 原生机制 Alt Code 的 ANSI 版本(不带 0 的是 OEM 版本)。\n\n4. 繁体中文用 Rime 的繁体中文输入法时，带 0 的字符集是 Big5，不带 0 是 GBK。</string>
+    <string name="template_preset_richedit_alt_x_description">使用方法：打开支持 RichEdit 的程序的输入点 -> 调整输入法(简体中文、繁体中文、日语、朝鲜语使用英语模式) -> 文本框输入文本发送(模板打 u+ 与十六进制码，最后按 Alt+X 转换)\n\n注释说明：\n\nAlt+X 是 RichEdit(Word 的文字内核)自带的内联转换，不需要检查代码页更改字符集，用不到小键盘。\n\n光标紧跟十六进制码时按下，码就地变成字符；但是由于是支持变长码，要精准只转这一段，必须选中文本或先打 u+(模板打的 u+ 就是为此，转换时连前缀一起删掉)。\n\n只在 RichEdit 宿主里有效，可按软件名查：\n支持：Word 全版本、Outlook 邮件正文、OneNote、Windows 11 记事本、WordPad(Win11 24H2 起移除)、TortoiseSVN / Git 提交框；\n其他情况：Excel、浏览器、VS Code、PowerPoint 普通文本框不支持(PPT 仅公式编辑区)。法语版 Word 用的是 Alt+C。</string>
+    <string name="template_preset_macos_hex_description">使用方法：在宿主的「键盘 → 输入法」里把当前输入法切成 Unicode Hex Input -> 文本框里输入文本发送即可(模板按住 Option 打 4 位十六进制，再松开 Option 让字符上屏)\n\n注释说明：\n\n1. 编码必须补齐到 4 位：这套输入法单次只收 4 位十六进制，所以模板的编码占位符带 pad=4 —— 不够 4 位时会在前面补 0，例如「中」是 4E2D、「A」要写成 0041；不补零的话那几位会被当成别的码位。\n\n2. 字符集是 UTF-16，不要改动：辅助平面字符(Emoji 等)按 UTF-16 代码单元拆成两次 Option+xxxx，由 macOS 自己把两个代理项合成一个字符，例如 😀 是 D83D 与 DE00 两次。改成 Unicode 会送出 5 位码位，这套输入法收不下。\n\n3. 前提是先把输入法切成 Unicode Hex Input，普通键盘布局下按 Option 只会打符号。这一步要使用者自己按(模板不负责切)，用完记得切回原来的输入法，否则日常的 Option+数字 快捷键会被占掉。\n\n4. 这条预设没有上机验证：手边没有 macOS 设备，按键时序可能随系统版本变化。发现不生效时，先在宿主上手动试一次 Option+4E2D 能不能上屏，再对比模板的时序(名字里的 unverified 就是这个意思)。</string>
+    <string name="template_preset_linux_ctrl_shift_u_description">使用方法：宿主上不需要额外设置，在文本框里输入文本发送即可(模板先按 Ctrl+Shift+U 并全部松开，再逐位敲十六进制码位，最后用空格确认)\n\n注释说明：\n\n1. 这段序列有两种按法，本模板用的是「离散式」：Ctrl+Shift+U 按下后立即全部松开，此时系统显示一个带下划线的 u，再敲十六进制、最后按空格提交；另一种「保持式」是按住 Ctrl+Shift 不放，敲完 u 与码位、松手时自动提交，提交时机握在宿主手里、设备端确认不了，所以不用它。\n\n2. 字符集是 Unicode，不需要改动：写 1~6 位十六进制，不需要补零，也不需要像 macOS 那样按 UTF-16 代理对拆两次，辅助平面字符(Emoji 等)一次就能输入。\n\n3. 需要宿主装了桌面输入法框架(GTK / IBus / Fcitx)才能用，桌面 Linux 与 ChromeOS 都自带、开箱即用。个别程序会自己占用这个组合键，在那种程序里会失效。\n\n4. 确认键用的是空格，回车(Enter)同样有效；想改用回车，把模板最后一步改成 tap Enter。\n\n5. 组合键按完之后要给输入法状态机留出启动时间，否则开头几位十六进制会被当成普通字母直接打进文本框。模板头部的「按键间隔」50 毫秒就是这个缓冲，不建议调小。</string>
+    <string name="template_host_layout_us_notice">宿主键盘不是美式布局，按下的键位会输出别的字符：发送前先在宿主上换成美式键盘(Windows)或添加一个美式键盘输入法(Linux)；macOS 的 Unicode Hex Input 自带美式布局。</string>
+    <string name="template_host_layout_english_notice">宿主键盘的字母位不是拉丁字母(朝鲜语、日语这类)：发送前先切到英文(英数)模式，英文模式下 26 个字母位与美式键盘一致。</string>
+    <string name="template_send_unencodable_title">有字符编不出来</string>
+    <string name="template_send_unencodable_text">第 %1$d 个字符「%2$s」(U+%3$s) 无法用字符集 %4$s 编码，继续发送会漏掉这个字符。请检查字符集或查看旁边的帮助，或检查文本是否用错。</string>
+    <string name="template_send_anyway">仍然发送</string>
+    <string name="template_preview_unencodable">示例里有字符编不出来：「%1$s」(U+%2$s) 无法用 %3$s 编码，展开时已跳过。</string>
+    <string name="template_delete_confirm">确定删除模板「%1$s」？</string>
+    <string name="template_save_failed">保存模板失败：</string>
+    <string name="template_load_error_title">模板加载错误</string>
+    <string name="template_load_error_desc">以下模板存在错误，请在编辑器中修复：</string>
+    <string name="template_load_error_item">%1$s（%2$d 个错误）</string>
+    <string name="template_send_blocked">模板无法输入文本，修复后才能发送</string>
+    <string name="template_card_summary">%1$s · %2$d 进制 · %3$d 步</string>
+    <string name="template_expand_summary">%1$d 步 · 展开 %2$d 帧 · 约 %3$d ms</string>
+    <string name="template_editor_title">编辑模板</string>
+    <string name="template_empty_steps">还没有步骤，点「添加步骤」创建一个</string>
+    <string name="template_step_summary">%1$d 步 · 保持 %2$d ms · 间隔 %3$d ms</string>
+
+    <!-- Template Editor: header parameters -->
+    <string name="template_header_title">模板参数</string>
+    <string name="template_header_summary">%1$s · %2$d 进制 · %3$d / %4$d / %5$d ms</string>
+    <string name="template_header_charset">字符集</string>
+    <string name="charset_hint_title">字符集与别名</string>
+    <string name="charset_hint_desc">右侧是各语言在 Windows 上对应的字符集。模板里请写规范名（加粗、等宽的那个），它下面的别名系统同样认识。</string>
+    <string name="charset_hint_limits">注意：大多数字符集没有包含 Unicode 的所有编码，收不进去的字符发不出去(发送前会提示)；部分字符集之间的码位不同(如 windows-1252 与 IBM850、GBK 与 Big5)，选错页时字符会发成别的字。需要覆盖全部字符请用 Unicode 或 UTF-16。</string>
+    <string name="charset_word_alt_code_hint">Word 里改用这一项(Alt Code 被重载)</string>
+    <string name="charset_lang_gbk">简体中文（ansi/oem）</string>
+    <string name="charset_lang_big5">繁体中文（ansi/oem）</string>
+    <string name="charset_lang_windows_31j">日语（ansi/oem）</string>
+    <string name="charset_lang_windows_949">韩语（ansi/oem）</string>
+    <string name="charset_lang_windows_1252">英语 · 西班牙语 · 法语 · 葡萄牙语 · 德语（ansi）</string>
+    <string name="charset_lang_ibm437">英语（美国）（oem）</string>
+    <string name="charset_lang_ibm850">英语（英国/国际）· 西班牙语 · 法语 · 葡萄牙语 · 德语（oem）</string>
+    <string name="charset_lang_windows_1251">俄语（ansi）</string>
+    <string name="charset_lang_ibm866">俄语（oem）</string>
+    <string name="charset_lang_windows_1256">阿拉伯语（ansi）</string>
+    <string name="charset_lang_ibm720">阿拉伯语（oem）</string>
+    <string name="charset_lang_unicode">全部现代语言（unicode）· 完整码点（UTF-32 不补零，1~6 位）</string>
+    <string name="charset_lang_utf16">辅助平面字符会拆成 2 段（UTF-16 代码单元）</string>
+    <string name="charset_lang_us_ascii">英语（ascii）· 印地语（无 ansi/oem 码页）</string>
+    <string name="template_header_radix">进制</string>
+    <string name="template_header_template_gap">模板间隔</string>
+    <string name="template_header_key_hold">按下保持</string>
+    <string name="template_header_key_gap">按键间隔</string>
+
+    <!-- Template Editor: add step -->
+    <string name="template_add_keyboard_key">键盘按键</string>
+    <string name="template_modifier_section">修饰键：选中后，下一次添加会包成组合键</string>
+    <string name="template_key_section">按键：点一下加一条 tap</string>
+    <string name="template_add">添加</string>
+    <string name="template_add_delay">延时</string>
+    <string name="template_add_code">编码占位符</string>
+    <string name="template_add_custom">自定义按键</string>
+    <string name="template_custom_key_title">自定义按键</string>
+
+    <!-- Template Editor: step dialog -->
+    <string name="template_step_edit">编辑步骤</string>
+    <string name="template_step_key">按键名</string>
+    <string name="template_step_duration">时长（毫秒）</string>
+    <string name="template_step_pad">补零到几位</string>
+    <string name="template_step_enable">启用</string>
+    <string name="template_step_code_hint">每一位的保持与间隔取模板参数里的「按下保持 / 按键间隔」。</string>
+    <string name="template_step_keys">数字键来源</string>
+    <string name="template_keys_numpad">小键盘</string>
+    <string name="template_keys_main">主键盘</string>
+    <string name="template_step_split">拆分</string>
+    <string name="template_step_chord_hint">整组按下、再整组松开；「拆分」得到的就是等价的多步写法。</string>
+    <string name="template_step_split_hint">拆分把「tap」变成「按下」+「松开」两步，按键会一直保持到后面的松开步骤。</string>
+    <string name="template_step_modifier_hint">修饰键：由本步骤负责按下 / 松开。</string>
+    <string name="template_step_unknown_hint">这一行认不出来。把它改成一条合法步骤即可，例如“down Alt”“sleep 20”或“&lt;code&gt;”。</string>
+    <string name="template_step_line">行</string>
+    <string name="template_status_ok">语法正确</string>
+    <string name="template_status_error">%1$d 个错误</string>
+    <string name="template_status_warning">%1$d 个警告</string>
+    <string name="template_preview">展开预览</string>
+    <string name="template_preview_empty">没有可预览的内容</string>
+    <string name="template_preview_sample">预览字符</string>
+    <string name="template_preview_test">测试</string>
+    <string name="template_preview_header_action">动作</string>
+    <string name="template_preview_header_report">修饰键 / 键码</string>
+    <string name="template_preview_header_duration">保持</string>
+
+    <!-- Template Diagnostics -->
+    <string name="template_error_empty">模板为空</string>
+    <string name="template_error_missing_code">缺少 &lt;code&gt; 占位符，无法用于输入文本</string>
+    <string name="template_warn_code_disabled">&lt;code&gt; 被停用，无法用于输入文本</string>
+    <string name="template_error_unknown_key">未知键名「%1$s」</string>
+    <string name="template_error_unknown_key_suggest">未知键名「%1$s」，是否要输入「%2$s」？</string>
+    <string name="template_error_invalid_number">无效的数字「%1$s」</string>
+    <string name="template_error_invalid_value">无效的值「%1$s」</string>
+    <string name="template_error_unclosed_placeholder">「&lt;」后面缺少「&gt;」</string>
+    <string name="template_error_unknown_step">无法识别的步骤「%1$s」</string>
+    <string name="template_error_unknown_charset">不支持的字符集「%1$s」</string>
+    <string name="template_error_invalid_radix">进制只能是 10 或 16，当前是「%1$s」</string>
+    <string name="template_error_unbalanced_key">按键「%1$s」按下后没有松开，这个键会一直保持按住</string>
+    <string name="template_warn_unknown_param">未知参数「%1$s」</string>
+    <string name="template_warn_duplicate_code">一个模板只发送一个字符，&lt;code&gt; 出现多次会让同一串编码被重复发送</string>
+    <string name="template_warn_multiple_held_keys">同时按住了多个普通键（%1$s），但键盘报告只能携带 1 个普通键</string>
+    <string name="template_warn_small_delay">延时 %1$s ms 过短，蓝牙下可能被压缩</string>
+    <string name="template_warn_small_delay_header">模板的按键保持 / 间隔 %1$s ms 低于 10 ms，蓝牙下可能被压缩</string>
+    <string name="template_warn_ignored_attr">属性「%1$s」已不再生效：按键节奏统一取模板参数，保存后会被清除</string>
+</resources>
