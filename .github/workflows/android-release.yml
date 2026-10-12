@@ -95,7 +95,14 @@ jobs:
           if-no-files-found: error
 
       - name: Attach to GitHub Release
+        # 只在 tag 推送时创建 Release：仓库 Settings -> Actions 里无需额外配置
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v3
         with:
+          # Release 标题直接用 tag 名（例如 v1.0）
+          name: RemoteInput ${{ github.ref_name }}
           files: dist/*.apk
+          # 没匹配到 APK 就报错，避免建出一个没有附件的 Release
+          fail_on_unmatched_files: true
+          # 由 GitHub 依据上一次 tag 到本次 tag 之间的提交 / PR 自动生成发布说明
+          generate_release_notes: true
