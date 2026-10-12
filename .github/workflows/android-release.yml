@@ -75,7 +75,11 @@ jobs:
           } >> "$GITHUB_ENV"
 
       - name: Build release APK
-        run: ./gradlew assembleRelease --stacktrace
+        # 项目在 Windows 上开发，git 的 core.fileMode 为 false，可执行位容易再次丢失；
+        # 这里兜一刀，避免又因为 ./gradlew: Permission denied 白跑一次。
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease --stacktrace
 
       - name: Collect APK
         run: |
