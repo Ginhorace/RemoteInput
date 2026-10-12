@@ -3,6 +3,11 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+// 发布签名材料从环境变量读取（CI 由 GitHub Secrets 注入，本地亦可先设置再打包）。
+// 未提供签名材料时不做签名，assembleRelease 产出的是 app-release-unsigned.apk —— 无法直接安装。
+val releaseKeystorePath: String? =
+    System.getenv("SIGNING_KEYSTORE_PATH")?.takeIf { it.isNotBlank() }
+
 android {
     // namespace 保持与源码包名一致：它决定生成的 R / BuildConfig 的包名，
     // 也决定 AndroidManifest 中 ".MainActivity" 这类相对类名的解析基准。
@@ -22,6 +27,17 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        if (releaseKeystorePath != null) {
+            create("release") {
+                storeFile = file(releaseKeystorePath)
+                storePassword = System.getenv("SIGNING_KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("SIGNING_KEY_ALIAS")
+                keyPassword = System.getenv("SIGNING_KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
             // R8：裁掉未被引用的类 / 方法 / 字段，并把标识符缩短。
@@ -35,6 +51,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // 有签名材料才签名，否则保持 AGP 默认的未签名产物
+            if (releaseKeystorePath != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
     compileOptions {
