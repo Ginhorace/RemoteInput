@@ -41,11 +41,14 @@
     <!-- Соединение сохраняется: постоянное уведомление службы переднего плана, карточка на экране поиска, сообщение при возврате и подтверждение смены устройства -->
     <string name="connection_kept_title">Соединение сохраняется</string>
     <string name="notification_channel_name">Сохраняемое соединение</string>
-    <string name="notification_channel_description">Показывает соединение Bluetooth, которое сохраняется, пока вы пользуетесь другими приложениями.</string>
-    <string name="notification_text_connecting">Подключение к %1$s…</string>
-    <string name="notification_text_connected">Подключено к %1$s</string>
-    <string name="notification_action_open">К управлению</string>
+    <string name="notification_channel_description">Показывает соединение, которое сохраняется, пока вы пользуетесь другими приложениями.</string>
+    <string name="notification_text_bluetooth_connecting">Bluetooth: подключение к %1$s…</string>
+    <string name="notification_text_bluetooth_connected">Bluetooth: подключено к %1$s</string>
+    <string name="notification_text_lan_listening">USB/IP: прослушивание %1$s</string>
+    <string name="notification_text_lan_attached">USB/IP: ПК подключён</string>
+    <string name="open_controls">К управлению</string>
     <string name="connection_kept_toast">Соединение сохраняется в фоновом режиме</string>
+    <string name="notification_off_toast">Уведомления отключены — вернуться к управлению можно со страницы поиска.</string>
     <string name="scanner_switch_title">Сменить устройство?</string>
     <string name="scanner_switch_text">Сейчас подключено к %1$s. Отключить и подключиться к %2$s?</string>
     <string name="scanner_switch_confirm">Сменить</string>
@@ -53,6 +56,25 @@
     <!-- Mode Names -->
     <string name="mode_keyboard">Режим клавиатуры</string>
     <string name="mode_touchpad">Режим тачпада</string>
+    <string name="mode_mouse">Режим мыши</string>
+
+    <!-- Mouse (classic Bluetooth link only) -->
+    <string name="mouse_control">Управление мышью</string>
+    <string name="middle_button">Средняя кнопка</string>
+    <string name="button_4">Кнопка 4</string>
+    <string name="button_5">Кнопка 5</string>
+    <string name="scroll_wheel">Колесо прокрутки</string>
+    <string name="scroll_up">Прокрутить вверх</string>
+    <string name="scroll_down">Прокрутить вниз</string>
+    <string name="mouse_area">Область указателя</string>
+    <string name="mouse_area_hint">Сдвиг — перемещение · Нажатие — левая кнопка · Долгое нажатие — правая</string>
+    <string name="mouse_only_move">Отпустите кнопки, чтобы двигать указатель</string>
+
+    <!-- Mouse settings -->
+    <string name="mouse_settings">Настройки мыши</string>
+    <string name="long_press_duration">Длительность долгого нажатия</string>
+    <string name="long_press_description">Короткое нажатие — левая кнопка, долгое — правая</string>
+    <string name="long_press_duration_format">%1$d мс</string>
 
     <!-- Keyboard pages (page indicator labels) -->
     <string name="keyboard_page_main">Основная</string>
@@ -98,6 +120,7 @@
     <string name="hue_amber">Янтарный</string>
     <string name="hue_rose">Розовый</string>
     <string name="hue_graphite">Графитовый</string>
+    <string name="hue_dynamic">Цвета системы (Material You)</string>
 
     <!-- Languages -->
     <string name="language_system">Как в системе</string>
@@ -237,4 +260,20 @@
     <string name="template_warn_small_delay">Задержка %1$s мс слишком мала и может быть сжата в Bluetooth</string>
     <string name="template_warn_small_delay_header">Удержание или интервал шаблона %1$s мс меньше 10 мс и может быть сжат в Bluetooth</string>
     <string name="template_warn_ignored_attr">Атрибут «%1$s» больше не действует: ритм клавиш берётся из параметров шаблона, а атрибут удаляется при сохранении</string>
+    <!-- LAN (USB/IP) link -->
+    <string name="lan_title">Локальная сеть (USB/IP)</string>
+    <string name="lan_start">Начать прослушивание</string>
+    <string name="lan_stop">Остановить прослушивание</string>
+    <string name="lan_idle">Прослушивание выключено</string>
+    <string name="lan_listening">Прослушивание %1$s</string>
+    <string name="lan_connected">ПК подключён</string>
+    <string name="lan_waiting">Ожидание ПК</string>
+    <string name="lan_open_controls">Нажмите, чтобы открыть управление</string>
+    <string name="lan_attach_hint">На ПК: usbip attach -r %1$s -b 1-1</string>
+    <string name="lan_address_unknown">нет адреса</string>
+    <string name="lan_failed">Не удалось запустить: порт %1$d может быть занят</string>
+    <!-- 局域网（USB/IP）监听端口：可在设置里改 -->
+    <string name="lan_port">Порт прослушивания</string>
+    <string name="lan_port_hint">1024-65535. Применится при следующем запуске прослушивания; текущее прослушивание будет остановлено.</string>
+    <!-- BLE (HID over GATT) link -->
 </resources>

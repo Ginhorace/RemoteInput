@@ -57,6 +57,77 @@ class AppPreferences private constructor(context: Context) {
         get() = prefs.getString(SettingConstants.KEY_LAST_CONNECTED_DEVICE_ADDRESS, null)
         set(value) = prefs.edit { putString(SettingConstants.KEY_LAST_CONNECTED_DEVICE_ADDRESS, value) }
 
+    /**
+     * 是否已经问过一次通知权限（Android 13+）。
+     *
+     * 申请时机在控制页「连接成功」那一刻（见 ControlScreen），且**全局只问一次**：用户拒绝
+     * 之后不再弹窗、也不在界面上挂常驻提示，只在拒绝当下提示一句（`R.string.notification_off_toast`）。
+     */
+    var notificationPermissionAsked: Boolean
+        get() = prefs.getBoolean(SettingConstants.KEY_NOTIFICATION_PERMISSION_ASKED, false)
+        set(value) = prefs.edit { putBoolean(SettingConstants.KEY_NOTIFICATION_PERMISSION_ASKED, value) }
+
+    // ==================== 局域网（USB/IP） ====================
+
+    private val _usbipPort = MutableStateFlow(readUsbipPort())
+
+    /**
+     * 局域网监听端口（可在设置里改，见 [SettingConstants.USBIP_PORT_DEFAULT]）。
+     *
+     * 做成 StateFlow 而不是普通 `var`：局域网卡片与控制页标题都显示「地址:端口」，
+     * 用户在设置里改完返回时要立刻跟着变（与 [disabledCharsets] / [customCharsets] 同一写法）。
+     */
+    val usbipPort: StateFlow<Int> = _usbipPort.asStateFlow()
+
+    /**
+     * 改监听端口。
+     *
+     * 越界值夹回合法区间而不是拒绝：设置页已经在输入框上拦了一道，这里是兜底 ——
+     * 一个非法端口会让监听直接起不来，宁可静默修正。
+     */
+    fun setUsbipPort(port: Int) {
+        val next = port.coerceIn(SettingConstants.USBIP_PORT_MIN, SettingConstants.USBIP_PORT_MAX)
+        if (next == _usbipPort.value) return
+        _usbipPort.value = next
+        prefs.edit { putInt(SettingConstants.KEY_USBIP_PORT, next) }
+    }
+
+    /** 读端口：存坏的值也夹回合法区间，免得界面显示一个永远绑不上的端口 */
+    private fun readUsbipPort(): Int = prefs
+        .getInt(SettingConstants.KEY_USBIP_PORT, SettingConstants.USBIP_PORT_DEFAULT)
+        .coerceIn(SettingConstants.USBIP_PORT_MIN, SettingConstants.USBIP_PORT_MAX)
+
+    // ==================== 鼠标（经典蓝牙链路） ====================
+
+    private val _longPressDuration = MutableStateFlow(readLongPressDuration())
+
+    /**
+     * 鼠标触摸区的长按判定时长（毫秒）。
+     *
+     * 做成 StateFlow 的理由与 [usbipPort] 相同：设置页改完返回控制页时，
+     * 已经在组合里的鼠标页要立刻用上新阈值。
+     */
+    val longPressDuration: StateFlow<Int> = _longPressDuration.asStateFlow()
+
+    /** 改长按判定时长；越界值夹回合法区间（设置页已在按钮上拦了一道，这里是兜底） */
+    fun setLongPressDuration(millis: Int) {
+        val next = millis.coerceIn(
+            SettingConstants.LONG_PRESS_DURATION_MIN,
+            SettingConstants.LONG_PRESS_DURATION_MAX,
+        )
+        if (next == _longPressDuration.value) return
+        _longPressDuration.value = next
+        prefs.edit { putInt(SettingConstants.KEY_LONG_PRESS_DURATION, next) }
+    }
+
+    /** 读长按时长：存坏的值也夹回合法区间，否则触摸区可能再也触发不了长按 */
+    private fun readLongPressDuration(): Int = prefs
+        .getInt(SettingConstants.KEY_LONG_PRESS_DURATION, SettingConstants.LONG_PRESS_DURATION_DEFAULT)
+        .coerceIn(
+            SettingConstants.LONG_PRESS_DURATION_MIN,
+            SettingConstants.LONG_PRESS_DURATION_MAX,
+        )
+
     // ==================== 字符集 ====================
 
     private val _disabledCharsets = MutableStateFlow(

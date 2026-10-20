@@ -19,7 +19,7 @@ import com.github.remotecontrol.util.HidReportDescriptors
 import com.github.remotecontrol.util.KeyboardConstants
 import com.github.remotecontrol.util.template.MacroTemplate
 import com.github.remotecontrol.util.template.MacroTemplateExpander
-import com.github.remotecontrol.viewmodel.BluetoothHidViewModel
+import com.github.remotecontrol.hid.HidSession
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -36,7 +36,7 @@ import kotlinx.coroutines.withContext
  */
 @Composable
 fun TextInputPanel(
-    viewModel: BluetoothHidViewModel,
+    viewModel: HidSession,
     modifier: Modifier = Modifier,
     template: MacroTemplate,
     enabled: Boolean = true,
@@ -120,7 +120,7 @@ fun TextInputPanel(
  * 与编辑器里的展开预览共用同一份展开逻辑，因此「预览所见」就是「实际所发」。
  */
 fun sendTextByTemplate(
-    viewModel: BluetoothHidViewModel,
+    viewModel: HidSession,
     template: MacroTemplate,
     text: String,
     cancellationCheck: (() -> Unit)? = null
@@ -162,7 +162,7 @@ fun sendTextByTemplate(
  */
 @Composable
 fun rememberTemplateSender(
-    viewModel: BluetoothHidViewModel,
+    viewModel: HidSession,
     template: MacroTemplate,
     checkEncodable: Boolean = true,
 ): (String) -> Unit {

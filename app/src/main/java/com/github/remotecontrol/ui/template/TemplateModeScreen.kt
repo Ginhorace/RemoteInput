@@ -36,12 +36,12 @@ import com.github.remotecontrol.util.template.MacroTemplateParser
 import com.github.remotecontrol.util.template.MacroTemplatePreset
 import com.github.remotecontrol.util.template.MacroTemplatePresets
 import com.github.remotecontrol.util.template.MacroTemplateStore
-import com.github.remotecontrol.viewmodel.BluetoothHidViewModel
+import com.github.remotecontrol.hid.HidSession
 import java.io.File
 
 @Composable
 fun TemplateModeScreen(
-    viewModel: BluetoothHidViewModel,
+    viewModel: HidSession,
     modifier: Modifier = Modifier,
     isLandscape: Boolean = false
 ) {

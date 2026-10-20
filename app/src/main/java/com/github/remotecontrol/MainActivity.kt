@@ -8,6 +8,7 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -26,8 +27,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.github.remotecontrol.ui.BluetoothScannerScreen
+import com.github.remotecontrol.bluetooth.BluetoothScannerScreen
 import com.github.remotecontrol.ui.theme.LocalAppTokens
+import com.github.remotecontrol.usbip.LanConnectionCard
+import com.github.remotecontrol.usbip.UsbIpControlActivity
 import com.github.remotecontrol.ui.theme.RemoteInputTheme
 import com.github.remotecontrol.util.AppPreferences
 import com.github.remotecontrol.util.HueScheme
@@ -86,7 +89,23 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                 ) { paddingValues ->
-                    BluetoothScannerScreen(modifier = Modifier.padding(paddingValues))
+                    // 首屏自上而下：经典蓝牙扫描页（原有那一套，一行没改）+ 局域网（USB/IP）卡片。
+                    // 两条链路是同一时刻**二选一**的关系（见 hid/LinkCoordinator），所以并排放着，
+                    // 用户选哪条就从哪条进去，而不是先选一条通路再选设备。
+                    Column(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(paddingValues)
+                    ) {
+                        BluetoothScannerScreen(modifier = Modifier.weight(1f))
+                        LanConnectionCard(
+                            onOpenControls = {
+                                startActivity(
+                                    Intent(this@MainActivity, UsbIpControlActivity::class.java)
+                                )
+                            }
+                        )
+                    }
                 }
             }
         }

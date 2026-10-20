@@ -1,4 +1,4 @@
-package com.github.remotecontrol.viewmodel
+package com.github.remotecontrol.bluetooth
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -126,7 +126,7 @@ class BluetoothScannerViewModel(application: Application) : AndroidViewModel(app
      *
      * **不含 POST_NOTIFICATIONS**：通知权限只影响连接期间那条常驻通知（Android 13+），
      * 被拒时连接照旧在后台保持。把它算进来会让用户「不想看通知」就直接失去扫描页的所有功能，
-     * 所以它只在 BluetoothScannerScreen 里随蓝牙权限一起顺手申请、不做门禁。
+     * 它的申请时机另在控制页「连接成功」那一刻（见 ControlScreen），同样不做门禁。
      */
     fun checkPermissions(context: Context) {
         _hasBluetoothPermission.value =

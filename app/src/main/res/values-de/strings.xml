@@ -41,11 +41,14 @@
     <!-- Verbindung bleibt bestehen: Dauerbenachrichtigung des Vordergrunddienstes, Karte auf der Scan-Seite, Hinweis beim Zurückgehen, Gerätewechsel -->
     <string name="connection_kept_title">Verbindung bleibt bestehen</string>
     <string name="notification_channel_name">Bestehende Verbindung</string>
-    <string name="notification_channel_description">Zeigt die Bluetooth-Verbindung, die bestehen bleibt, während du andere Apps nutzt.</string>
-    <string name="notification_text_connecting">Verbindung mit %1$s wird hergestellt…</string>
-    <string name="notification_text_connected">Verbunden mit %1$s</string>
-    <string name="notification_action_open">Zur Steuerung</string>
+    <string name="notification_channel_description">Zeigt die Verbindung, die bestehen bleibt, während du andere Apps nutzt.</string>
+    <string name="notification_text_bluetooth_connecting">Bluetooth: Verbindung mit %1$s wird hergestellt…</string>
+    <string name="notification_text_bluetooth_connected">Bluetooth: verbunden mit %1$s</string>
+    <string name="notification_text_lan_listening">USB/IP: Wartet auf %1$s</string>
+    <string name="notification_text_lan_attached">USB/IP: PC verbunden</string>
+    <string name="open_controls">Zur Steuerung</string>
     <string name="connection_kept_toast">Die Verbindung bleibt im Hintergrund bestehen</string>
+    <string name="notification_off_toast">Benachrichtigungen sind aus – von der Scan-Seite kommst du zurück zur Steuerung.</string>
     <string name="scanner_switch_title">Gerät wechseln?</string>
     <string name="scanner_switch_text">Aktuell mit %1$s verbunden. Trennen und mit %2$s verbinden?</string>
     <string name="scanner_switch_confirm">Wechseln</string>
@@ -53,6 +56,25 @@
     <!-- Mode Names -->
     <string name="mode_keyboard">Tastaturmodus</string>
     <string name="mode_touchpad">Touchpad-Modus</string>
+    <string name="mode_mouse">Mausmodus</string>
+
+    <!-- Mouse (classic Bluetooth link only) -->
+    <string name="mouse_control">Maussteuerung</string>
+    <string name="middle_button">Mittlere Taste</string>
+    <string name="button_4">Taste 4</string>
+    <string name="button_5">Taste 5</string>
+    <string name="scroll_wheel">Scrollrad</string>
+    <string name="scroll_up">Nach oben scrollen</string>
+    <string name="scroll_down">Nach unten scrollen</string>
+    <string name="mouse_area">Zeigerbereich</string>
+    <string name="mouse_area_hint">Ziehen zum Bewegen · Tippen = links · Lang drücken = rechts</string>
+    <string name="mouse_only_move">Tasten loslassen, um den Zeiger zu bewegen</string>
+
+    <!-- Mouse settings -->
+    <string name="mouse_settings">Mauseinstellungen</string>
+    <string name="long_press_duration">Dauer des langen Drückens</string>
+    <string name="long_press_description">Kurz drücken = linke Taste, lang drücken = rechte Taste</string>
+    <string name="long_press_duration_format">%1$d ms</string>
 
     <!-- Keyboard pages (page indicator labels) -->
     <string name="keyboard_page_main">Haupt</string>
@@ -98,6 +120,7 @@
     <string name="hue_amber">Amber</string>
     <string name="hue_rose">Rosé</string>
     <string name="hue_graphite">Graphit</string>
+    <string name="hue_dynamic">Systemfarben (Material You)</string>
 
     <!-- Languages -->
     <string name="language_system">Systemeinstellung folgen</string>
@@ -237,4 +260,20 @@
     <string name="template_warn_small_delay">Die Verzögerung von %1$s ms ist sehr kurz und kann über Bluetooth gestaucht werden</string>
     <string name="template_warn_small_delay_header">Halten oder Abstand der Vorlage (%1$s ms) liegt unter 10 ms und kann über Bluetooth gestaucht werden</string>
     <string name="template_warn_ignored_attr">Das Attribut „%1$s“ wirkt nicht mehr: Der Tastenrhythmus folgt jetzt den Vorlagenparametern und wird beim Speichern entfernt</string>
+    <!-- LAN (USB/IP) link -->
+    <string name="lan_title">LAN (USB/IP)</string>
+    <string name="lan_start">Zuhören starten</string>
+    <string name="lan_stop">Zuhören beenden</string>
+    <string name="lan_idle">Nicht aktiv</string>
+    <string name="lan_listening">Wartet auf %1$s</string>
+    <string name="lan_connected">PC verbunden</string>
+    <string name="lan_waiting">Warte auf den PC</string>
+    <string name="lan_open_controls">Tippen für Steuerung</string>
+    <string name="lan_attach_hint">Am PC: usbip attach -r %1$s -b 1-1</string>
+    <string name="lan_address_unknown">keine Adresse</string>
+    <string name="lan_failed">Start fehlgeschlagen: Port %1$d ist evtl. belegt</string>
+    <!-- 局域网（USB/IP）监听端口：可在设置里改 -->
+    <string name="lan_port">Lauschport</string>
+    <string name="lan_port_hint">1024-65535. Wirkt beim nächsten Start des Lauschens; ein laufendes Lauschen wird dabei gestoppt.</string>
+    <!-- BLE (HID over GATT) link -->
 </resources>

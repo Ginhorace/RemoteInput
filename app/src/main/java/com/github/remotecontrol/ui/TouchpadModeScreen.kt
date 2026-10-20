@@ -56,7 +56,7 @@ import com.github.remotecontrol.ui.theme.SectionTitle
 import com.github.remotecontrol.util.HidReportDescriptors
 import com.github.remotecontrol.util.TouchpadConstants
 import com.github.remotecontrol.util.TouchpadReport
-import com.github.remotecontrol.viewmodel.BluetoothHidViewModel
+import com.github.remotecontrol.hid.HidSession
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
@@ -81,7 +81,7 @@ data class HistoryBatch(val scanTime: Int, val fingerCount: Int, val fingers: Li
  */
 @Composable
 fun TouchpadModeScreen(
-    viewModel: BluetoothHidViewModel,
+    viewModel: HidSession,
     modifier: Modifier = Modifier,
     isLandscape: Boolean = false
 ) {
@@ -346,7 +346,7 @@ fun TouchpadModeScreen(
     }
 }
 
-private fun sendTouchpadReport(viewModel: BluetoothHidViewModel, report: TouchpadReport) {
+private fun sendTouchpadReport(viewModel: HidSession, report: TouchpadReport) {
 //    Log.w("BluetoothHid", "$report")
     viewModel.sendReport(HidReportDescriptors.REPORT_ID_TOUCHPAD, report.toByteArray())
 }

@@ -1,4 +1,4 @@
-package com.github.remotecontrol.viewmodel
+package com.github.remotecontrol.hid
 
 import android.util.Log
 import com.github.remotecontrol.util.KeyboardConstants

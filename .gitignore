@@ -41,8 +41,14 @@ captures/
 *.iws
 *.ipr
 
+# VS Code / 编辑器工作区设置（各人本地一份，不进版本控制）
+.vscode/
+
 # CodeBuddy IDE（plan 阶段会在工作区生成计划文件）
 .codebuddy/
+
+# 项目自有的方案与结论文档目录（与 .codebuddy 区分，不纳入版本控制）
+plan/
 
 # Keystore files
 *.jks

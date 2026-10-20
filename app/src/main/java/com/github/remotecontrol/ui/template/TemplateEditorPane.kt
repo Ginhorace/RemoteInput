@@ -36,7 +36,7 @@ import com.github.remotecontrol.util.template.MacroTemplateStep
 import com.github.remotecontrol.util.template.TemplateField
 import com.github.remotecontrol.util.template.TemplateSeverity
 import com.github.remotecontrol.util.template.hasActiveCode
-import com.github.remotecontrol.viewmodel.BluetoothHidViewModel
+import com.github.remotecontrol.hid.HidSession
 
 // ─────────────────────────────────────────────
 // 模板编辑器（鼠标宏风格）
@@ -44,7 +44,7 @@ import com.github.remotecontrol.viewmodel.BluetoothHidViewModel
 
 @Composable
 internal fun TemplateEditorPane(
-    viewModel: BluetoothHidViewModel,
+    viewModel: HidSession,
     draft: TemplateDraft,
     isLandscape: Boolean,
     onHeaderChange: (MacroTemplateHeader) -> Unit,

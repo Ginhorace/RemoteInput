@@ -41,11 +41,14 @@
     <!-- 연결 유지: 포그라운드 서비스의 상시 알림, 스캔 화면 카드, 뒤로 가기 안내, 기기 전환 확인 -->
     <string name="connection_kept_title">연결 유지 중</string>
     <string name="notification_channel_name">연결 유지</string>
-    <string name="notification_channel_description">다른 앱을 사용하는 동안 유지되는 블루투스 연결을 표시합니다.</string>
-    <string name="notification_text_connecting">%1$s에 연결 중…</string>
-    <string name="notification_text_connected">%1$s에 연결됨</string>
-    <string name="notification_action_open">제어 화면으로</string>
+    <string name="notification_channel_description">다른 앱을 사용하는 동안 유지되는 연결을 표시합니다.</string>
+    <string name="notification_text_bluetooth_connecting">Bluetooth: %1$s에 연결 중…</string>
+    <string name="notification_text_bluetooth_connected">Bluetooth: %1$s에 연결됨</string>
+    <string name="notification_text_lan_listening">USB/IP: %1$s에서 수신 중</string>
+    <string name="notification_text_lan_attached">USB/IP: PC 연결됨</string>
+    <string name="open_controls">제어 화면으로</string>
     <string name="connection_kept_toast">연결이 백그라운드에서 유지됩니다</string>
+    <string name="notification_off_toast">알림이 꺼져 있습니다. 검색 페이지에서 제어 화면으로 돌아갈 수 있습니다.</string>
     <string name="scanner_switch_title">기기를 전환할까요?</string>
     <string name="scanner_switch_text">현재 %1$s에 연결되어 있습니다. 연결을 끊고 %2$s에 연결할까요?</string>
     <string name="scanner_switch_confirm">전환</string>
@@ -53,6 +56,25 @@
     <!-- Mode Names -->
     <string name="mode_keyboard">키보드 모드</string>
     <string name="mode_touchpad">터치패드 모드</string>
+    <string name="mode_mouse">마우스 모드</string>
+
+    <!-- Mouse (classic Bluetooth link only) -->
+    <string name="mouse_control">마우스 조작</string>
+    <string name="middle_button">가운데 버튼</string>
+    <string name="button_4">버튼 4</string>
+    <string name="button_5">버튼 5</string>
+    <string name="scroll_wheel">스크롤 휠</string>
+    <string name="scroll_up">위로 스크롤</string>
+    <string name="scroll_down">아래로 스크롤</string>
+    <string name="mouse_area">포인터 영역</string>
+    <string name="mouse_area_hint">밀어서 이동 · 탭하여 왼쪽 클릭 · 길게 눌러 오른쪽 클릭</string>
+    <string name="mouse_only_move">버튼을 놓으면 포인터를 움직일 수 있습니다</string>
+
+    <!-- Mouse settings -->
+    <string name="mouse_settings">마우스 설정</string>
+    <string name="long_press_duration">길게 누르기 시간</string>
+    <string name="long_press_description">짧게 누르면 왼쪽 클릭, 길게 누르면 오른쪽 클릭</string>
+    <string name="long_press_duration_format">%1$d 밀리초</string>
 
     <!-- Keyboard pages (page indicator labels) -->
     <string name="keyboard_page_main">메인</string>
@@ -98,6 +120,7 @@
     <string name="hue_amber">Amber 앰버</string>
     <string name="hue_rose">Rose 로즈</string>
     <string name="hue_graphite">Graphite 흑연</string>
+    <string name="hue_dynamic">시스템 색상(Material You)</string>
 
     <!-- Languages -->
     <string name="language_system">시스템 설정 따르기</string>
@@ -237,4 +260,20 @@
     <string name="template_warn_small_delay">지연 %1$s ms는 너무 짧아 블루투스에서 압축될 수 있습니다</string>
     <string name="template_warn_small_delay_header">템플릿의 누름 유지 / 간격 %1$s ms가 10 ms 미만이라 블루투스에서 압축될 수 있습니다</string>
     <string name="template_warn_ignored_attr">속성 \'%1$s\'은(는) 더 이상 적용되지 않습니다: 키 타이밍은 템플릿 매개변수를 따르며, 저장할 때 제거됩니다</string>
+    <!-- LAN (USB/IP) link -->
+    <string name="lan_title">LAN(USB/IP)</string>
+    <string name="lan_start">수신 시작</string>
+    <string name="lan_stop">수신 중지</string>
+    <string name="lan_idle">수신 안 함</string>
+    <string name="lan_listening">%1$s에서 수신 중</string>
+    <string name="lan_connected">PC 연결됨</string>
+    <string name="lan_waiting">PC 연결 대기 중</string>
+    <string name="lan_open_controls">탭하여 제어 화면 열기</string>
+    <string name="lan_attach_hint">PC에서 실행: usbip attach -r %1$s -b 1-1</string>
+    <string name="lan_address_unknown">주소 없음</string>
+    <string name="lan_failed">시작 실패: 포트 %1$d이(가) 사용 중일 수 있음</string>
+    <!-- 局域网（USB/IP）监听端口：可在设置里改 -->
+    <string name="lan_port">수신 포트</string>
+    <string name="lan_port_hint">1024-65535. 변경 사항은 다음에 수신을 시작할 때 적용되며, 수신 중이면 먼저 중지됩니다.</string>
+    <!-- BLE (HID over GATT) link -->
 </resources>

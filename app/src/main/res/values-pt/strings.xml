@@ -41,11 +41,14 @@
     <!-- Conexão mantida: notificação permanente do serviço em primeiro plano, cartão da tela de busca, aviso ao voltar e confirmação de troca de dispositivo -->
     <string name="connection_kept_title">Conexão mantida</string>
     <string name="notification_channel_name">Conexão mantida</string>
-    <string name="notification_channel_description">Mostra a conexão Bluetooth que é mantida enquanto você usa outros aplicativos.</string>
-    <string name="notification_text_connecting">Conectando a %1$s…</string>
-    <string name="notification_text_connected">Conectado a %1$s</string>
-    <string name="notification_action_open">Voltar aos controles</string>
+    <string name="notification_channel_description">Mostra a conexão mantida enquanto você usa outros aplicativos.</string>
+    <string name="notification_text_bluetooth_connecting">Bluetooth: conectando a %1$s…</string>
+    <string name="notification_text_bluetooth_connected">Bluetooth: conectado a %1$s</string>
+    <string name="notification_text_lan_listening">USB/IP: escutando em %1$s</string>
+    <string name="notification_text_lan_attached">USB/IP: PC conectado</string>
+    <string name="open_controls">Voltar aos controles</string>
     <string name="connection_kept_toast">A conexão é mantida em segundo plano</string>
+    <string name="notification_off_toast">As notificações estão desativadas — você pode voltar aos controles pela página de busca.</string>
     <string name="scanner_switch_title">Trocar de dispositivo?</string>
     <string name="scanner_switch_text">Conectado a %1$s. Desconectar e conectar a %2$s?</string>
     <string name="scanner_switch_confirm">Trocar</string>
@@ -53,6 +56,25 @@
     <!-- Mode Names -->
     <string name="mode_keyboard">Modo teclado</string>
     <string name="mode_touchpad">Modo touchpad</string>
+    <string name="mode_mouse">Modo mouse</string>
+
+    <!-- Mouse (classic Bluetooth link only) -->
+    <string name="mouse_control">Controle do mouse</string>
+    <string name="middle_button">Botão do meio</string>
+    <string name="button_4">Botão 4</string>
+    <string name="button_5">Botão 5</string>
+    <string name="scroll_wheel">Roda de rolagem</string>
+    <string name="scroll_up">Rolar para cima</string>
+    <string name="scroll_down">Rolar para baixo</string>
+    <string name="mouse_area">Área do ponteiro</string>
+    <string name="mouse_area_hint">Deslize para mover · Toque para clique esquerdo · Segure para clique direito</string>
+    <string name="mouse_only_move">Solte os botões para mover o ponteiro</string>
+
+    <!-- Mouse settings -->
+    <string name="mouse_settings">Configurações do mouse</string>
+    <string name="long_press_duration">Duração do toque longo</string>
+    <string name="long_press_description">Toque curto = clique esquerdo, toque longo = clique direito</string>
+    <string name="long_press_duration_format">%1$d ms</string>
 
     <!-- Keyboard pages (page indicator labels) -->
     <string name="keyboard_page_main">Principal</string>
@@ -98,6 +120,7 @@
     <string name="hue_amber">Âmbar</string>
     <string name="hue_rose">Rosa</string>
     <string name="hue_graphite">Grafite</string>
+    <string name="hue_dynamic">Cores do sistema (Material You)</string>
 
     <!-- Languages -->
     <string name="language_system">Seguir o sistema</string>
@@ -237,4 +260,20 @@
     <string name="template_warn_small_delay">O atraso de %1$s ms é muito curto e pode ser comprimido no Bluetooth</string>
     <string name="template_warn_small_delay_header">O tempo de pressionar ou o intervalo do modelo (%1$s ms) está abaixo de 10 ms e pode ser comprimido no Bluetooth</string>
     <string name="template_warn_ignored_attr">O atributo «%1$s» não tem mais efeito: o ritmo das teclas segue os parâmetros do modelo e ele é removido ao salvar</string>
+    <!-- LAN (USB/IP) link -->
+    <string name="lan_title">LAN (USB/IP)</string>
+    <string name="lan_start">Iniciar escuta</string>
+    <string name="lan_stop">Parar escuta</string>
+    <string name="lan_idle">Não está escutando</string>
+    <string name="lan_listening">Escutando em %1$s</string>
+    <string name="lan_connected">PC conectado</string>
+    <string name="lan_waiting">Aguardando o PC</string>
+    <string name="lan_open_controls">Toque para abrir os controles</string>
+    <string name="lan_attach_hint">No PC: usbip attach -r %1$s -b 1-1</string>
+    <string name="lan_address_unknown">sem endereço</string>
+    <string name="lan_failed">Falha ao iniciar: a porta %1$d pode estar em uso</string>
+    <!-- 局域网（USB/IP）监听端口：可在设置里改 -->
+    <string name="lan_port">Porta de escuta</string>
+    <string name="lan_port_hint">1024-65535. Passa a valer na próxima vez que iniciar a escuta; se já estiver ativa, é encerrada antes.</string>
+    <!-- BLE (HID over GATT) link -->
 </resources>

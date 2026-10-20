@@ -1,4 +1,4 @@
-package com.github.remotecontrol.ui
+package com.github.remotecontrol.bluetooth
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -7,7 +7,6 @@ import android.bluetooth.BluetoothDevice
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
@@ -27,8 +26,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.github.remotecontrol.ControlActivity
 import com.github.remotecontrol.R
+import com.github.remotecontrol.hid.hasActiveLink
+import com.github.remotecontrol.ui.DisconnectDialog
 import com.github.remotecontrol.ui.theme.ConnStatus
 import com.github.remotecontrol.ui.theme.ElevatedCard
 import com.github.remotecontrol.ui.theme.LocalAppDimens
@@ -37,9 +37,6 @@ import com.github.remotecontrol.ui.theme.PrimaryButton
 import com.github.remotecontrol.ui.theme.SectionTitle
 import com.github.remotecontrol.ui.theme.StatusDot
 import com.github.remotecontrol.ui.theme.TintLevel
-import com.github.remotecontrol.viewmodel.BluetoothHidViewModel
-import com.github.remotecontrol.viewmodel.BluetoothScannerViewModel
-import com.github.remotecontrol.viewmodel.hasActiveLink
 
 /**
  * 读取 device.name / 发起 ACTION_REQUEST_ENABLE 需要 BLUETOOTH_CONNECT 权限，
@@ -72,12 +69,11 @@ fun BluetoothScannerScreen(modifier: Modifier = Modifier) {
 
     val unknownDevice = stringResource(id = R.string.unknown_device)
 
-    // 权限请求
+    // 权限请求：只申请蓝牙这两项。通知权限不在这里问 —— 它的时机在控制页「连接成功」
+    // 那一刻（见 requiredPermissions 的说明），所以这个回调只认蓝牙
     val requestPermissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
-        // 只有蓝牙这两项是功能必需。通知权限被拒只影响那条常驻通知（连接照旧在后台保持），
-        // 若把它也算进来，用户在 Android 13+ 上不想看通知就会被锁在「申请权限」这一步。
         viewModel.updatePermissions(
             permissions[Manifest.permission.BLUETOOTH_CONNECT] == true &&
                     permissions[Manifest.permission.BLUETOOTH_SCAN] == true
@@ -302,18 +298,16 @@ fun BluetoothScannerScreen(modifier: Modifier = Modifier) {
 }
 
 /**
- * 本页要申请的运行时权限。
+ * 本页要申请的运行时权限：只有蓝牙这两项。
  *
- * 通知权限只在 Android 13+ 存在：在更低版本上把它放进请求数组会被直接判为拒绝，
- * 反而把「蓝牙权限已授予」这个判断带偏。
+ * `POST_NOTIFICATIONS` **不在这里**申请 —— 它的申请时机在控制页「连接成功」那一刻
+ * （见 [ControlScreen] 里那段说明）：那时用户刚连上设备，「连接会在后台保持」一句话就说得清；
+ * 在这里顺带问，用户还没连过任何设备，既没有上下文，也白白用掉了那几次申请机会。
  */
-private fun requiredPermissions(): Array<String> = buildList {
-    add(Manifest.permission.BLUETOOTH_CONNECT)
-    add(Manifest.permission.BLUETOOTH_SCAN)
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-        add(Manifest.permission.POST_NOTIFICATIONS)
-    }
-}.toTypedArray()
+private fun requiredPermissions(): Array<String> = arrayOf(
+    Manifest.permission.BLUETOOTH_CONNECT,
+    Manifest.permission.BLUETOOTH_SCAN,
+)
 
 /** 进控制页。连接复用 / 重连的判断都在 ViewModel 的 connectToDevice 里 */
 private fun startControlActivity(context: Context, address: String?, name: String?) {

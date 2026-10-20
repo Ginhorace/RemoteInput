@@ -41,11 +41,14 @@
     <!-- कनेक्शन बना हुआ: फ़ोरग्राउंड सेवा की स्थायी सूचना, स्कैन स्क्रीन का कार्ड, वापस जाने पर संदेश और डिवाइस बदलने की पुष्टि -->
     <string name="connection_kept_title">कनेक्शन बना हुआ है</string>
     <string name="notification_channel_name">बना हुआ कनेक्शन</string>
-    <string name="notification_channel_description">अन्य ऐप इस्तेमाल करते समय बना रहने वाला ब्लूटूथ कनेक्शन दिखाता है।</string>
-    <string name="notification_text_connecting">%1$s से कनेक्ट हो रहा है…</string>
-    <string name="notification_text_connected">%1$s से कनेक्टेड</string>
-    <string name="notification_action_open">कंट्रोल पर वापस जाएँ</string>
+    <string name="notification_channel_description">अन्य ऐप इस्तेमाल करते समय बना रहने वाला कनेक्शन दिखाता है।</string>
+    <string name="notification_text_bluetooth_connecting">Bluetooth: %1$s से कनेक्ट हो रहा है…</string>
+    <string name="notification_text_bluetooth_connected">Bluetooth: %1$s से कनेक्टेड</string>
+    <string name="notification_text_lan_listening">USB/IP: %1$s पर सुन रहा है</string>
+    <string name="notification_text_lan_attached">USB/IP: कंप्यूटर जुड़ा है</string>
+    <string name="open_controls">कंट्रोल पर वापस जाएँ</string>
     <string name="connection_kept_toast">कनेक्शन बैकग्राउंड में बना हुआ है</string>
+    <string name="notification_off_toast">सूचनाएँ बंद हैं — आप खोज पेज से कंट्रोल पर वापस जा सकते हैं।</string>
     <string name="scanner_switch_title">डिवाइस बदलें?</string>
     <string name="scanner_switch_text">अभी %1$s से कनेक्टेड है। इसे डिस्कनेक्ट करके %2$s से कनेक्ट करें?</string>
     <string name="scanner_switch_confirm">बदलें</string>
@@ -53,6 +56,25 @@
     <!-- Mode Names -->
     <string name="mode_keyboard">कीबोर्ड मोड</string>
     <string name="mode_touchpad">टचपैड मोड</string>
+    <string name="mode_mouse">माउस मोड</string>
+
+    <!-- Mouse (classic Bluetooth link only) -->
+    <string name="mouse_control">माउस नियंत्रण</string>
+    <string name="middle_button">मध्य बटन</string>
+    <string name="button_4">बटन 4</string>
+    <string name="button_5">बटन 5</string>
+    <string name="scroll_wheel">स्क्रॉल व्हील</string>
+    <string name="scroll_up">ऊपर स्क्रॉल करें</string>
+    <string name="scroll_down">नीचे स्क्रॉल करें</string>
+    <string name="mouse_area">पॉइंटर क्षेत्र</string>
+    <string name="mouse_area_hint">खींचकर घुमाएँ · टैप = बायाँ क्लिक · देर तक दबाएँ = दायाँ क्लिक</string>
+    <string name="mouse_only_move">पॉइंटर घुमाने के लिए बटन छोड़ें</string>
+
+    <!-- Mouse settings -->
+    <string name="mouse_settings">माउस सेटिंग्स</string>
+    <string name="long_press_duration">देर तक दबाने की अवधि</string>
+    <string name="long_press_description">छोटा दबाव = बायाँ क्लिक, देर तक दबाव = दायाँ क्लिक</string>
+    <string name="long_press_duration_format">%1$d ms</string>
 
     <!-- Keyboard pages (page indicator labels) -->
     <string name="keyboard_page_main">मुख्य</string>
@@ -98,6 +120,7 @@
     <string name="hue_amber">एम्बर</string>
     <string name="hue_rose">रोज़</string>
     <string name="hue_graphite">ग्रेफाइट</string>
+    <string name="hue_dynamic">सिस्टम रंग (Material You)</string>
 
     <!-- Languages -->
     <string name="language_system">सिस्टम के अनुसार</string>
@@ -237,4 +260,20 @@
     <string name="template_warn_small_delay">%1$s ms की देरी बहुत कम है और ब्लूटूथ पर सिकुड़ सकती है</string>
     <string name="template_warn_small_delay_header">टेम्पलेट का दबाए रखने का समय या अंतराल %1$s ms 10 ms से कम है और ब्लूटूथ पर सिकुड़ सकता है</string>
     <string name="template_warn_ignored_attr">एट्रिब्यूट «%1$s» अब प्रभावी नहीं है: कुंजी की गति अब टेम्पलेट पैरामीटर से तय होती है और सहेजते समय यह हटा दिया जाता है</string>
+    <!-- LAN (USB/IP) link -->
+    <string name="lan_title">लैन (USB/IP)</string>
+    <string name="lan_start">सुनना शुरू करें</string>
+    <string name="lan_stop">सुनना बंद करें</string>
+    <string name="lan_idle">सुन नहीं रहा</string>
+    <string name="lan_listening">%1$s पर सुन रहा है</string>
+    <string name="lan_connected">कंप्यूटर जुड़ा है</string>
+    <string name="lan_waiting">कंप्यूटर की प्रतीक्षा</string>
+    <string name="lan_open_controls">नियंत्रण खोलने के लिए टैप करें</string>
+    <string name="lan_attach_hint">कंप्यूटर पर: usbip attach -r %1$s -b 1-1</string>
+    <string name="lan_address_unknown">कोई पता नहीं</string>
+    <string name="lan_failed">शुरू नहीं हो सका: पोर्ट %1$d व्यस्त हो सकता है</string>
+    <!-- 局域网（USB/IP）监听端口：可在设置里改 -->
+    <string name="lan_port">सुनने का पोर्ट</string>
+    <string name="lan_port_hint">1024-65535. अगली बार सुनना शुरू करने पर लागू होगा; अगर सुनना चल रहा हो तो पहले रुक जाएगा.</string>
+    <!-- BLE (HID over GATT) link -->
 </resources>

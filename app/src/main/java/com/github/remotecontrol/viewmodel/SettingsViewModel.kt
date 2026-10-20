@@ -43,6 +43,12 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
     val disabledCharsets: StateFlow<Set<String>> = prefs.disabledCharsets
     val customCharsets: StateFlow<List<String>> = prefs.customCharsets
 
+    // 局域网监听端口（由 prefs 持有，这里直接转发）
+    val usbipPort: StateFlow<Int> = prefs.usbipPort
+
+    // 经典蓝牙鼠标触摸区的长按判定时长（由 prefs 持有，这里直接转发）
+    val longPressDuration: StateFlow<Int> = prefs.longPressDuration
+
     /**
      * 更新主题模式（跟随系统/浅色/深色）
      */
@@ -109,5 +115,24 @@ class SettingsViewModel(application: Application) : AndroidViewModel(application
      */
     fun removeCharset(name: String) {
         prefs.removeCustomCharset(name)
+    }
+
+    /**
+     * 更新局域网监听端口。
+     *
+     * 直接落盘（不绕 IO 协程）：局域网链路那边观察着这个 flow，端口一变就把正在跑的监听停掉，
+     * 免得卡片显示的 `地址:端口` 与实际绑定的端口对不上。
+     */
+    fun updateUsbipPort(port: Int) {
+        prefs.setUsbipPort(port)
+    }
+
+    /**
+     * 更新鼠标长按判定时长。
+     *
+     * 只影响经典蓝牙链路鼠标页的「单击 / 长按」判定，不涉及资源配置，改完不需要 recreate。
+     */
+    fun updateLongPressDuration(millis: Int) {
+        prefs.setLongPressDuration(millis)
     }
 }

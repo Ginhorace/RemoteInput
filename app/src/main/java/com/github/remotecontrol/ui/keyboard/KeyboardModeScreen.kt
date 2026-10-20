@@ -38,8 +38,8 @@ import com.github.remotecontrol.ui.theme.tintStyle
 import com.github.remotecontrol.util.HidReportDescriptors
 import com.github.remotecontrol.util.HostKeyboardLayout
 import com.github.remotecontrol.util.KeyboardConstants
-import com.github.remotecontrol.viewmodel.BluetoothHidViewModel
-import com.github.remotecontrol.viewmodel.HidState
+import com.github.remotecontrol.hid.HidSession
+import com.github.remotecontrol.hid.HidState
 import kotlinx.coroutines.launch
 
 /**
@@ -76,7 +76,7 @@ import kotlinx.coroutines.launch
  */
 @Composable
 fun KeyboardModeScreen(
-    viewModel: BluetoothHidViewModel,
+    viewModel: HidSession,
     layout: HostKeyboardLayout,
     modifier: Modifier = Modifier,
     isLandscape: Boolean = false,
@@ -89,7 +89,7 @@ fun KeyboardModeScreen(
 
     // 「键盘页可见」+「链路已连接」两件事谁后到都算数：先停在本页、之后才连上同样会触发。
     // 灯态的同步刻意只挂在本页 —— 别的页面不看灯，没必要为了几个灯去打扰主机
-    // （同步动作会碰一下主机的锁键，见 BluetoothHidViewModel.syncKeyboardLeds）
+    // （同步动作会碰一下主机的锁键，见 HidSession.syncKeyboardLeds）
     val hidState by viewModel.state.collectAsState()
     LaunchedEffect(hidState is HidState.Connected) {
         if (hidState is HidState.Connected) viewModel.syncKeyboardLeds()
@@ -153,7 +153,7 @@ fun KeyboardModeScreen(
 }
 
 /** 键盘报告的唯一出口：报告 ID 与字节序列都收在这里 */
-fun sendKeyboardReport(viewModel: BluetoothHidViewModel, report: KeyboardConstants.KeyboardReport) {
+fun sendKeyboardReport(viewModel: HidSession, report: KeyboardConstants.KeyboardReport) {
     viewModel.sendReport(HidReportDescriptors.REPORT_ID_KEYBOARD, report.toByteArray())
 }
 

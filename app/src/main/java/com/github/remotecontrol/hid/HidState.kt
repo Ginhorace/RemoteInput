@@ -1,4 +1,4 @@
-package com.github.remotecontrol.viewmodel
+package com.github.remotecontrol.hid
 
 /**
  * HID 链路的顶级状态。
@@ -13,7 +13,7 @@ package com.github.remotecontrol.viewmodel
  */
 sealed interface HidState {
 
-    /** 未初始化，或 [BluetoothHidViewModel.cleanup] 之后 */
+    /** 未初始化，或 [com.github.remotecontrol.bluetooth.BluetoothHidViewModel.cleanup] 之后 */
     data object Idle : HidState
 
     /** 正在绑定 HID profile 服务（`getProfileProxy`），有超时保护 */
@@ -49,6 +49,21 @@ val HidState.hasActiveLink: Boolean
     get() = this is HidState.Connecting ||
             this is HidState.Connected ||
             this is HidState.Disconnecting
+
+/**
+ * 「自己开着等对方来」那两条链路（BLE / 局域网）「开着」的判据：
+ * **正在广播 / 监听（对方还没连上来）或已连上**。
+ *
+ * 与 [hasActiveLink] 的区别在这一档：[HidState.Ready] 在它们那里表示「口子开着、等对方来」，
+ * 这条链路此刻就该被保活（这正是「退到后台还能等对方连上来」的前提），所以它算「开着」；
+ * 而经典蓝牙那侧的 [HidState.Ready] 只是「HID 应用注册好了、可以连」，算不上链路。
+ *
+ * 用到它的地方：前台服务的保活判断、这两条链路卡片的按钮文案、[LinkCoordinator] 的互斥登记。
+ */
+val HidState.isListening: Boolean
+    get() = this is HidState.Ready ||
+            this is HidState.Connecting ||
+            this is HidState.Connected
 
 /**
  * HID 连接过程中的用户可见失败。

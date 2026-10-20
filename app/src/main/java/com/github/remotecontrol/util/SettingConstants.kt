@@ -7,7 +7,11 @@ import com.github.remotecontrol.R
 import java.util.Locale
 
 /**
- * 控制界面模式枚举：触摸板 / 键盘 / 模板
+ * 控制界面模式枚举：指针 / 键盘 / 模板
+ *
+ * [TOUCHPAD] 是**指针模式的槽位**，具体形态由链路的 `PointerKind` 决定：
+ * 经典蓝牙注册鼠标描述符（相对位移），局域网注册触摸板描述符（绝对坐标 PTP）。
+ * 枚举名沿用历史值 —— 它会被写进偏好里的当前模式，改名没有收益。
  */
 enum class ControlMode {
     KEYBOARD,
@@ -99,7 +103,18 @@ enum class HueScheme {
     VIOLET,
     AMBER,
     ROSE,
-    GRAPHITE
+    GRAPHITE,
+
+    /**
+     * 跟随系统莫奈取色（Material You）。
+     *
+     * **只取系统的强调色**，不接管背景 / 卡片 / 描边：那几层仍走本项目的中性色，
+     * 否则会像旧版 `ThemeColor.DYNAMIC` 一样把深色工具风冲掉（见 `ui/theme/Theme.kt` 的注释）。
+     * 具体色值在 `RemoteInputTheme` 里按当前明暗从系统配色取，`HueScheme` 本身拿不到
+     * `Context`，所以 [com.github.remotecontrol.ui.theme] 里给它留了一套兜底值
+     * （只在不依赖 Compose 的地方使用，例如单测）。
+     */
+    DYNAMIC
 }
 
 /**
@@ -187,6 +202,8 @@ object SettingConstants {
         R.string.hue_amber    to HueScheme.AMBER,
         R.string.hue_rose     to HueScheme.ROSE,
         R.string.hue_graphite to HueScheme.GRAPHITE,
+        // 跟随系统放最后：默认仍是 AZURE，老用户的选择不受影响
+        R.string.hue_dynamic  to HueScheme.DYNAMIC,
     )
 
     /**
@@ -234,6 +251,14 @@ object SettingConstants {
     const val KEY_LAST_CONNECTED_DEVICE_ADDRESS = "last_connected_device_address"
 
     /**
+     * 是否已经问过一次通知权限（Android 13+）。
+     *
+     * 它的申请时机在控制页「连接成功」那一刻，且**全局只问一次**：用户拒绝之后不再打扰
+     * （见 [AppPreferences.notificationPermissionAsked]）。
+     */
+    const val KEY_NOTIFICATION_PERMISSION_ASKED = "notification_permission_asked"
+
+    /**
      * 被禁用的字符集（规范名的集合）。
      *
      * 存的是**禁用集**而不是启用集：新加进清单的字符集默认就是启用的，
@@ -248,6 +273,29 @@ object SettingConstants {
      * 而字符集名里不可能出现换行，做分隔符是安全的。
      */
     const val KEY_CUSTOM_CHARSETS = "custom_charsets"
+
+    /**
+     * 局域网（USB/IP）的监听端口。
+     *
+     * 出厂值 3240 是 usbip 的惯用端口，能做设置项的理由通常只有一个：3240 被别的程序占了。
+     * 范围取 1024–65535 —— 1024 以下在 Android 上根本绑不上（特权端口），65535 以上不是合法端口。
+     */
+    const val KEY_USBIP_PORT = "usbip_port"
+    const val USBIP_PORT_DEFAULT = 3240
+    const val USBIP_PORT_MIN = 1024
+    const val USBIP_PORT_MAX = 65535
+
+    /**
+     * 经典蓝牙链路鼠标触摸区的「长按判定时长」（毫秒）。
+     *
+     * 只被 `ui/MouseModeScreen` 使用：短于它算单击左键，长于它算长按右键。
+     * 局域网链路的 PTP 触摸板不看这个值（长按 / 双指点击由主机侧的 PTP 驱动处理）。
+     */
+    const val KEY_LONG_PRESS_DURATION = "long_press_duration"
+    const val LONG_PRESS_DURATION_DEFAULT = 500
+    const val LONG_PRESS_DURATION_MIN = 200
+    const val LONG_PRESS_DURATION_MAX = 1000
+    const val LONG_PRESS_DURATION_STEP = 50
 }
 
 

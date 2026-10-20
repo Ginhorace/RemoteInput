@@ -44,11 +44,14 @@
     -->
     <string name="connection_kept_title">Connection kept alive</string>
     <string name="notification_channel_name">Kept connection</string>
-    <string name="notification_channel_description">Shows the Bluetooth connection that stays alive while you use other apps.</string>
-    <string name="notification_text_connecting">Connecting to %1$s…</string>
-    <string name="notification_text_connected">Connected to %1$s</string>
-    <string name="notification_action_open">Open controls</string>
+    <string name="notification_channel_description">Shows the connection that stays alive while you use other apps.</string>
+    <string name="notification_text_bluetooth_connecting">Bluetooth: connecting to %1$s…</string>
+    <string name="notification_text_bluetooth_connected">Bluetooth: connected to %1$s</string>
+    <string name="notification_text_lan_listening">USB/IP: listening on %1$s</string>
+    <string name="notification_text_lan_attached">USB/IP: PC attached</string>
+    <string name="open_controls">Open controls</string>
     <string name="connection_kept_toast">Connection kept alive in the background</string>
+    <string name="notification_off_toast">Notifications are off — you can return to the controls from the scan page.</string>
     <string name="scanner_switch_title">Switch device?</string>
     <string name="scanner_switch_text">Currently connected to %1$s. Disconnect it and connect to %2$s?</string>
     <string name="scanner_switch_confirm">Switch</string>
@@ -56,6 +59,25 @@
     <!-- Mode Names -->
     <string name="mode_keyboard">Keyboard Mode</string>
     <string name="mode_touchpad">Touchpad Mode</string>
+    <string name="mode_mouse">Mouse Mode</string>
+
+    <!-- Mouse (classic Bluetooth link only) -->
+    <string name="mouse_control">Mouse Control</string>
+    <string name="middle_button">Middle Button</string>
+    <string name="button_4">Button 4</string>
+    <string name="button_5">Button 5</string>
+    <string name="scroll_wheel">Scroll Wheel</string>
+    <string name="scroll_up">Scroll Up</string>
+    <string name="scroll_down">Scroll Down</string>
+    <string name="mouse_area">Pointer Area</string>
+    <string name="mouse_area_hint">Slide to move · Tap to left-click · Long press to right-click</string>
+    <string name="mouse_only_move">Release the buttons to move the pointer</string>
+
+    <!-- Mouse settings -->
+    <string name="mouse_settings">Mouse Settings</string>
+    <string name="long_press_duration">Long Press Duration</string>
+    <string name="long_press_description">Short press for left click, long press for right click</string>
+    <string name="long_press_duration_format">%1$d ms</string>
 
     <!-- Keyboard pages (page indicator labels) -->
     <string name="keyboard_page_main">Main</string>
@@ -116,6 +138,7 @@
     <string name="hue_amber">Amber</string>
     <string name="hue_rose">Rose</string>
     <string name="hue_graphite">Graphite</string>
+    <string name="hue_dynamic">Follow System (Material You)</string>
 
     <!-- Languages -->
     <!--
@@ -298,4 +321,20 @@
     <string name="template_warn_small_delay">Delay %1$s ms is very short and may be compressed over Bluetooth</string>
     <string name="template_warn_small_delay_header">Template hold / gap %1$s ms is below 10 ms and may be compressed over Bluetooth</string>
     <string name="template_warn_ignored_attr">Attribute “%1$s” no longer takes effect: key timing now follows the template parameters, and it is removed when the template is saved</string>
+    <!-- LAN (USB/IP) link -->
+    <string name="lan_title">LAN (USB/IP)</string>
+    <string name="lan_start">Start listening</string>
+    <string name="lan_stop">Stop listening</string>
+    <string name="lan_idle">Not listening</string>
+    <string name="lan_listening">Listening on %1$s</string>
+    <string name="lan_connected">PC attached</string>
+    <string name="lan_waiting">Waiting for the PC to attach</string>
+    <string name="lan_open_controls">Tap to open controls</string>
+    <string name="lan_attach_hint">On the PC: usbip attach -r %1$s -b 1-1</string>
+    <string name="lan_address_unknown">no address</string>
+    <string name="lan_failed">Start failed: port %1$d may be in use</string>
+    <!-- 局域网（USB/IP）监听端口：可在设置里改 -->
+    <string name="lan_port">Listen port</string>
+    <string name="lan_port_hint">1024-65535. Takes effect the next time you start listening; a running listener is stopped when you change it.</string>
+    <!-- BLE (HID over GATT) link -->
 </resources>

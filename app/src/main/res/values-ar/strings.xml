@@ -41,11 +41,14 @@
     <!-- الاتصال محتفظ به: إشعار دائم من خدمة المقدمة، وبطاقة في شاشة البحث، وتنبيه عند الرجوع، وتأكيد تبديل الجهاز -->
     <string name="connection_kept_title">الاتصال محتفظ به</string>
     <string name="notification_channel_name">اتصال محتفظ به</string>
-    <string name="notification_channel_description">يعرض اتصال البلوتوث الذي يبقى قائمًا أثناء استخدام تطبيقات أخرى.</string>
-    <string name="notification_text_connecting">جارٍ الاتصال بـ %1$s…</string>
-    <string name="notification_text_connected">متصل بـ %1$s</string>
-    <string name="notification_action_open">العودة إلى التحكم</string>
+    <string name="notification_channel_description">يعرض الاتصال الذي يبقى قائمًا أثناء استخدام تطبيقات أخرى.</string>
+    <string name="notification_text_bluetooth_connecting">Bluetooth: جارٍ الاتصال بـ %1$s…</string>
+    <string name="notification_text_bluetooth_connected">Bluetooth: متصل بـ %1$s</string>
+    <string name="notification_text_lan_listening">USB/IP: يستمع على %1$s</string>
+    <string name="notification_text_lan_attached">USB/IP: الكمبيوتر متصل</string>
+    <string name="open_controls">العودة إلى التحكم</string>
     <string name="connection_kept_toast">يبقى الاتصال قائمًا في الخلفية</string>
+    <string name="notification_off_toast">الإشعارات معطّلة — يمكنك العودة إلى التحكم من صفحة البحث.</string>
     <string name="scanner_switch_title">تبديل الجهاز؟</string>
     <string name="scanner_switch_text">متصل حاليًا بـ %1$s. هل تريد قطع الاتصال والاتصال بـ %2$s؟</string>
     <string name="scanner_switch_confirm">تبديل</string>
@@ -53,6 +56,25 @@
     <!-- Mode Names -->
     <string name="mode_keyboard">وضع لوحة المفاتيح</string>
     <string name="mode_touchpad">وضع لوحة اللمس</string>
+    <string name="mode_mouse">وضع الفأرة</string>
+
+    <!-- Mouse (classic Bluetooth link only) -->
+    <string name="mouse_control">أزرار الفأرة</string>
+    <string name="middle_button">الزر الأوسط</string>
+    <string name="button_4">الزر 4</string>
+    <string name="button_5">الزر 5</string>
+    <string name="scroll_wheel">عجلة التمرير</string>
+    <string name="scroll_up">التمرير لأعلى</string>
+    <string name="scroll_down">التمرير لأسفل</string>
+    <string name="mouse_area">منطقة المؤشر</string>
+    <string name="mouse_area_hint">اسحب للتحريك · انقر لليسار · اضغط مطولاً لليمين</string>
+    <string name="mouse_only_move">حرر الأزرار لتحريك المؤشر</string>
+
+    <!-- Mouse settings -->
+    <string name="mouse_settings">إعدادات الفأرة</string>
+    <string name="long_press_duration">مدة الضغط المطول</string>
+    <string name="long_press_description">ضغطة قصيرة = الزر الأيسر، ضغطة مطولة = الزر الأيمن</string>
+    <string name="long_press_duration_format">%1$d مللي ثانية</string>
 
     <!-- Keyboard pages (page indicator labels) -->
     <string name="keyboard_page_main">الرئيسية</string>
@@ -98,6 +120,7 @@
     <string name="hue_amber">كهرماني</string>
     <string name="hue_rose">وردي</string>
     <string name="hue_graphite">جرافيت</string>
+    <string name="hue_dynamic">ألوان النظام (Material You)</string>
 
     <!-- Languages -->
     <string name="language_system">اتباع النظام</string>
@@ -237,4 +260,20 @@
     <string name="template_warn_small_delay">التأخير %1$s مللي ثانية قصير جدًا وقد يُضغط عبر البلوتوث</string>
     <string name="template_warn_small_delay_header">مدة الإمساك أو الفاصل في القالب %1$s مللي ثانية أقل من 10 مللي ثانية وقد تُضغط عبر البلوتوث</string>
     <string name="template_warn_ignored_attr">لم تعد السمة «%1$s» فعّالة: إيقاع المفاتيح يتبع معاملات القالب، وتُزال عند الحفظ</string>
+    <!-- LAN (USB/IP) link -->
+    <string name="lan_title">الشبكة المحلية (USB/IP)</string>
+    <string name="lan_start">بدء الاستماع</string>
+    <string name="lan_stop">إيقاف الاستماع</string>
+    <string name="lan_idle">لا يستمع</string>
+    <string name="lan_listening">يستمع على %1$s</string>
+    <string name="lan_connected">الكمبيوتر متصل</string>
+    <string name="lan_waiting">في انتظار الكمبيوتر</string>
+    <string name="lan_open_controls">اضغط لفتح لوحة التحكم</string>
+    <string name="lan_attach_hint">على الكمبيوتر: usbip attach -r %1$s -b 1-1</string>
+    <string name="lan_address_unknown">لا يوجد عنوان</string>
+    <string name="lan_failed">فشل البدء: قد يكون المنفذ %1$d مستخدمًا</string>
+    <!-- 局域网（USB/IP）监听端口：可在设置里改 -->
+    <string name="lan_port">منفذ الاستماع</string>
+    <string name="lan_port_hint">1024-65535. يُطبَّق في المرة التالية لبدء الاستماع؛ وإذا كان الاستماع جاريًا فيتوقف أولًا.</string>
+    <!-- BLE (HID over GATT) link -->
 </resources>

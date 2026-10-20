@@ -51,9 +51,9 @@ import com.github.remotecontrol.util.KeyboardConstants
  * 「亮」取的是 **警告色（异色）**，不是错误色：灯亮只说明锁键生效，不是出错。
  * 两者同色的话，三盏灯亮着会像整页都在报错，而错误色得留着说真正出错的事。
  *
- * 键盘页一打开就会主动去问一次主机（见 `BluetoothHidViewModel.syncKeyboardLeds`），
+ * 键盘页一打开就会主动去问一次主机（见 `HidSession.syncKeyboardLeds`），
  * 所以空心圈一般只出现在「刚进页面」到「主机回话」之间那一瞬间；主机要是连 Num Lock 都不理
- * （`BluetoothHidViewModel.numpadWarning`），空心圈就会一直留着，界面会另外
+ * （`HidSession.numpadWarning`），空心圈就会一直留着，界面会另外
  * 提示一句「连接的设备可能不支持小键盘」。
  */
 @Composable

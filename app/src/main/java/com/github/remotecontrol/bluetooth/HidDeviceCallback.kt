@@ -1,4 +1,4 @@
-package com.github.remotecontrol.viewmodel
+package com.github.remotecontrol.bluetooth
 
 import android.annotation.SuppressLint
 import android.bluetooth.BluetoothDevice

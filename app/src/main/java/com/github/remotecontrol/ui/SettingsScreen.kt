@@ -9,6 +9,7 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -17,13 +18,16 @@ import androidx.compose.material.icons.filled.Keyboard
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.Translate
+import androidx.compose.material.icons.filled.Wifi
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.github.remotecontrol.R
@@ -126,6 +130,10 @@ fun SettingsScreen(
     onCharsetEnabledChange: (String, Boolean) -> Unit,
     onAddCharset: (String) -> CharsetAddResult,
     onRemoveCharset: (String) -> Unit,
+    usbipPort: Int,
+    onUsbipPortChange: (Int) -> Unit,
+    longPressDuration: Int,
+    onLongPressDurationChange: (Int) -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -171,6 +179,22 @@ fun SettingsScreen(
             KeyboardSettingsSection(
                 keyboardLayoutMode = keyboardLayoutMode,
                 onKeyboardLayoutModeChange = onKeyboardLayoutModeChange
+            )
+
+            Spacer(modifier = Modifier.height(dimens.sectionGap))
+
+            MouseSettingsSection(
+                longPressDuration = longPressDuration,
+                onLongPressDurationChange = onLongPressDurationChange,
+            )
+
+            Spacer(modifier = Modifier.height(dimens.sectionGap))
+
+            // 端口排在字符集**之前**：字符集那一节很长（14 项内置 + 自定义），
+            // 端口这项既短又只跟局域网有关，不该被压在长长的字符集列表下面
+            LanSettingsSection(
+                usbipPort = usbipPort,
+                onUsbipPortChange = onUsbipPortChange,
             )
 
             Spacer(modifier = Modifier.height(dimens.sectionGap))
@@ -554,4 +578,70 @@ private fun CharsetAddMessage(result: CharsetAddResult?) {
         color = color,
         modifier = Modifier.padding(top = 6.dp),
     )
+}
+
+/**
+ * 局域网（USB/IP）设置：监听端口。
+ *
+ * 做成设置项的理由通常只有一个 —— 3240 被别的程序占了。两个细节：
+ *
+ * 1. **只有合法端口才回写偏好**：输入框自己管一份文本，用户敲到一半的 `80` 不该被当成一次改动
+ *    （也免得落盘一个永远绑不上的值）；越界时输入框标红、说明文字转错误色；
+ * 2. **改了会把正在跑的监听停掉**（见 `UsbIpInputViewModel`）：服务端绑的还是旧端口，
+ *    而卡片显示的是新端口，不停的话界面就开始骗人了。
+ */
+@Composable
+fun LanSettingsSection(
+    usbipPort: Int,
+    onUsbipPortChange: (Int) -> Unit,
+) {
+    val dimens = LocalAppDimens.current
+
+    // key 用 usbipPort：合法值一落盘就跟着复位（把「用户敲到一半的残留」丢掉），
+    // 也让旋转 / 重建之后输入框回到已生效的那个值上
+    var text by rememberSaveable(usbipPort) { mutableStateOf(usbipPort.toString()) }
+
+    val valid = text.toIntOrNull()
+        ?.let { it in SettingConstants.USBIP_PORT_MIN..SettingConstants.USBIP_PORT_MAX }
+        ?: false
+
+    Column(modifier = Modifier.padding(horizontal = dimens.screenPadding, vertical = 0.dp)) {
+        ElevatedCard(level = TintLevel.SURFACE) {
+            SectionTitle(text = stringResource(R.string.lan_title), icon = Icons.Default.Wifi)
+
+            Text(
+                text = stringResource(R.string.lan_port),
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(bottom = 4.dp)
+            )
+
+            OutlinedTextField(
+                value = text,
+                onValueChange = { raw ->
+                    // 只留数字、最多 5 位；中间态不动偏好，合法了才落盘
+                    val digits = raw.filter { it.isDigit() }.take(5)
+                    text = digits
+                    digits.toIntOrNull()
+                        ?.takeIf { it in SettingConstants.USBIP_PORT_MIN..SettingConstants.USBIP_PORT_MAX }
+                        ?.let(onUsbipPortChange)
+                },
+                isError = !valid,
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                modifier = Modifier.fillMaxWidth(),
+            )
+
+            Text(
+                text = stringResource(R.string.lan_port_hint),
+                style = MaterialTheme.typography.bodySmall,
+                color = if (valid) {
+                    MaterialTheme.colorScheme.onSurfaceVariant
+                } else {
+                    LocalAppTokens.current.error
+                },
+                modifier = Modifier.padding(top = 8.dp)
+            )
+        }
+    }
 }

@@ -1,16 +1,20 @@
 package com.github.remotecontrol.ui.theme
 
+import android.content.Context
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.dynamicDarkColorScheme
+import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -336,6 +340,9 @@ internal val HueScheme.darkSemantics: SemanticPair
         HueScheme.GRAPHITE -> GraphitePairDark
         HueScheme.AMBER -> AmberPairDark
         HueScheme.ROSE -> RosePairDark
+        // 运行时由系统配色的 tertiary / error 覆盖（见 RemoteInputTheme）；
+        // 这里的兜底只为「拿不到 Context」的调用方（单测、预览）留一个完整值
+        HueScheme.DYNAMIC -> AzurePairDark
     }
 
 /**
@@ -352,6 +359,8 @@ internal val HueScheme.lightSemantics: SemanticPair
         HueScheme.GRAPHITE -> GraphitePairLight
         HueScheme.AMBER -> AmberPairLight
         HueScheme.ROSE -> RosePairLight
+        // 同深色：运行时由系统配色覆盖，这里只是兜底
+        HueScheme.DYNAMIC -> AzurePairLight
     }
 
 /** 亮色块上的文字色：深色模式压近黑、浅色模式用纯白（[AppTokens.onAccent] 等三处共用） */
@@ -364,10 +373,18 @@ private val OnSolidLight = Color(0xFFFFFFFF)
  * `onAccent` 取近黑 —— 亮色强调块上放深色文字，填充态与文字态双向都够对比度。
  *
  * 两个异色取自 [HueScheme.darkSemantics]（每套方案各一对），「底」再由它按同一套混合比派生。
+ *
+ * @param accentOverride 跟随系统莫奈取色时传入系统主色（[HueScheme.DYNAMIC]）；
+ *        其余方案传 null，走 `HueScheme.darkAccent` 的固定值
+ * @param semanticsOverride 跟随系统时传入系统配色的 tertiary / error；其余方案传 null
  */
-internal fun darkTokens(hue: HueScheme): AppTokens {
-    val accent = hue.darkAccent
-    val semantics = hue.darkSemantics
+internal fun darkTokens(
+    hue: HueScheme,
+    accentOverride: Color? = null,
+    semanticsOverride: SemanticPair? = null,
+): AppTokens {
+    val accent = accentOverride ?: hue.darkAccent
+    val semantics = semanticsOverride ?: hue.darkSemantics
     // 浓度阶梯第 2 档 = 卡片底。异色的「底」**压在它上面**算：这一层才是边上真实衬着的那层
     val surface = accent.mix(InkCard, 0.16f)
 
@@ -412,10 +429,17 @@ internal fun darkTokens(hue: HueScheme): AppTokens {
  * 4. `onAccent` 是纯白（强调色本身已被压暗）
  *
  * 两个异色取自 [HueScheme.lightSemantics]。
+ *
+ * @param accentOverride 跟随系统莫奈取色时传入系统主色（[HueScheme.DYNAMIC]）
+ * @param semanticsOverride 跟随系统时传入系统配色的 tertiary / error
  */
-internal fun lightTokens(hue: HueScheme): AppTokens {
-    val accent = hue.lightAccent
-    val semantics = hue.lightSemantics
+internal fun lightTokens(
+    hue: HueScheme,
+    accentOverride: Color? = null,
+    semanticsOverride: SemanticPair? = null,
+): AppTokens {
+    val accent = accentOverride ?: hue.lightAccent
+    val semantics = semanticsOverride ?: hue.lightSemantics
     val surface = accent.mix(PaperCard, 0.08f)
 
     return AppTokens(
@@ -469,6 +493,8 @@ internal val HueScheme.darkAccent: Color
         HueScheme.AMBER -> Color(0xFFE3B341)
         HueScheme.ROSE -> Color(0xFFF0619B)
         HueScheme.GRAPHITE -> Color(0xFF9CA3AF)
+        // 兜底：运行时由系统莫奈主色覆盖（RemoteInputTheme 传 accentOverride）
+        HueScheme.DYNAMIC -> Color(0xFF58A6FF)
     }
 
 internal val HueScheme.lightAccent: Color
@@ -479,13 +505,36 @@ internal val HueScheme.lightAccent: Color
         HueScheme.AMBER -> Color(0xFF9A6700)
         HueScheme.ROSE -> Color(0xFFBE185D)
         HueScheme.GRAPHITE -> Color(0xFF4B5563)
+        // 兜底：运行时由系统莫奈主色覆盖（RemoteInputTheme 传 accentOverride）
+        HueScheme.DYNAMIC -> Color(0xFF0969DA)
     }
 
-/** 供设置页的色相选择器取"当前模式下这个方案长什么样"的圆点颜色 */
+/**
+ * 供设置页的色相选择器取"当前模式下这个方案长什么样"的圆点颜色。
+ *
+ * [HueScheme.DYNAMIC] 不能在枚举里写死：莫奈主色来自系统，只能在这里用 `Context` 现取。
+ */
 @Composable
-fun hueDotColor(hue: HueScheme, darkTheme: Boolean): Color = remember(hue, darkTheme) {
-    if (darkTheme) hue.darkAccent else hue.lightAccent
+fun hueDotColor(hue: HueScheme, darkTheme: Boolean): Color {
+    val context = LocalContext.current
+    // 系统配色要在 Composable 里先取好，remember 的 lambda 不是 Composable，不能在里面调
+    val dynamicScheme =
+        if (hue == HueScheme.DYNAMIC) systemDynamicColorScheme(context, darkTheme) else null
+
+    return remember(hue, darkTheme, dynamicScheme) {
+        dynamicScheme?.primary ?: if (darkTheme) hue.darkAccent else hue.lightAccent
+    }
 }
+
+/**
+ * 系统莫奈配色。
+ *
+ * 本项目 `minSdk = 31`，动态取色没有「系统不支持」的分支；`dynamicDarkColorScheme` /
+ * `dynamicLightColorScheme` 会在拿不到系统调色板时回退到 M3 基线，不需要额外判断。
+ */
+@Composable
+internal fun systemDynamicColorScheme(context: Context, darkTheme: Boolean): ColorScheme =
+    if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
 
 /**
  * 把 token 展开成 Material 3 的 [ColorScheme]。

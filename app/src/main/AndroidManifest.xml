@@ -8,16 +8,24 @@
      your app never derives physical location from Bluetooth scan results. -->
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
         android:usesPermissionFlags="neverForLocation" />
-
     <uses-feature android:name="android.hardware.bluetooth" android:required="true"/>
 
     <!--
-        连接期间的前台服务。
-        FOREGROUND_SERVICE_CONNECTED_DEVICE 是 Android 14+ 对 connectedDevice 类型的单独要求；
+        局域网（USB/IP）链路：手机当服务端在 3240 端口监听，电脑用现成的 usbip 客户端挂载。
+        只需要普通 socket，用不到位置 / 邻近设备 / 本地网络那一类权限。
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+        连接期间的前台服务。前三个权限各管一件事：
+        - FOREGROUND_SERVICE                    前台服务的总开关；
+        - FOREGROUND_SERVICE_CONNECTED_DEVICE   蓝牙链路的类型（Android 14+ 对每种类型单独要求）；
+        - FOREGROUND_SERVICE_SPECIAL_USE        局域网链路的类型（同上）。
         POST_NOTIFICATIONS 是 Android 13+ 显示那条常驻通知的运行时权限。
     -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <!--
@@ -55,7 +63,7 @@
             同一个实例（走 onNewIntent），而不是再叠一层控制页。
         -->
         <activity
-            android:name=".ControlActivity"
+            android:name=".bluetooth.ControlActivity"
             android:exported="false"
             android:label="@string/control_title"
             android:theme="@style/Theme.RemoteInput"
@@ -63,6 +71,19 @@
             android:screenOrientation="fullSensor"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
             android:windowSoftInputMode= "adjustNothing"/>
+        <!--
+            局域网链路的控制页：与 ControlActivity 同款（旋转不重建 / singleTop / 全传感器方向），
+            但不需要设备地址 —— 它展示的是本机的 usbip 服务，没有「连哪台」这回事。
+        -->
+        <activity
+            android:name=".usbip.UsbIpControlActivity"
+            android:exported="false"
+            android:label="@string/lan_title"
+            android:theme="@style/Theme.RemoteInput"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
@@ -72,13 +93,25 @@
 
         <!--
             连接期间的前台服务：只为把进程钉在前台（退到后台的普通进程随时可能被回收，
-            进程一死 HID 注册就跟着没了，主机侧表现为设备被拔出），顺带承载那条常驻通知。
-            连接本身由 BluetoothHidViewModel 的进程级单例持有，见 HidForegroundService。
+            进程一死链路就跟着没了，主机侧表现为设备被拔出），顺带承载那条常驻通知。
+            链路本身由两条链路的进程级单例持有，见 HidForegroundService。
+
+            类型按当前链路给（见 HidForegroundService.foregroundServiceType），两个都先声明出来：
+            - 蓝牙链路 connectedDevice —— 它就是「与外部设备（蓝牙）持续交互」；
+            - 局域网链路 specialUse —— 那条链路只是自己开一个 TCP 监听，而 connectedDevice
+              在 Android 14+ 要求同时持有蓝牙 / Wi-Fi / USB 那一组权限里的任意一个，
+              我们只有 INTERNET，清掉数据后未授蓝牙权限时会直接抛 SecurityException。
+              specialUse 正是官方给「不符合任何既定类型」留的出口。
         -->
         <service
             android:name=".HidForegroundService"
             android:exported="false"
-            android:foregroundServiceType="connectedDevice" />
+            android:foregroundServiceType="connectedDevice|specialUse">
+            <!-- specialUse 必须说明用途，给审核与系统看 -->
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="usbip_device_emulation_listener" />
+        </service>
 
     </application>
 

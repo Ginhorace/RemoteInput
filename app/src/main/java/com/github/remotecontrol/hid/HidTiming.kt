@@ -1,4 +1,4 @@
-package com.github.remotecontrol.viewmodel
+package com.github.remotecontrol.hid
 
 /**
  * HID 连接流程里的各种等待时长。
@@ -17,6 +17,16 @@ internal object HidTiming {
 
     /** 等待配对完成的超时；超时或配对被取消则不再重建连接 */
     const val BOND_WAIT_TIMEOUT_MS = 30_000L
+
+    /**
+     * 等配对时轮询 `bondState` 的间隔。
+     *
+     * 除了 `ACTION_BOND_STATE_CHANGED` 广播，还要有这一路兜底：真机上出现过
+     * 「链路侧配对成功、应用侧却整整等满 30 s 超时」的现场，只信广播的话，
+     * 那一次就会被判成「没配上」（日志里 `Bond state broadcast` 一行都没有、
+     * 只有 `Bond detected by polling`）。
+     */
+    const val BOND_POLL_INTERVAL_MS = 250L
 
     /** 拆掉旧链路之后，等它彻底干净再连新的延迟（配对后重建、换设备都用它） */
     const val RECONNECT_DELAY_MS = 800L

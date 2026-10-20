@@ -42,11 +42,14 @@
     <!-- 连接保持：前台服务的常驻通知、扫描页连接卡片、后退提示、换设备确认 -->
     <string name="connection_kept_title">连接保持中</string>
     <string name="notification_channel_name">连接保持</string>
-    <string name="notification_channel_description">在使用其它应用时显示仍在保持的蓝牙连接。</string>
-    <string name="notification_text_connecting">正在连接 %1$s…</string>
-    <string name="notification_text_connected">已连接 %1$s</string>
-    <string name="notification_action_open">回到控制页</string>
+    <string name="notification_channel_description">在使用其它应用时显示仍在保持的连接。</string>
+    <string name="notification_text_bluetooth_connecting">蓝牙正在连接 %1$s…</string>
+    <string name="notification_text_bluetooth_connected">蓝牙连接 %1$s</string>
+    <string name="notification_text_lan_listening">USB/IP 监听 %1$s</string>
+    <string name="notification_text_lan_attached">USB/IP 电脑已挂载</string>
+    <string name="open_controls">回到控制页</string>
     <string name="connection_kept_toast">连接仍在后台保持</string>
+    <string name="notification_off_toast">通知已关闭，可从扫描页返回控制页</string>
     <string name="scanner_switch_title">切换设备？</string>
     <string name="scanner_switch_text">当前已连接 %1$s。要断开它并连接到 %2$s 吗？</string>
     <string name="scanner_switch_confirm">切换</string>
@@ -54,6 +57,25 @@
     <!-- Mode Names -->
     <string name="mode_keyboard">键盘模式</string>
     <string name="mode_touchpad">触摸板模式</string>
+    <string name="mode_mouse">鼠标模式</string>
+
+    <!-- Mouse (classic Bluetooth link only) -->
+    <string name="mouse_control">鼠标按键</string>
+    <string name="middle_button">中键</string>
+    <string name="button_4">按键 4</string>
+    <string name="button_5">按键 5</string>
+    <string name="scroll_wheel">滚轮</string>
+    <string name="scroll_up">向上滚动</string>
+    <string name="scroll_down">向下滚动</string>
+    <string name="mouse_area">指针区域</string>
+    <string name="mouse_area_hint">滑动移动 · 单击左键 · 长按右键</string>
+    <string name="mouse_only_move">松开按键后可移动指针</string>
+
+    <!-- Mouse settings -->
+    <string name="mouse_settings">鼠标设置</string>
+    <string name="long_press_duration">长按判定时长</string>
+    <string name="long_press_description">短按为左键，长按为右键</string>
+    <string name="long_press_duration_format">%1$d 毫秒</string>
 
     <!-- Keyboard pages (page indicator labels) -->
     <string name="keyboard_page_main">主键盘</string>
@@ -100,6 +122,7 @@
     <string name="hue_amber">Amber 琥珀</string>
     <string name="hue_rose">Rose 玫红</string>
     <string name="hue_graphite">Graphite 石墨</string>
+    <string name="hue_dynamic">跟随系统（莫奈取色）</string>
 
     <!-- Languages -->
     <!-- 语言名是原生写法，放在默认语包里（translatable="false"），这里只留需要本地化的「跟随系统」 -->
@@ -240,4 +263,20 @@
     <string name="template_warn_small_delay">延时 %1$s ms 过短，蓝牙下可能被压缩</string>
     <string name="template_warn_small_delay_header">模板的按键保持 / 间隔 %1$s ms 低于 10 ms，蓝牙下可能被压缩</string>
     <string name="template_warn_ignored_attr">属性「%1$s」已不再生效：按键节奏统一取模板参数，保存后会被清除</string>
+    <!-- 局域网（USB/IP）链路 -->
+    <string name="lan_title">局域网（USB/IP）</string>
+    <string name="lan_start">开始监听</string>
+    <string name="lan_stop">停止监听</string>
+    <string name="lan_idle">未监听</string>
+    <string name="lan_listening">正在监听 %1$s</string>
+    <string name="lan_connected">电脑已挂载</string>
+    <string name="lan_waiting">等待电脑导入</string>
+    <string name="lan_open_controls">点卡片进入控制页</string>
+    <string name="lan_attach_hint">电脑执行：usbip attach -r %1$s -b 1-1</string>
+    <string name="lan_address_unknown">未连接网络</string>
+    <string name="lan_failed">启动失败：端口 %1$d 可能被占用</string>
+    <!-- 局域网（USB/IP）监听端口：可在设置里改 -->
+    <string name="lan_port">监听端口</string>
+    <string name="lan_port_hint">1024-65535；改动在下次「开始监听」时生效，正在监听时会先停下来。</string>
+    <!-- BLE (HID over GATT) link -->
 </resources>

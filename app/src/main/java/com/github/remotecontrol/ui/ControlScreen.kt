@@ -1,11 +1,6 @@
 package com.github.remotecontrol.ui
 
-import android.content.Context
-import android.content.Intent
-import android.content.pm.ShortcutInfo
-import android.content.pm.ShortcutManager
 import android.content.res.Configuration
-import android.graphics.drawable.Icon as AndroidIcon
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -17,6 +12,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Code
 import androidx.compose.material.icons.filled.Keyboard
 import androidx.compose.material.icons.filled.LinkOff
+import androidx.compose.material.icons.filled.Mouse
 import androidx.compose.material.icons.filled.TouchApp
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -46,8 +42,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.github.remotecontrol.ControlActivity
 import com.github.remotecontrol.R
+import com.github.remotecontrol.hid.HidError
+import com.github.remotecontrol.hid.HidSession
+import com.github.remotecontrol.hid.HidState
+import com.github.remotecontrol.hid.PointerKind
+import com.github.remotecontrol.hid.hasActiveLink
 import com.github.remotecontrol.ui.keyboard.KeyboardModeScreen
 import com.github.remotecontrol.ui.template.TemplateModeScreen
 import com.github.remotecontrol.ui.theme.ConnStatus
@@ -56,36 +56,46 @@ import com.github.remotecontrol.ui.theme.LocalAppTokens
 import com.github.remotecontrol.ui.theme.StatusDot
 import com.github.remotecontrol.ui.theme.TintLevel
 import com.github.remotecontrol.ui.theme.tintStyle
-import com.github.remotecontrol.util.AppPreferences
 import com.github.remotecontrol.util.ControlMode
 import com.github.remotecontrol.util.HostKeyboardLayout
 import com.github.remotecontrol.util.KeyboardLayoutCatalog
 import com.github.remotecontrol.util.KeyboardLayoutMode
 import com.github.remotecontrol.util.LocaleHelper
-import com.github.remotecontrol.viewmodel.BluetoothHidViewModel
-import com.github.remotecontrol.viewmodel.HidError
-import com.github.remotecontrol.viewmodel.HidState
-import com.github.remotecontrol.viewmodel.hasActiveLink
 
+/**
+ * 控制页界面：键盘 / 触摸板 / 模板三种模式 + 横竖屏布局 + 错误 / 提示对话框。
+ *
+ * **两条链路共用同一份**（经典蓝牙 / 局域网）：它只认 [HidSession] —— 即「一条链路对界面暴露什么」，
+ * 因此这里既不知道也不该知道报告最终走蓝牙还是走 USB/IP。
+ *
+ * 指针那一页是唯一的例外：报告结构由链路的 [PointerKind] 决定，
+ * 所以 `ControlMode.TOUCHPAD` 这个槽位在鼠标链路上渲染 `MouseModeScreen`、
+ * 在触摸板链路上渲染 `TouchpadModeScreen`，而不是让同一个页面去猜。
+ *
+ * 蓝牙专有的那几件「界面一挂上就做的事」（初始化 HID 应用、按地址发起连接、申请通知权限）
+ * 不在本文件里，见 `bluetooth/BluetoothLinkEffects.kt` —— 它由蓝牙控制页在**同一段 `setContent`**
+ * 里与本函数并列调用；局域网控制页没有对应的东西，什么都不传。
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ControlScreen(
-    viewModel: BluetoothHidViewModel,
+    viewModel: HidSession,
     deviceName: String,
-    deviceAddress: String?,
     // Configuration.ORIENTATION_LANDSCAPE / PORTRAIT。
-    // 不用 LocalConfiguration.current：ControlActivity 拦截了 orientation 配置变更（旋转不重建），
+    // 不用 LocalConfiguration.current：控制页拦截了 orientation 配置变更（旋转不重建），
     // LocalConfiguration 不会自动刷新，方向只能由 Activity 的 onConfigurationChanged 显式传入。
     orientation: Int,
     keyboardLayoutMode: KeyboardLayoutMode,
-    // 后退：只退出界面，连接留在后台（由常驻通知承载），见 ControlActivity.exitControlScreen
+    // 后退：只退出界面，连接留在后台（由常驻通知承载）
     onBack: () -> Unit,
-    // 断开连接：显式动作，确认之后才走，见 ControlActivity.disconnectAndExit
+    // 断开连接：显式动作，确认之后才走
     onDisconnect: () -> Unit
 ) {
     val context = LocalContext.current
     val isLandscape = orientation == Configuration.ORIENTATION_LANDSCAPE
     val state by viewModel.state.collectAsState()
+    // 指针形态由链路决定，运行期不变（经典蓝牙 = 鼠标，局域网 = 触摸板）
+    val pointerKind = viewModel.pointerKind
 
     // 「主机不理 Num Lock」的提示。触发点在键盘页那次问灯态，但它说的是**这台设备**的事
     // （模板的 Alt Code 输入靠小键盘），所以挂在 ControlScreen 而不是键盘页：
@@ -105,23 +115,8 @@ fun ControlScreen(
         else -> null
     }
 
-    val prefs = remember { AppPreferences.getInstance(context) }
     var currentMode by rememberSaveable { mutableStateOf(ControlMode.TOUCHPAD) }
     var showDisconnectDialog by remember { mutableStateOf(false) }
-
-    // 初始化（幂等：连接归进程级单例所有，从通知栏回到本页会再走一遍这里）
-    LaunchedEffect(Unit) {
-        viewModel.initialize(context)
-    }
-
-    // 连接设备 + 快捷方式
-    DeviceConnectionEffect(
-        viewModel = viewModel,
-        context = context,
-        deviceAddress = deviceAddress,
-        deviceName = deviceName,
-        prefs = prefs
-    )
 
     // 断开入口只有这一个按钮。链路本来就没建起来时不必弹确认框 ——
     // 那时候「断开」和「退出」是同一件事（这段判断原来挂在后退键上）
@@ -161,6 +156,8 @@ fun ControlScreen(
                 currentMode = mode,
                 isLandscape = landscape,
                 keyboardLayout = layout,
+                // 捕获的是本页会话的形态：同一控制页里链路不会中途更换，所以不放进 key
+                pointerKind = pointerKind,
             )
         }
     }
@@ -173,6 +170,7 @@ fun ControlScreen(
         if (isLandscape) {
             LandscapeLayout(
                 currentMode = currentMode,
+                pointerKind = pointerKind,
                 keyboardLayout = keyboardLayout,
                 onModeSelected = switchMode,
                 onBack = onBack,
@@ -185,6 +183,7 @@ fun ControlScreen(
                 deviceName = deviceName,
                 state = state,
                 currentMode = currentMode,
+                pointerKind = pointerKind,
                 keyboardLayout = keyboardLayout,
                 onModeSelected = switchMode,
                 onBack = onBack,
@@ -219,60 +218,13 @@ fun ControlScreen(
 }
 
 // ─────────────────────────────────────────────
-// 连接建立 + 快捷方式 Effect
-// ─────────────────────────────────────────────
-
-@Composable
-private fun DeviceConnectionEffect(
-    viewModel: BluetoothHidViewModel,
-    context: Context,
-    deviceAddress: String?,
-    deviceName: String,
-    prefs: AppPreferences
-) {
-    // 快捷方式的长标签要跟随界面语言，而 LaunchedEffect 的块内不能调用 stringResource，
-    // 所以在组合作用域里先解析好
-    val connectToLabel = stringResource(id = R.string.shortcut_connect_to, deviceName)
-
-    // 「等注册完成才发起连接」的门禁已经收进 ViewModel（awaitReady），
-    // 这里只负责把地址交出去，不再关心注册状态。
-    // 地址相同的重复进入会在 connectToDevice 里短路，不会把已有的链路拆掉重建。
-    LaunchedEffect(deviceAddress) {
-        if (deviceAddress == null) return@LaunchedEffect
-
-        prefs.lastConnectedDeviceAddress = deviceAddress
-
-        // 更新快捷方式
-        val shortcutManager = context.getSystemService(ShortcutManager::class.java)
-        val shortcut = ShortcutInfo.Builder(context, "last_device")
-            .setShortLabel(deviceName)
-            .setLongLabel(connectToLabel)
-            .setIcon(AndroidIcon.createWithResource(context, R.mipmap.ic_launcher))
-            .setIntent(
-                Intent(context, ControlActivity::class.java).apply {
-                    action = Intent.ACTION_VIEW
-                    putExtra(ControlActivity.EXTRA_DEVICE_ADDRESS, deviceAddress)
-                    putExtra(ControlActivity.EXTRA_DEVICE_NAME, deviceName)
-                    addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-                }
-            )
-            .build()
-
-        shortcutManager?.addDynamicShortcuts(listOf(shortcut))
-
-        // 连接蓝牙设备
-        // 地址 → 设备的解析与连接节奏都在 ViewModel 里（那边本来就已经持有 adapter，不必再取一次）
-        viewModel.connectToDevice(deviceAddress)
-    }
-}
-
-// ─────────────────────────────────────────────
 // 横屏布局
 // ─────────────────────────────────────────────
 
 @Composable
 private fun LandscapeLayout(
     currentMode: ControlMode,
+    pointerKind: PointerKind,
     keyboardLayout: HostKeyboardLayout,
     onModeSelected: (ControlMode) -> Unit,
     onBack: () -> Unit,
@@ -317,6 +269,7 @@ private fun LandscapeLayout(
             )
             ModeButtonGroup(
                 currentMode = currentMode,
+                pointerKind = pointerKind,
                 onModeSelected = onModeSelected
             )
             Spacer(modifier = Modifier.weight(1f))
@@ -339,6 +292,7 @@ private fun PortraitLayout(
     deviceName: String,
     state: HidState,
     currentMode: ControlMode,
+    pointerKind: PointerKind,
     keyboardLayout: HostKeyboardLayout,
     onModeSelected: (ControlMode) -> Unit,
     onBack: () -> Unit,
@@ -414,6 +368,7 @@ private fun PortraitLayout(
                     ) {
                         ModeButtonGroup(
                             currentMode = currentMode,
+                            pointerKind = pointerKind,
                             onModeSelected = onModeSelected
                         )
                     }
@@ -447,17 +402,26 @@ private fun PortraitLayout(
 
 @Composable
 private fun ModeContentArea(
-    viewModel: BluetoothHidViewModel,
+    viewModel: HidSession,
     currentMode: ControlMode,
     isLandscape: Boolean,
-    keyboardLayout: HostKeyboardLayout
+    keyboardLayout: HostKeyboardLayout,
+    pointerKind: PointerKind,
 ) {
     when (currentMode) {
         ControlMode.KEYBOARD -> {
             KeyboardModeScreen(viewModel, keyboardLayout, Modifier.fillMaxSize(), isLandscape)
         }
+        // ControlMode.TOUCHPAD 是「指针模式」这个槽位：具体页面由链路的指针形态决定 ——
+        // 经典蓝牙注册的是鼠标描述符，只能发 4 字节相对位移；局域网是 PTP 触摸板
         ControlMode.TOUCHPAD -> {
-            TouchpadModeScreen(viewModel, Modifier.fillMaxSize(), isLandscape)
+            when (pointerKind) {
+                PointerKind.MOUSE ->
+                    MouseModeScreen(viewModel, Modifier.fillMaxSize(), isLandscape)
+
+                PointerKind.TOUCHPAD ->
+                    TouchpadModeScreen(viewModel, Modifier.fillMaxSize(), isLandscape)
+            }
         }
         ControlMode.TEMPLATE -> {
             TemplateModeScreen(viewModel, Modifier.fillMaxSize(), isLandscape)
@@ -472,20 +436,24 @@ private fun ModeContentArea(
 @Composable
 private fun ModeButtonGroup(
     currentMode: ControlMode,
+    pointerKind: PointerKind,
     onModeSelected: (ControlMode) -> Unit
 ) {
     SideRailModeButton(
         mode = ControlMode.TOUCHPAD,
+        pointerKind = pointerKind,
         isSelected = currentMode == ControlMode.TOUCHPAD,
         onClick = { onModeSelected(ControlMode.TOUCHPAD) }
     )
     SideRailModeButton(
         mode = ControlMode.KEYBOARD,
+        pointerKind = pointerKind,
         isSelected = currentMode == ControlMode.KEYBOARD,
         onClick = { onModeSelected(ControlMode.KEYBOARD) }
     )
     SideRailModeButton(
         mode = ControlMode.TEMPLATE,
+        pointerKind = pointerKind,
         isSelected = currentMode == ControlMode.TEMPLATE,
         onClick = { onModeSelected(ControlMode.TEMPLATE) }
     )
@@ -525,7 +493,7 @@ private fun ErrorDialog(
  * 「连接的设备可能不支持小键盘」提示。
  *
  * 它不是失败 —— 链路是好的，只是主机对 Num Lock 的敲击一声不吭（见
- * `BluetoothHidViewModel.numpadWarning`）。之所以值得打断一下：模板的 `Alt Code` 输入
+ * `HidSession.numpadWarning`）。之所以值得打断一下：模板的 `Alt Code` 输入
  * 全靠小键盘，主机没有小键盘这一路时，用户会在模板里按半天却什么都打不出来，
  * 而且现场看不出原因。标题用「提示」而不是「错误」，也是这个意思。
  */
@@ -576,17 +544,25 @@ private fun errorText(error: HidError): String = when (error) {
 @Composable
 fun SideRailModeButton(
     mode: ControlMode,
+    pointerKind: PointerKind,
     isSelected: Boolean,
     onClick: () -> Unit
 ) {
     val icon = when (mode) {
         ControlMode.KEYBOARD -> Icons.Default.Keyboard
-        ControlMode.TOUCHPAD -> Icons.Default.TouchApp
+        // 指针槽位的图标随链路形态切换：经典蓝牙是鼠标，局域网是触摸板
+        ControlMode.TOUCHPAD -> when (pointerKind) {
+            PointerKind.MOUSE -> Icons.Default.Mouse
+            PointerKind.TOUCHPAD -> Icons.Default.TouchApp
+        }
         ControlMode.TEMPLATE -> Icons.Default.Code
     }
     val contentDescription = when (mode) {
         ControlMode.KEYBOARD -> stringResource(id = R.string.mode_keyboard)
-        ControlMode.TOUCHPAD -> stringResource(id = R.string.mode_touchpad)
+        ControlMode.TOUCHPAD -> when (pointerKind) {
+            PointerKind.MOUSE -> stringResource(id = R.string.mode_mouse)
+            PointerKind.TOUCHPAD -> stringResource(id = R.string.mode_touchpad)
+        }
         ControlMode.TEMPLATE -> stringResource(id = R.string.mode_template)
     }
     val dimens = LocalAppDimens.current

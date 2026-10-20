@@ -140,14 +140,18 @@ class TokensTest {
     }
 
     /**
-     * **六套方案之间不重复**：逐套切主题时要看得出颜色变了 ——
+     * **固定的几套方案之间不重复**：逐套切主题时要看得出颜色变了 ——
      * 「一套通用色 + 个别偏移」正是这条要防的。
+     *
+     * [HueScheme.DYNAMIC] 不参与：它的色值来自系统，静态兜底值只是为了让不依赖 Context 的
+     * 调用方能跑，拿它和固定方案比「必须不同」没有意义。
      */
     @Test
     fun everySchemeHasItsOwnSemanticPair() {
+        val fixedSchemes = HueScheme.entries.filter { it != HueScheme.DYNAMIC }
         listOf(
-            "深色" to HueScheme.entries.associateWith { darkTokens(it) },
-            "浅色" to HueScheme.entries.associateWith { lightTokens(it) },
+            "深色" to fixedSchemes.associateWith { darkTokens(it) },
+            "浅色" to fixedSchemes.associateWith { lightTokens(it) },
         ).forEach { (mode, tokens) ->
             val warns = tokens.mapValues { (_, t) -> t.warn }
             val errors = tokens.mapValues { (_, t) -> t.error }
@@ -189,5 +193,21 @@ class TokensTest {
             assertNotEquals("${hue.name}：警告色要按模式配反差值", dark.warn, light.warn)
             assertNotEquals("${hue.name}：错误色要按模式配反差值", dark.error, light.error)
         }
+    }
+
+    /**
+     * 跟随系统（莫奈）在不依赖 Context 时也必须能构造出完整的一套 token ——
+     * `RemoteInputTheme` 会传系统色覆盖，但单测 / 预览这类调用方走的是兜底值，
+     * 兜底值不成立就会在编译之外的地方炸。
+     */
+    @Test
+    fun dynamicSchemeFallsBackToCompletePalette() {
+        listOf("深色" to darkTokens(HueScheme.DYNAMIC), "浅色" to lightTokens(HueScheme.DYNAMIC))
+            .forEach { (mode, tokens) ->
+                assertNotEquals("$mode：强调色不能是透明", Color.Transparent, tokens.accent)
+                assertEquals(1f, tokens.accent.alpha)
+                assertNotEquals("$mode：警告色与错误色必须分得开", tokens.warn, tokens.error)
+                assertNotEquals("$mode：警告色不该等于强调色", tokens.accent, tokens.warn)
+            }
     }
 }

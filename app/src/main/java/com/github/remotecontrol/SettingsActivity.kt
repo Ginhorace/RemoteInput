@@ -42,6 +42,8 @@ class SettingsActivity : ComponentActivity() {
             val keyboardLayoutMode by viewModel.keyboardLayoutMode.collectAsState()
             val disabledCharsets by viewModel.disabledCharsets.collectAsState()
             val customCharsets by viewModel.customCharsets.collectAsState()
+            val usbipPort by viewModel.usbipPort.collectAsState()
+            val longPressDuration by viewModel.longPressDuration.collectAsState()
 
             val darkTheme = remember(themeMode) {
                 when (themeMode) {
@@ -76,6 +78,13 @@ class SettingsActivity : ComponentActivity() {
                     onCharsetEnabledChange = viewModel::setCharsetEnabled,
                     onAddCharset = viewModel::addCharset,
                     onRemoveCharset = viewModel::removeCharset,
+                    usbipPort = usbipPort,
+                    // 端口只影响局域网那条链路，改完由 UsbIpInputViewModel 观察并收掉正在跑的监听，
+                    // 本页不需要 recreate
+                    onUsbipPortChange = viewModel::updateUsbipPort,
+                    longPressDuration = longPressDuration,
+                    // 只影响经典蓝牙鼠标页的单击 / 长按判定，不涉及资源配置，不需要 recreate
+                    onLongPressDurationChange = viewModel::updateLongPressDuration,
                 )
             }
         }

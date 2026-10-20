@@ -18,7 +18,7 @@ import com.github.remotecontrol.util.template.MacroTemplate
 import com.github.remotecontrol.util.template.MacroTemplateExpander
 import com.github.remotecontrol.util.template.MacroTemplateHeader
 import com.github.remotecontrol.util.template.MacroTemplateStep
-import com.github.remotecontrol.viewmodel.BluetoothHidViewModel
+import com.github.remotecontrol.hid.HidSession
 
 // ─────────────────────────────────────────────
 // 展开预览
@@ -26,7 +26,7 @@ import com.github.remotecontrol.viewmodel.BluetoothHidViewModel
 
 @Composable
 internal fun TemplatePreviewDialog(
-    viewModel: BluetoothHidViewModel,
+    viewModel: HidSession,
     header: MacroTemplateHeader,
     steps: List<MacroTemplateStep>,
     canSend: Boolean,
